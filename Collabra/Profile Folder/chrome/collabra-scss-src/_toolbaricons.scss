@@ -1,0 +1,62 @@
+@import "_mixins.scss";
+
+:root {
+    --btn1-icon-width: 42px !important;
+    --btn1-icon-height: 39px !important;
+    --page-icon: url("chrome://collabra/content/bookmarks/bookmark-item.gif") !important;
+}
+
+$iconRegionMap: (
+    "back-button": 0,
+    "forward-button": 1,
+    "stop-button": 3,
+    "reload-button": 2,
+);
+
+.toolbarbutton-1 {
+    @each $icon, $offset in $iconRegionMap {
+        &##{$icon} {
+            padding: 0 !important;
+            opacity: 1 !important;
+            align-items: flex-start !important;
+
+            .toolbarbutton-icon {
+                // FUCK SCSS
+                --icon-offset: -#{$offset} !important;
+                list-style-image: none !important;
+                background-image: url("chrome://collabra/content/btn1.gif") !important;
+                background-position-y: calc(var(--btn1-icon-height) * var(--icon-offset)) !important;
+
+                width: var(--btn1-icon-width) !important;
+                height: var(--btn1-icon-height) !important;
+                padding: 0 !important;
+                border-radius: 0 !important;
+                margin-inline-end: 2px !important;
+            }
+
+            &:not([disabled="true"]):hover {
+                .toolbarbutton-icon {
+                    background-position-x: calc(var(--btn1-icon-width) * -1) !important;
+                }
+            }
+
+            &:not([disabled="true"]):hover:active,
+            &:not([disabled="true"])[open="true"] {
+                .toolbarbutton-icon {
+                    background-position-x: calc(var(--btn1-icon-width) * -2) !important;
+                }
+            }
+
+            &[disabled="true"] {
+                .toolbarbutton-icon {
+                    background-position-x: calc(var(--btn1-icon-width) * -3);
+                }
+            }
+        }
+    }
+}
+
+#reload-button,
+#stop-button {
+    display: flex !important;
+}

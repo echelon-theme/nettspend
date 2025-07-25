@@ -1,0 +1,146 @@
+#PersonalToolbar {
+    transition: none !important;
+    height: 24px !important;
+    padding-inline: 0 !important;
+    background-color: #C7D0D9 !important;
+    background: url("chrome://collabra/content/toolbar/tb-mid.gif") repeat-x top;
+
+    toolbargrippy {
+        border-top: 1px solid #CED6DD;
+        border-right: 1px solid #95A0AD;
+        border-bottom: 1px solid #95A0AD;
+        border-left: 1px solid #DAE3ED;
+
+        &:hover:active {
+            border-color: #67737E;
+        }
+    }
+
+    &::after {
+        border-top: 1px solid #CED6DD;
+        border-right: 1px solid #95A0AD;
+        border-bottom: 1px solid #95A0AD;
+        border-left: 1px solid #DAE3ED;
+    }
+
+    .toolbarbutton-1,
+    .bookmark-item {
+        padding: 1px 2px !important;
+        align-items: center !important;
+        cursor: pointer;
+        margin: 0 !important;
+        border: 1px solid transparent !important;
+        border-radius: 0 !important;
+        background-color: transparent !important;
+        margin-block: 1px !important;
+
+        &:hover {
+            text-decoration: underline !important;
+        }
+
+        &:hover:active,
+        &[open="true"] {
+            padding: 2px 1px 0px 3px !important;
+        }
+
+        &[container="true"] {
+            list-style-image: url("chrome://collabra/content/bookmarks/bookmark-folder-closed.gif") !important;
+            cursor: default;
+            text-decoration: none !important;
+
+            &:hover {
+                border-top-color: #EEF0F3 !important;
+                border-right-color: #86929E !important;
+                border-bottom-color: #86929E !important;
+                border-left-color: #EEF0F3 !important;
+            }
+
+            &:hover:active,
+            &[open="true"] {
+                list-style-image: url("chrome://collabra/content/bookmarks/bookmark-folder-open.gif") !important;
+                border-top-color: #86929E !important;
+                border-right-color: #EEF0F3 !important;
+                border-bottom-color: #EEF0F3 !important;
+                border-left-color: #86929E !important;
+            }
+        }
+
+        .toolbarbutton-icon {
+            margin-inline-end: 2px !important;
+        }
+    }
+
+    .toolbarbutton-1:not(#sidebar-button) {
+        .toolbarbutton-badge-stack,
+        .toolbarbutton-icon {
+            width: 16px !important;
+            height: 16px !important;
+            padding: 0 !important;
+            border-radius: 0 !important;
+            background-color: transparent !important;
+            margin-inline-end: 2px !important;
+        }
+
+        .toolbarbutton-text {
+            display: flex !important;
+            border-radius: 0 !important;
+            padding: 0 !important;
+            min-height: auto !important;
+            background-color: transparent !important;
+        }
+        
+        &#home-button {
+            list-style-image: url("chrome://collabra/content/bookmarks/home.gif") !important;
+
+            .toolbarbutton-icon {
+                width: 22px !important;
+                height: 17px !important;
+                margin-inline-end: 1px !important;
+            }
+        }
+    }
+
+
+    #sidebar-button {
+        margin: 0 !important;
+        padding: 0 !important;
+        list-style-image: url("chrome://collabra/content/sbar-open.gif") !important;
+        align-items: flex-end !important;
+        z-index: 1 !important;
+        margin-inline-start: 1px !important;
+        cursor: pointer !important;
+        border: 0 !important;
+
+        &:hover {
+            list-style-image: url("chrome://collabra/content/sbar-open-hov.gif") !important;
+
+            &:active {
+                list-style-image: url("chrome://collabra/content/sbar-open-act.gif") !important;
+            }
+        }
+
+        &[checked] {
+            list-style-image: url("chrome://collabra/content/sbar-close.gif") !important;
+
+            &:hover {
+                list-style-image: url("chrome://collabra/content/sbar-close-hov.gif") !important;
+
+                &:active {
+                    list-style-image: url("chrome://collabra/content/sbar-close-act.gif") !important;
+                }
+            } 
+        }
+
+        .toolbarbutton-icon {
+            width: 51px !important;
+            height: 22px !important;
+            padding: 0 !important;
+            border-radius: 0 !important;
+            background-color: transparent !important;
+        }
+
+        .toolbarbutton-text {
+            display: none !important;
+        }
+    }
+}

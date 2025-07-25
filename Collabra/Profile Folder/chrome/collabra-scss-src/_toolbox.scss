@@ -1,0 +1,31 @@
+/*
+*  SHITTY FUCKING HACK HELPPPPPP
+*/
+#toolbar-menubar,
+#nav-bar,
+#PersonalToolbar {
+    position: relative !important;
+    
+    &::after {
+        content: '';
+        display: flex;
+        width: calc(100% - 12px);
+        height: 100%;
+        margin-inline-start: 12px;
+        pointer-events: none;
+        position: absolute;
+        box-sizing: border-box;
+    }
+}
+
+#navigator-toolbox {
+    border-bottom: 0 !important;
+}
+
+:root {
+    &[collabra-unified-extensions-disabled] {
+        #unified-extensions-button {
+            display: none !important;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+#toolbar-menubar {
+    background-color: rgb(221, 227, 235) !important;
+
+    toolbargrippy { 
+        border-top: 1px solid #EBF4FF;
+        border-right: 1px solid #B9BFC7;
+        border-bottom: 1px solid #B9BFC7;
+        border-left: 1px solid #F4FAFF;
+        background-color: #DDE3EB;
+        list-style-image: url("chrome://collabra/content/toolbar/mbgrip-arrow.gif");
+
+        &:hover:active {
+            border-color: #67737E;
+            background-color: #9DA9B6;
+            list-style-image: url("chrome://collabra/content/toolbar/tbgrip-arrow-act.gif");
+        }
+    }
+
+    &::after {
+        border-top: 1px solid #EBF4FF;
+        border-right: 1px solid #86929E;
+        border-bottom: 1px solid #B9BFC7;
+        border-left: 1px solid #EEF4FC;
+    }
+}

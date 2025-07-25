@@ -1,0 +1,27 @@
+#nav-bar {
+    background-color: rgb(177, 189, 201) !important;
+    box-shadow: none !important;
+    min-height: 47px !important;
+    max-height: 47px !important;
+    background: url("chrome://collabra/content/toolbar/prtb-bg-noline.gif") repeat-x top;
+
+    &::after {
+        border-top: none;
+        border-right: 1px solid #95A0AD;
+        border-bottom: 1px solid #95A0AD;
+        border-left: none;
+    }
+}
+
+#PanelUI-button {
+    margin-inline-start: -1px !important;
+
+    #PanelUI-menu-button {
+        appearance: none !important;
+        list-style-image: none !important;
+        border: 0 !important;
+        max-width: 1px !important;
+        height: 1px !important;
+        padding: 0 !important;
+    }
+}
