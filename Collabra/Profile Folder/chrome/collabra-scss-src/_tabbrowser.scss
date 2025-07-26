@@ -1,11 +1,150 @@
+:root {
+    --tab-min-height: 21px !important;
+}
+
 #TabsToolbar {
     background-color: #C7D0D9 !important;
     border-top: 1px solid #494F5D !important;
     border-bottom: 1px solid #BAC2CD !important;
-    padding-block-end: 2px !important;
+    padding-block-end: 3px !important;
+
+    #tabbrowser-tabs {
+        margin-block-start: 1px !important;
+        
+        &:not([movingtab]) {
+            margin-block-end: -1px !important;
+        }
+        
+        &[movingtab] {
+            padding-bottom: 0px !important;
+            margin-block-end: -1px !important;
+        }
+    }
 
     .toolbar-items {
         border-bottom: 1px solid #000 !important;
+    }
+
+    .tabbrowser-tab {
+        padding: 0 !important;
+
+        .tab-content {
+            padding-inline: 6px !important;
+
+            .tab-throbber, 
+            .tab-icon-pending, 
+            .tab-icon-image, 
+            .tab-sharing-icon-overlay, 
+            .tab-icon-overlay {
+                &:not([pinned]) {
+                    margin-inline-end: 2px !important;
+                }
+            }
+
+            .tab-throbber[busy] {
+                background-image: url("chrome://collabra/content/loading.gif") !important;
+                opacity: 0.6 !important;
+
+                &[progress] {
+                    opacity: 0.6 !important;
+                }
+
+                &::before {
+                    content: none !important;
+                }
+            }
+
+            .tab-icon-image:not([src], [busy="true"]), 
+            .tab-icon-image:not([busy="true"]):-moz-broken,
+            .tab-icon-image:not([busy="true"])[src="chrome://branding/content/icon32.png"] {
+                display: flex !important;
+                content: var(--page-icon) !important;
+            }
+
+            .tab-secondary-label {
+                visibility: collapse !important;
+            }
+        }
+
+        .tab-background {
+            border-radius: 0 !important;
+            margin: 0 !important;
+            background-color: transparent !important;
+            border: 3px solid transparent;
+            border-image: url("chrome://collabra/content/tabbrowser/tab.png") 3 stretch !important;
+            box-shadow: none !important;
+            background-image: linear-gradient(to top, #9CABBA, #9CABBA) !important;
+            background-size: calc(100%  - 6px), calc(100%  - 6px) !important;
+            background-position: 3px 3px !important;
+            background-origin: border-box !important;
+            background-repeat: repeat-x !important;
+
+            &[selected] {
+                background-image: linear-gradient(to top, #C7D0D9, #C7D0D9) !important;
+                border-image: url("chrome://collabra/content/tabbrowser/tab-selected.png") 3 stretch !important;
+            }
+        }
+
+        &:hover:active {
+            color: #fff !important;
+
+            .tab-background {
+                background-image: linear-gradient(to top, #8B9AAD, #8B9AAD) !important;
+                border-image: url("chrome://collabra/content/tabbrowser/tab-active.png") 3 stretch !important;
+            }
+        }
+
+        .tab-label-container {
+            height: unset !important;
+        }
+
+        .tab-close-button {
+            visibility: collapse !important;
+        }
+    }
+
+    .tabs-closebutton-box {
+        margin: 0px 4px !important;
+        padding: 3px 2px !important;
+    }
+
+    #tabbrowser-tabs:not([overflow], [hashiddentabs]) ~ #alltabs-button {
+        display: none !important;
+    }
+
+    #new-tab-button {
+        list-style-image: url("chrome://collabra/content/tabbrowser/tab-new.gif") !important;
+        padding-top: 2px !important;
+        padding-right: 5px !important;
+        padding-bottom: 3px !important;
+        padding-left: 2px !important;
+
+        &:hover {
+            list-style-image: url("chrome://collabra/content/tabbrowser/tab-new-hov.gif") !important;
+
+            &:active {
+                list-style-image: url("chrome://collabra/content/tabbrowser/tab-new-act.gif") !important;
+            }
+        }
+
+        .toolbarbutton-icon {
+            border-radius: 0 !important;
+            width: 22px !important;
+            height: 17px !important;
+            padding: 0 !important;
+            border-color: transparent !important;
+            margin-inline-end: 2px !important;
+        }
+        
+        .toolbarbutton-text {
+            :root:not([collabra-appearance-mozilla]) & {
+                display: flex !important;
+            }
+            padding: 0 !important;
+            min-height: unset !important;
+            border-radius: 0 !important;
+            background-color: transparent !important;
+        }
     }
 }
 

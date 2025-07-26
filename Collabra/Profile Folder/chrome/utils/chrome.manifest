@@ -7,3 +7,5 @@ locale  collabra                                                    en-US ../loc
 skin	userstyles	                                                classic/1.0	../CSS/
 content userchrome                                                  ../ contentaccessible=yes
 content collabra                                                    ../assets/images/ contentaccessible=yes
+
+override resource://gre-resources/scrollbars.css                    ../assets/override/scrollbars.css

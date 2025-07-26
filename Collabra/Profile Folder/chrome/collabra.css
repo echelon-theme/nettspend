@@ -1,3 +1,187 @@
+@import url("chrome://branding/content/brand.css");
+@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@namespace html url("http://www.w3.org/1999/xhtml");
+:root {
+  --btn1-icon-width: 42px !important;
+  --btn1-icon-height: 39px !important;
+  --page-icon: url("chrome://collabra/content/bookmarks/bookmark-item.gif") !important;
+}
+
+.toolbarbutton-1#back-button {
+  padding: 0 !important;
+  opacity: 1 !important;
+  align-items: flex-start !important;
+}
+.toolbarbutton-1#back-button .toolbarbutton-icon {
+  --icon-offset: -0 !important;
+  list-style-image: none !important;
+  background-image: url("chrome://collabra/content/btn1.gif") !important;
+  background-position-y: calc(var(--btn1-icon-height) * var(--icon-offset)) !important;
+  width: var(--btn1-icon-width) !important;
+  height: var(--btn1-icon-height) !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  margin-inline-end: 2px !important;
+}
+.toolbarbutton-1#back-button:not([disabled=true]):hover .toolbarbutton-icon {
+  background-position-x: calc(var(--btn1-icon-width) * -1) !important;
+}
+.toolbarbutton-1#back-button:not([disabled=true]):hover:active .toolbarbutton-icon, .toolbarbutton-1#back-button:not([disabled=true])[open=true] .toolbarbutton-icon {
+  background-position-x: calc(var(--btn1-icon-width) * -2) !important;
+}
+.toolbarbutton-1#back-button[disabled=true] .toolbarbutton-icon {
+  background-position-x: calc(var(--btn1-icon-width) * -3);
+}
+.toolbarbutton-1#forward-button {
+  padding: 0 !important;
+  opacity: 1 !important;
+  align-items: flex-start !important;
+}
+.toolbarbutton-1#forward-button .toolbarbutton-icon {
+  --icon-offset: -1 !important;
+  list-style-image: none !important;
+  background-image: url("chrome://collabra/content/btn1.gif") !important;
+  background-position-y: calc(var(--btn1-icon-height) * var(--icon-offset)) !important;
+  width: var(--btn1-icon-width) !important;
+  height: var(--btn1-icon-height) !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  margin-inline-end: 2px !important;
+}
+.toolbarbutton-1#forward-button:not([disabled=true]):hover .toolbarbutton-icon {
+  background-position-x: calc(var(--btn1-icon-width) * -1) !important;
+}
+.toolbarbutton-1#forward-button:not([disabled=true]):hover:active .toolbarbutton-icon, .toolbarbutton-1#forward-button:not([disabled=true])[open=true] .toolbarbutton-icon {
+  background-position-x: calc(var(--btn1-icon-width) * -2) !important;
+}
+.toolbarbutton-1#forward-button[disabled=true] .toolbarbutton-icon {
+  background-position-x: calc(var(--btn1-icon-width) * -3);
+}
+.toolbarbutton-1#stop-button {
+  padding: 0 !important;
+  opacity: 1 !important;
+  align-items: flex-start !important;
+}
+.toolbarbutton-1#stop-button .toolbarbutton-icon {
+  --icon-offset: -3 !important;
+  list-style-image: none !important;
+  background-image: url("chrome://collabra/content/btn1.gif") !important;
+  background-position-y: calc(var(--btn1-icon-height) * var(--icon-offset)) !important;
+  width: var(--btn1-icon-width) !important;
+  height: var(--btn1-icon-height) !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  margin-inline-end: 2px !important;
+}
+.toolbarbutton-1#stop-button:not([disabled=true]):hover .toolbarbutton-icon {
+  background-position-x: calc(var(--btn1-icon-width) * -1) !important;
+}
+.toolbarbutton-1#stop-button:not([disabled=true]):hover:active .toolbarbutton-icon, .toolbarbutton-1#stop-button:not([disabled=true])[open=true] .toolbarbutton-icon {
+  background-position-x: calc(var(--btn1-icon-width) * -2) !important;
+}
+.toolbarbutton-1#stop-button[disabled=true] .toolbarbutton-icon {
+  background-position-x: calc(var(--btn1-icon-width) * -3);
+}
+.toolbarbutton-1#reload-button {
+  padding: 0 !important;
+  opacity: 1 !important;
+  align-items: flex-start !important;
+}
+.toolbarbutton-1#reload-button .toolbarbutton-icon {
+  --icon-offset: -2 !important;
+  list-style-image: none !important;
+  background-image: url("chrome://collabra/content/btn1.gif") !important;
+  background-position-y: calc(var(--btn1-icon-height) * var(--icon-offset)) !important;
+  width: var(--btn1-icon-width) !important;
+  height: var(--btn1-icon-height) !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  margin-inline-end: 2px !important;
+}
+.toolbarbutton-1#reload-button:not([disabled=true]):hover .toolbarbutton-icon {
+  background-position-x: calc(var(--btn1-icon-width) * -1) !important;
+}
+.toolbarbutton-1#reload-button:not([disabled=true]):hover:active .toolbarbutton-icon, .toolbarbutton-1#reload-button:not([disabled=true])[open=true] .toolbarbutton-icon {
+  background-position-x: calc(var(--btn1-icon-width) * -2) !important;
+}
+.toolbarbutton-1#reload-button[disabled=true] .toolbarbutton-icon {
+  background-position-x: calc(var(--btn1-icon-width) * -3);
+}
+.toolbarbutton-1#home-button {
+  padding: 0 !important;
+  opacity: 1 !important;
+  align-items: flex-start !important;
+}
+.toolbarbutton-1#home-button .toolbarbutton-icon {
+  --icon-offset: -4 !important;
+  list-style-image: none !important;
+  background-image: url("chrome://collabra/content/btn1.gif") !important;
+  background-position-y: calc(var(--btn1-icon-height) * var(--icon-offset)) !important;
+  width: var(--btn1-icon-width) !important;
+  height: var(--btn1-icon-height) !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  margin-inline-end: 2px !important;
+}
+.toolbarbutton-1#home-button:not([disabled=true]):hover .toolbarbutton-icon {
+  background-position-x: calc(var(--btn1-icon-width) * -1) !important;
+}
+.toolbarbutton-1#home-button:not([disabled=true]):hover:active .toolbarbutton-icon, .toolbarbutton-1#home-button:not([disabled=true])[open=true] .toolbarbutton-icon {
+  background-position-x: calc(var(--btn1-icon-width) * -2) !important;
+}
+.toolbarbutton-1#home-button[disabled=true] .toolbarbutton-icon {
+  background-position-x: calc(var(--btn1-icon-width) * -3);
+}
+.toolbarbutton-1#unified-extensions-button {
+  padding: 0 !important;
+  opacity: 1 !important;
+  align-items: flex-start !important;
+}
+.toolbarbutton-1#unified-extensions-button .toolbarbutton-icon {
+  --icon-offset: -5 !important;
+  list-style-image: none !important;
+  background-image: url("chrome://collabra/content/btn1.gif") !important;
+  background-position-y: calc(var(--btn1-icon-height) * var(--icon-offset)) !important;
+  width: var(--btn1-icon-width) !important;
+  height: var(--btn1-icon-height) !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  margin-inline-end: 2px !important;
+}
+.toolbarbutton-1#unified-extensions-button:not([disabled=true]):hover .toolbarbutton-icon {
+  background-position-x: calc(var(--btn1-icon-width) * -1) !important;
+}
+.toolbarbutton-1#unified-extensions-button:not([disabled=true]):hover:active .toolbarbutton-icon, .toolbarbutton-1#unified-extensions-button:not([disabled=true])[open=true] .toolbarbutton-icon {
+  background-position-x: calc(var(--btn1-icon-width) * -2) !important;
+}
+.toolbarbutton-1#unified-extensions-button[disabled=true] .toolbarbutton-icon {
+  background-position-x: calc(var(--btn1-icon-width) * -3);
+}
+
+#reload-button,
+#stop-button {
+  display: flex !important;
+}
+
+.close-icon {
+  width: 15px !important;
+  height: 16px !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+  background-image: url("chrome://collabra/content/close.png") !important;
+  list-style-image: none !important;
+  background-position-x: 0 !important;
+}
+.close-icon:hover {
+  background-position-x: -15px !important;
+}
+.close-icon:hover:active, .close-icon[open] {
+  background-position-x: -30px !important;
+}
+
 toolbargrippy {
   display: flex;
   flex-direction: column-reverse;
@@ -233,6 +417,8 @@ toolbargrippy[tbgrippy-collapsed=true]:hover:active .toolbargrippy-arrow {
   width: 22px !important;
   height: 17px !important;
   margin-inline-end: 1px !important;
+  background-image: none !important;
+  list-style-image: inherit !important;
 }
 #PersonalToolbar #sidebar-button {
   margin: 0 !important;
@@ -268,134 +454,6 @@ toolbargrippy[tbgrippy-collapsed=true]:hover:active .toolbargrippy-arrow {
 }
 #PersonalToolbar #sidebar-button .toolbarbutton-text {
   display: none !important;
-}
-
-#navigator-throbber {
-  appearance: none !important;
-  align-items: center !important;
-  justify-content: center !important;
-  margin: 2px 11px 4px 7px !important;
-  padding: 0 !important;
-  background-color: transparent !important;
-  border: none !important;
-  list-style-image: url("chrome://collabra/content/brand/throbber-single.gif");
-}
-#navigator-throbber[busy=true] {
-  list-style-image: url("chrome://collabra/content/brand/throbber-anim.gif");
-}
-
-@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-@namespace html url("http://www.w3.org/1999/xhtml");
-:root {
-  --btn1-icon-width: 42px !important;
-  --btn1-icon-height: 39px !important;
-  --page-icon: url("chrome://collabra/content/bookmarks/bookmark-item.gif") !important;
-}
-
-.toolbarbutton-1#back-button {
-  padding: 0 !important;
-  opacity: 1 !important;
-  align-items: flex-start !important;
-}
-.toolbarbutton-1#back-button .toolbarbutton-icon {
-  --icon-offset: -0 !important;
-  list-style-image: none !important;
-  background-image: url("chrome://collabra/content/btn1.gif") !important;
-  background-position-y: calc(var(--btn1-icon-height) * var(--icon-offset)) !important;
-  width: var(--btn1-icon-width) !important;
-  height: var(--btn1-icon-height) !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
-  margin-inline-end: 2px !important;
-}
-.toolbarbutton-1#back-button:not([disabled=true]):hover .toolbarbutton-icon {
-  background-position-x: calc(var(--btn1-icon-width) * -1) !important;
-}
-.toolbarbutton-1#back-button:not([disabled=true]):hover:active .toolbarbutton-icon, .toolbarbutton-1#back-button:not([disabled=true])[open=true] .toolbarbutton-icon {
-  background-position-x: calc(var(--btn1-icon-width) * -2) !important;
-}
-.toolbarbutton-1#back-button[disabled=true] .toolbarbutton-icon {
-  background-position-x: calc(var(--btn1-icon-width) * -3);
-}
-.toolbarbutton-1#forward-button {
-  padding: 0 !important;
-  opacity: 1 !important;
-  align-items: flex-start !important;
-}
-.toolbarbutton-1#forward-button .toolbarbutton-icon {
-  --icon-offset: -1 !important;
-  list-style-image: none !important;
-  background-image: url("chrome://collabra/content/btn1.gif") !important;
-  background-position-y: calc(var(--btn1-icon-height) * var(--icon-offset)) !important;
-  width: var(--btn1-icon-width) !important;
-  height: var(--btn1-icon-height) !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
-  margin-inline-end: 2px !important;
-}
-.toolbarbutton-1#forward-button:not([disabled=true]):hover .toolbarbutton-icon {
-  background-position-x: calc(var(--btn1-icon-width) * -1) !important;
-}
-.toolbarbutton-1#forward-button:not([disabled=true]):hover:active .toolbarbutton-icon, .toolbarbutton-1#forward-button:not([disabled=true])[open=true] .toolbarbutton-icon {
-  background-position-x: calc(var(--btn1-icon-width) * -2) !important;
-}
-.toolbarbutton-1#forward-button[disabled=true] .toolbarbutton-icon {
-  background-position-x: calc(var(--btn1-icon-width) * -3);
-}
-.toolbarbutton-1#stop-button {
-  padding: 0 !important;
-  opacity: 1 !important;
-  align-items: flex-start !important;
-}
-.toolbarbutton-1#stop-button .toolbarbutton-icon {
-  --icon-offset: -3 !important;
-  list-style-image: none !important;
-  background-image: url("chrome://collabra/content/btn1.gif") !important;
-  background-position-y: calc(var(--btn1-icon-height) * var(--icon-offset)) !important;
-  width: var(--btn1-icon-width) !important;
-  height: var(--btn1-icon-height) !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
-  margin-inline-end: 2px !important;
-}
-.toolbarbutton-1#stop-button:not([disabled=true]):hover .toolbarbutton-icon {
-  background-position-x: calc(var(--btn1-icon-width) * -1) !important;
-}
-.toolbarbutton-1#stop-button:not([disabled=true]):hover:active .toolbarbutton-icon, .toolbarbutton-1#stop-button:not([disabled=true])[open=true] .toolbarbutton-icon {
-  background-position-x: calc(var(--btn1-icon-width) * -2) !important;
-}
-.toolbarbutton-1#stop-button[disabled=true] .toolbarbutton-icon {
-  background-position-x: calc(var(--btn1-icon-width) * -3);
-}
-.toolbarbutton-1#reload-button {
-  padding: 0 !important;
-  opacity: 1 !important;
-  align-items: flex-start !important;
-}
-.toolbarbutton-1#reload-button .toolbarbutton-icon {
-  --icon-offset: -2 !important;
-  list-style-image: none !important;
-  background-image: url("chrome://collabra/content/btn1.gif") !important;
-  background-position-y: calc(var(--btn1-icon-height) * var(--icon-offset)) !important;
-  width: var(--btn1-icon-width) !important;
-  height: var(--btn1-icon-height) !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
-  margin-inline-end: 2px !important;
-}
-.toolbarbutton-1#reload-button:not([disabled=true]):hover .toolbarbutton-icon {
-  background-position-x: calc(var(--btn1-icon-width) * -1) !important;
-}
-.toolbarbutton-1#reload-button:not([disabled=true]):hover:active .toolbarbutton-icon, .toolbarbutton-1#reload-button:not([disabled=true])[open=true] .toolbarbutton-icon {
-  background-position-x: calc(var(--btn1-icon-width) * -2) !important;
-}
-.toolbarbutton-1#reload-button[disabled=true] .toolbarbutton-icon {
-  background-position-x: calc(var(--btn1-icon-width) * -3);
-}
-
-#reload-button,
-#stop-button {
-  display: flex !important;
 }
 
 :root {
@@ -473,18 +531,213 @@ toolbargrippy[tbgrippy-collapsed=true]:hover:active .toolbargrippy-arrow {
   list-style-image: url("chrome://collabra/content/toolbar/ubhist-arrow-act.gif") !important;
 }
 
+:root {
+  --tab-min-height: 21px !important;
+}
+
 #TabsToolbar {
   background-color: #C7D0D9 !important;
   border-top: 1px solid #494F5D !important;
   border-bottom: 1px solid #BAC2CD !important;
-  padding-block-end: 2px !important;
+  padding-block-end: 3px !important;
+}
+#TabsToolbar #tabbrowser-tabs {
+  margin-block-start: 1px !important;
+}
+#TabsToolbar #tabbrowser-tabs:not([movingtab]) {
+  margin-block-end: -1px !important;
+}
+#TabsToolbar #tabbrowser-tabs[movingtab] {
+  padding-bottom: 0px !important;
+  margin-block-end: -1px !important;
 }
 #TabsToolbar .toolbar-items {
   border-bottom: 1px solid #000 !important;
 }
+#TabsToolbar .tabbrowser-tab {
+  padding: 0 !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-content {
+  padding-inline: 6px !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-content .tab-throbber:not([pinned]),
+#TabsToolbar .tabbrowser-tab .tab-content .tab-icon-pending:not([pinned]),
+#TabsToolbar .tabbrowser-tab .tab-content .tab-icon-image:not([pinned]),
+#TabsToolbar .tabbrowser-tab .tab-content .tab-sharing-icon-overlay:not([pinned]),
+#TabsToolbar .tabbrowser-tab .tab-content .tab-icon-overlay:not([pinned]) {
+  margin-inline-end: 2px !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-content .tab-throbber[busy] {
+  background-image: url("chrome://collabra/content/loading.gif") !important;
+  opacity: 0.6 !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-content .tab-throbber[busy][progress] {
+  opacity: 0.6 !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-content .tab-throbber[busy]::before {
+  content: none !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-content .tab-icon-image:not([src], [busy=true]),
+#TabsToolbar .tabbrowser-tab .tab-content .tab-icon-image:not([busy=true]):-moz-broken,
+#TabsToolbar .tabbrowser-tab .tab-content .tab-icon-image:not([busy=true])[src="chrome://branding/content/icon32.png"] {
+  display: flex !important;
+  content: var(--page-icon) !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-content .tab-secondary-label {
+  visibility: collapse !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-background {
+  border-radius: 0 !important;
+  margin: 0 !important;
+  background-color: transparent !important;
+  border: 3px solid transparent;
+  border-image: url("chrome://collabra/content/tabbrowser/tab.png") 3 stretch !important;
+  box-shadow: none !important;
+  background-image: linear-gradient(to top, #9CABBA, #9CABBA) !important;
+  background-size: calc(100% - 6px), calc(100% - 6px) !important;
+  background-position: 3px 3px !important;
+  background-origin: border-box !important;
+  background-repeat: repeat-x !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-background[selected] {
+  background-image: linear-gradient(to top, #C7D0D9, #C7D0D9) !important;
+  border-image: url("chrome://collabra/content/tabbrowser/tab-selected.png") 3 stretch !important;
+}
+#TabsToolbar .tabbrowser-tab:hover:active {
+  color: #fff !important;
+}
+#TabsToolbar .tabbrowser-tab:hover:active .tab-background {
+  background-image: linear-gradient(to top, #8B9AAD, #8B9AAD) !important;
+  border-image: url("chrome://collabra/content/tabbrowser/tab-active.png") 3 stretch !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-label-container {
+  height: unset !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-close-button {
+  visibility: collapse !important;
+}
+#TabsToolbar .tabs-closebutton-box {
+  margin: 0px 4px !important;
+  padding: 3px 2px !important;
+}
+#TabsToolbar #tabbrowser-tabs:not([overflow], [hashiddentabs]) ~ #alltabs-button {
+  display: none !important;
+}
+#TabsToolbar #new-tab-button {
+  list-style-image: url("chrome://collabra/content/tabbrowser/tab-new.gif") !important;
+  padding-top: 2px !important;
+  padding-right: 5px !important;
+  padding-bottom: 3px !important;
+  padding-left: 2px !important;
+}
+#TabsToolbar #new-tab-button:hover {
+  list-style-image: url("chrome://collabra/content/tabbrowser/tab-new-hov.gif") !important;
+}
+#TabsToolbar #new-tab-button:hover:active {
+  list-style-image: url("chrome://collabra/content/tabbrowser/tab-new-act.gif") !important;
+}
+#TabsToolbar #new-tab-button .toolbarbutton-icon {
+  border-radius: 0 !important;
+  width: 22px !important;
+  height: 17px !important;
+  padding: 0 !important;
+  border-color: transparent !important;
+  margin-inline-end: 2px !important;
+}
+#TabsToolbar #new-tab-button .toolbarbutton-text {
+  padding: 0 !important;
+  min-height: unset !important;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+}
+:root:not([collabra-appearance-mozilla]) #TabsToolbar #new-tab-button .toolbarbutton-text {
+  display: flex !important;
+}
 
 #tabbrowser-tabbox {
   border-top: 1px solid #000 !important;
+}
+
+@media not (-moz-windows-non-native-menus) {
+  menupopup {
+    appearance: none !important;
+    border: 1px solid #7F8893 !important;
+    box-shadow: inset 1px 1px 0 #EEF4FC, inset -1px -1px 0 #B9BFC7 !important;
+    background-color: #DDE3EB !important;
+  }
+  menupopup menuseparator {
+    appearance: none !important;
+    padding: 0 !important;
+    border-top: 1px solid #A5ABC0 !important;
+    border-bottom: 1px solid #EEF1F7 !important;
+    margin-inline: 3px !important;
+    margin-block: 2px !important;
+  }
+  menupopup .menu-iconic .menu-iconic-left,
+  menupopup .menuitem-iconic .menu-iconic-left {
+    appearance: none !important;
+    width: 16px !important;
+  }
+  menupopup .menu-text,
+  menupopup .menu-iconic-left,
+  menupopup .menu-iconic-text {
+    appearance: none !important;
+    margin: 0px 2px 0px 0px !important;
+  }
+  menupopup .menu-text {
+    padding: 0 !important;
+    margin-left: 18px !important;
+  }
+  menupopup menu,
+  menupopup menuitem {
+    padding: 2px !important;
+    appearance: none !important;
+  }
+  menupopup menu:where([_moz-menuactive=true]):not([disabled=true]),
+  menupopup menuitem:where([_moz-menuactive=true]):not([disabled=true]) {
+    background-color: #424F63 !important;
+    color: white !important;
+  }
+  menupopup .menu-accel,
+  menupopup .menu-iconic-accel {
+    margin: 0px 2px 0px 7px !important;
+    padding-right: 14px !important;
+    color: inherit !important;
+  }
+  menupopup .menu-right {
+    appearance: none !important;
+    margin: 0px 0px 0px 6px !important;
+    width: 8px !important;
+    padding: 0 !important;
+    list-style-image: url("chrome://collabra/content/menu/menu-arrow.gif") !important;
+  }
+  menupopup .menu-right[_moz-menuactive=true] {
+    list-style-image: url("chrome://collabra/content/menu/menu-arrow-hov.gif") !important;
+  }
+  menupopup .menu-right[disabled=true] {
+    list-style-image: url("chrome://collabra/content/menu/menu-arrow-dis.gif") !important;
+  }
+  menupopup menuitem[checked=true] {
+    list-style-image: url("chrome://collabra/content/menu/menu-check.gif") !important;
+  }
+  menupopup menuitem[checked=true][disabled=true] {
+    list-style-image: url("chrome://collabra/content/menu/menu-check-dis.gif") !important;
+  }
+  menupopup menuitem[checked=true][_moz-menuactive=true] {
+    list-style-image: url("chrome://collabra/content/menu/menu-check-hov.gif") !important;
+  }
+  menupopup menuitem[checked=true][type=radio] {
+    list-style-image: url("chrome://collabra/content/menu/menu-radio.gif") !important;
+  }
+  menupopup menuitem[checked=true][type=radio][disabled=true] {
+    list-style-image: url("chrome://collabra/content/menu/menu-radio-dis.gif") !important;
+  }
+  menupopup menuitem[checked=true][type=radio][_moz-menuactive=true] {
+    list-style-image: url("chrome://collabra/content/menu/menu-radio-hov.gif") !important;
+  }
+  menupopup menuitem[checked=true] .menu-iconic-icon {
+    display: flex !important;
+  }
 }
 
 /*# sourceMappingURL=collabra.css.map */

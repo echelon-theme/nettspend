@@ -1,0 +1,102 @@
+@media not (-moz-windows-non-native-menus) {
+    menupopup {
+        appearance: none !important;
+        border: 1px solid #7F8893 !important;
+        box-shadow: inset 1px 1px 0 #EEF4FC, inset -1px -1px 0 #B9BFC7 !important;
+        background-color: #DDE3EB !important;
+
+        menuseparator {
+            appearance: none !important;
+            padding: 0 !important;
+            border-top: 1px solid #A5ABC0 !important;
+            border-bottom: 1px solid #EEF1F7 !important;
+            margin-inline: 3px !important;
+            margin-block: 2px !important;
+        }
+
+        .menu-iconic, 
+        .menuitem-iconic {
+            .menu-iconic-left {
+                appearance: none !important;
+                width: 16px !important;
+            }
+        }
+
+        .menu-text, 
+        .menu-iconic-left,
+        .menu-iconic-text {
+            appearance: none !important;
+            margin: 0px 2px 0px 0px !important;
+        }
+
+        .menu-text {
+            padding: 0 !important;
+            margin-left: 18px !important;
+        }
+
+        menu,
+        menuitem {
+            padding: 2px !important;
+            appearance: none !important;
+            
+            &:where([_moz-menuactive="true"]):not([disabled="true"]) {
+                background-color: #424F63 !important;
+                color: white !important;
+            }
+        }
+
+        .menu-accel,
+        .menu-iconic-accel {
+            margin: 0px 2px 0px 7px !important;
+            padding-right: 14px !important;
+            color: inherit !important;
+        }
+
+        .menu-right {
+            appearance: none !important;
+            margin: 0px 0px 0px 6px !important;
+            width: 8px !important;
+            padding: 0 !important;
+            list-style-image: url("chrome://collabra/content/menu/menu-arrow.gif") !important;
+
+            &[_moz-menuactive="true"] {
+                list-style-image: url("chrome://collabra/content/menu/menu-arrow-hov.gif") !important;
+            }
+
+            &[disabled="true"] {
+                list-style-image: url("chrome://collabra/content/menu/menu-arrow-dis.gif") !important;
+            }
+        }
+
+        menuitem {
+
+            &[checked="true"] {
+                list-style-image: url("chrome://collabra/content/menu/menu-check.gif") !important;
+
+                &[disabled="true"] {
+                    list-style-image: url("chrome://collabra/content/menu/menu-check-dis.gif") !important;
+                }
+
+                &[_moz-menuactive="true"] {
+                    list-style-image: url("chrome://collabra/content/menu/menu-check-hov.gif") !important;
+                }
+
+                &[type="radio"] {
+                    list-style-image: url("chrome://collabra/content/menu/menu-radio.gif") !important;
+
+                    &[disabled="true"] {
+                        list-style-image: url("chrome://collabra/content/menu/menu-radio-dis.gif") !important;
+                    }
+
+                    &[_moz-menuactive="true"] {
+                        list-style-image: url("chrome://collabra/content/menu/menu-radio-hov.gif") !important;
+                    }
+                }
+
+                .menu-iconic-icon {
+                    display: flex !important;
+                }
+            }
+        }
+    }
+}

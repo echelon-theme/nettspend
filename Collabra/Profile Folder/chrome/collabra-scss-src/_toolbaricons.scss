@@ -11,6 +11,8 @@ $iconRegionMap: (
     "forward-button": 1,
     "stop-button": 3,
     "reload-button": 2,
+    "home-button": 4,
+    "unified-extensions-button": 5,
 );
 
 .toolbarbutton-1 {
@@ -59,4 +61,10 @@ $iconRegionMap: (
 #reload-button,
 #stop-button {
     display: flex !important;
+}
+
+.close-icon {
+    @include set-size(15px, 16px);
+    @include set-background("close.png");
+    @include set-horizontal-states(0, 15px, 30px);
 }

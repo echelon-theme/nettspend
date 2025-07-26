@@ -20,7 +20,8 @@ try
 
     // Branding part 1: Registration of content
     let prefs = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefBranch);
-    let branding = prefs.getStringPref("Namoroka.Option.Branding", "");
+	let mozilla = prefs.getBoolPref("collabra.appearance.mozilla");
+    let branding = mozilla ? "mozilla" : "default";
     if (branding != "")
     {
         let brandingManifest = Cc["@mozilla.org/file/directory_service;1"].getService(Ci.nsIProperties).get("UChrm", Ci.nsIFile);
