@@ -20,7 +20,7 @@ try
 
     // Branding part 1: Registration of content
     let prefs = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefBranch);
-	let mozilla = prefs.getBoolPref("collabra.appearance.mozilla");
+	let mozilla = prefs.getBoolPref("nettspend.appearance.mozilla");
     let branding = mozilla ? "mozilla" : "default";
     if (branding != "")
     {
