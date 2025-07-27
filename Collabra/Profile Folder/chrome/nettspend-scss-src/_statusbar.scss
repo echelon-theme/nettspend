@@ -69,55 +69,55 @@
         }
         
         #mini-mail {
-            list-style-image: url("chrome://collabra/content/taskbar/mail.gif");
+            list-style-image: url("chrome://nettspend/content/taskbar/mail.gif");
             margin-left: 1px;
 
             &:hover:active {
-                list-style-image: url("chrome://collabra/content/taskbar/mail-act.gif");
+                list-style-image: url("chrome://nettspend/content/taskbar/mail-act.gif");
             }
         }
 
         #mini-addr {
-            list-style-image: url("chrome://collabra/content/taskbar/addressbook.gif");
+            list-style-image: url("chrome://nettspend/content/taskbar/addressbook.gif");
 
             &:hover:active {
-                list-style-image: url("chrome://collabra/content/taskbar/addressbook-act.gif");
+                list-style-image: url("chrome://nettspend/content/taskbar/addressbook-act.gif");
             }
         }
         
         #mini-comp {
-            list-style-image: url("chrome://collabra/content/taskbar/composer.gif");
+            list-style-image: url("chrome://nettspend/content/taskbar/composer.gif");
 
             &:hover:active {
-                list-style-image: url("chrome://collabra/content/taskbar/composer-act.gif");
+                list-style-image: url("chrome://nettspend/content/taskbar/composer-act.gif");
             }
         }
 
         #mini-irc {
-            list-style-image: url("chrome://collabra/content/taskbar/taskbar-irc.gif");
+            list-style-image: url("chrome://nettspend/content/taskbar/taskbar-irc.gif");
         }
     }
     
     .fakeresizer {
-        list-style-image: url("chrome://collabra/content/resizer.png") !important;
+        list-style-image: url("chrome://nettspend/content/resizer.png") !important;
         cursor: se-resize !important;
         width: 15px !important;
         height: 15px !important;
     }
 
     #offline-status {
-        list-style-image: url("chrome://collabra/content/online.gif");
+        list-style-image: url("chrome://nettspend/content/online.gif");
 
         &[offline] {
-            list-style-image: url("chrome://collabra/content/offline.gif");
+            list-style-image: url("chrome://nettspend/content/offline.gif");
         }
     }
 
     #security-button {
-        list-style-image: url("chrome://collabra/content/lock-insecure.gif");
+        list-style-image: url("chrome://nettspend/content/lock-insecure.gif");
 
         &[level="high"] {
-            list-style-image: url("chrome://collabra/content/lock-secure.gif");
+            list-style-image: url("chrome://nettspend/content/lock-secure.gif");
         }
     }
 }

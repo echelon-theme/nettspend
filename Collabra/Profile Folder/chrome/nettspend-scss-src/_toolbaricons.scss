@@ -3,7 +3,7 @@
 :root {
     --btn1-icon-width: 42px !important;
     --btn1-icon-height: 39px !important;
-    --page-icon: url("chrome://collabra/content/bookmarks/bookmark-item.gif") !important;
+    --page-icon: url("chrome://nettspend/content/bookmarks/bookmark-item.gif") !important;
 }
 
 $iconRegionMap: (
@@ -26,7 +26,7 @@ $iconRegionMap: (
                 // FUCK SCSS
                 --icon-offset: -#{$offset} !important;
                 list-style-image: none !important;
-                background-image: url("chrome://collabra/content/btn1.gif") !important;
+                background-image: url("chrome://nettspend/content/btn1.gif") !important;
                 background-position-y: calc(var(--btn1-icon-height) * var(--icon-offset)) !important;
 
                 width: var(--btn1-icon-width) !important;

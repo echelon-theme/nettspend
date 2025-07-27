@@ -52,7 +52,7 @@
             }
 
             .tab-throbber[busy] {
-                background-image: url("chrome://collabra/content/loading.gif") !important;
+                background-image: url("chrome://nettspend/content/loading.gif") !important;
                 opacity: 0.6 !important;
 
                 &[progress] {
@@ -81,7 +81,7 @@
             margin: 0 !important;
             background-color: transparent !important;
             border: 3px solid transparent;
-            border-image: url("chrome://collabra/content/tabbrowser/tab.png") 3 stretch !important;
+            border-image: url("chrome://nettspend/content/tabbrowser/tab.png") 3 stretch !important;
             box-shadow: none !important;
             background-image: linear-gradient(to top, #9CABBA, #9CABBA) !important;
             background-size: calc(100%  - 6px), calc(100%  - 6px) !important;
@@ -91,7 +91,7 @@
 
             &[selected] {
                 background-image: linear-gradient(to top, #C7D0D9, #C7D0D9) !important;
-                border-image: url("chrome://collabra/content/tabbrowser/tab-selected.png") 3 stretch !important;
+                border-image: url("chrome://nettspend/content/tabbrowser/tab-selected.png") 3 stretch !important;
             }
         }
 
@@ -100,7 +100,7 @@
 
             .tab-background {
                 background-image: linear-gradient(to top, #8B9AAD, #8B9AAD) !important;
-                border-image: url("chrome://collabra/content/tabbrowser/tab-active.png") 3 stretch !important;
+                border-image: url("chrome://nettspend/content/tabbrowser/tab-active.png") 3 stretch !important;
             }
         }
 
@@ -123,17 +123,17 @@
     }
 
     #new-tab-button {
-        list-style-image: url("chrome://collabra/content/tabbrowser/tab-new.gif") !important;
+        list-style-image: url("chrome://nettspend/content/tabbrowser/tab-new.gif") !important;
         padding-top: 2px !important;
         padding-right: 5px !important;
         padding-bottom: 3px !important;
         padding-left: 2px !important;
 
         &:hover {
-            list-style-image: url("chrome://collabra/content/tabbrowser/tab-new-hov.gif") !important;
+            list-style-image: url("chrome://nettspend/content/tabbrowser/tab-new-hov.gif") !important;
 
             &:active {
-                list-style-image: url("chrome://collabra/content/tabbrowser/tab-new-act.gif") !important;
+                list-style-image: url("chrome://nettspend/content/tabbrowser/tab-new-act.gif") !important;
             }
         }
 
@@ -147,7 +147,7 @@
         }
         
         .toolbarbutton-text {
-            :root:not([collabra-appearance-mozilla]) & {
+            :root:not([nettspend-appearance-mozilla]) & {
                 display: flex !important;
             }
             padding: 0 !important;

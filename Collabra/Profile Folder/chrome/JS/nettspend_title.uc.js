@@ -1,12 +1,12 @@
 // ==UserScript==
-// @name			Collabra :: Title Text
+// @name			Nettspend :: Title Text
 // @description 	Changes the window title formats.
 // @author			Travis
 // @include			main
 // ==/UserScript===
 
 {
-    let { BrandUtils } = ChromeUtils.import("chrome://userscripts/content/collabra_utils.uc.js");
+    let { BrandUtils } = ChromeUtils.import("chrome://userscripts/content/nettspend_utils.uc.js");
 
     let root = document.documentElement;
     let fullName = BrandUtils.getBrandingKey("brandFullName");

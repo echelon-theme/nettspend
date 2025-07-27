@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name			Collabra :: Branding
+// @name			Nettspend :: Branding
 // @description 	Register brand FTLs.
 // @author			aubymori
 // @include			main
@@ -29,7 +29,7 @@
         "browser/aboutDialog.ftl"
     ];
 
-    let mozilla = Services.prefs.getBoolPref("collabra.appearance.mozilla");
+    let mozilla = Services.prefs.getBoolPref("nettspend.appearance.mozilla");
     let brand = mozilla ? "mozilla" : "default";
 
     if (brand != "")

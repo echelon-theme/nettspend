@@ -89,39 +89,39 @@ menubar {
             margin: 0px 0px 0px 6px !important;
             width: 8px !important;
             padding: 0 !important;
-            list-style-image: url("chrome://collabra/content/menu/menu-arrow.gif") !important;
+            list-style-image: url("chrome://nettspend/content/menu/menu-arrow.gif") !important;
 
             &[_moz-menuactive="true"] {
-                list-style-image: url("chrome://collabra/content/menu/menu-arrow-hov.gif") !important;
+                list-style-image: url("chrome://nettspend/content/menu/menu-arrow-hov.gif") !important;
             }
 
             &[disabled="true"] {
-                list-style-image: url("chrome://collabra/content/menu/menu-arrow-dis.gif") !important;
+                list-style-image: url("chrome://nettspend/content/menu/menu-arrow-dis.gif") !important;
             }
         }
 
         menuitem {
 
             &[checked="true"] {
-                list-style-image: url("chrome://collabra/content/menu/menu-check.gif") !important;
+                list-style-image: url("chrome://nettspend/content/menu/menu-check.gif") !important;
 
                 &[disabled="true"] {
-                    list-style-image: url("chrome://collabra/content/menu/menu-check-dis.gif") !important;
+                    list-style-image: url("chrome://nettspend/content/menu/menu-check-dis.gif") !important;
                 }
 
                 &[_moz-menuactive="true"] {
-                    list-style-image: url("chrome://collabra/content/menu/menu-check-hov.gif") !important;
+                    list-style-image: url("chrome://nettspend/content/menu/menu-check-hov.gif") !important;
                 }
 
                 &[type="radio"] {
-                    list-style-image: url("chrome://collabra/content/menu/menu-radio.gif") !important;
+                    list-style-image: url("chrome://nettspend/content/menu/menu-radio.gif") !important;
 
                     &[disabled="true"] {
-                        list-style-image: url("chrome://collabra/content/menu/menu-radio-dis.gif") !important;
+                        list-style-image: url("chrome://nettspend/content/menu/menu-radio-dis.gif") !important;
                     }
 
                     &[_moz-menuactive="true"] {
-                        list-style-image: url("chrome://collabra/content/menu/menu-radio-hov.gif") !important;
+                        list-style-image: url("chrome://nettspend/content/menu/menu-radio-hov.gif") !important;
                     }
                 }
 

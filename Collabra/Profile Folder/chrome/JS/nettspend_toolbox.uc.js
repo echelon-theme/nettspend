@@ -1,11 +1,11 @@
 // ==UserScript==
-// @name			Collabra :: Toolbox
+// @name			Nettspend :: Toolbox
 // @description 	HELP THE PAIN
 // @author			Travis
 // @include			main
 // ==/UserScript==
 
-var g_CollabraToolbox
+var g_NettspendToolbox
 
 {
     class ToolbarGrippyElement extends MozXULElement
@@ -133,7 +133,7 @@ var g_CollabraToolbox
     }
     customElements.define("toolbargrippy", ToolbarGrippyElement);
 
-    class CollabraToolboxManager
+    class NettspendToolboxManager
     {
         get internalToolbarFragment()
         {
@@ -212,6 +212,6 @@ var g_CollabraToolbox
         }
     }
 
-    g_CollabraToolbox = new CollabraToolboxManager;
-    g_CollabraToolbox.init();
+    g_NettspendToolbox = new NettspendToolboxManager;
+    g_NettspendToolbox.init();
 }

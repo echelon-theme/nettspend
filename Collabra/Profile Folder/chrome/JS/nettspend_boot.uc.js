@@ -1,25 +1,25 @@
 // ==UserScript==
-// @name			Collabra :: Boot
-// @description 	Initializes Collabra modules for different pages.
+// @name			Nettspend :: Boot
+// @description 	Initializes Nettspend modules for different pages.
 // @author			aubymori
 // @include			(.*)
 // @loadOrder       0
 // ==/UserScript==
 
-let COLLABRA_BOOT_CONFIG = {
+let NETTSPEND_BOOT_CONFIG = {
 	/* Main browser window */
 	"chrome://browser/content/browser.xhtml": {
 		prefs: [
-			"collabra.unified-extensions.disabled",
-			"collabra.appearance.mozilla",
-			"collabra.tabbrowser.hideononetab"
+			"nettspend.unified-extensions.disabled",
+			"nettspend.appearance.mozilla",
+			"nettspend.tabbrowser.hideononetab"
 		],
 		nativeControls: true
 	},
 };
 
 {
-	function bootCollabra(context, config)
+	function bootNettspend(context, config)
 	{
 		if (config?.prefs)
 		{
@@ -47,13 +47,13 @@ let COLLABRA_BOOT_CONFIG = {
 			return context.document.documentURI.split("#")[0].split("?")[0] == url;
 		}
 
-		for (const url in COLLABRA_BOOT_CONFIG)
+		for (const url in NETTSPEND_BOOT_CONFIG)
 		{
 			if (isCurrentURL(url))
 			{
 				context.addEventListener("load", function()
 				{
-					bootCollabra(context, COLLABRA_BOOT_CONFIG[url]);
+					bootNettspend(context, NETTSPEND_BOOT_CONFIG[url]);
 				});
 				return;
 			}

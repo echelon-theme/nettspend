@@ -3,7 +3,7 @@
     height: 24px !important;
     padding-inline: 0 !important;
     background-color: #C7D0D9 !important;
-    background: url("chrome://collabra/content/toolbar/tb-mid.gif") repeat-x top;
+    background: url("chrome://nettspend/content/toolbar/tb-mid.gif") repeat-x top;
 
     toolbargrippy {
         border-top: 1px solid #CED6DD;
@@ -44,7 +44,7 @@
         }
 
         &[container="true"] {
-            list-style-image: url("chrome://collabra/content/bookmarks/bookmark-folder-closed.gif") !important;
+            list-style-image: url("chrome://nettspend/content/bookmarks/bookmark-folder-closed.gif") !important;
             cursor: default;
             text-decoration: none !important;
 
@@ -57,7 +57,7 @@
 
             &:hover:active,
             &[open="true"] {
-                list-style-image: url("chrome://collabra/content/bookmarks/bookmark-folder-open.gif") !important;
+                list-style-image: url("chrome://nettspend/content/bookmarks/bookmark-folder-open.gif") !important;
                 border-top-color: #86929E !important;
                 border-right-color: #EEF0F3 !important;
                 border-bottom-color: #EEF0F3 !important;
@@ -101,11 +101,11 @@
         }
 
         &#home-button {
-            list-style-image: url("chrome://collabra/content/bookmarks/home.gif") !important;
+            list-style-image: url("chrome://nettspend/content/bookmarks/home.gif") !important;
         }
 
         &#search-button {
-            list-style-image: url("chrome://collabra/content/bookmarks/search-btn.gif") !important;
+            list-style-image: url("chrome://nettspend/content/bookmarks/search-btn.gif") !important;
         }
     }
 
@@ -113,7 +113,7 @@
     #sidebar-button {
         margin: 0 !important;
         padding: 0 !important;
-        list-style-image: url("chrome://collabra/content/sbar-open.gif") !important;
+        list-style-image: url("chrome://nettspend/content/sbar-open.gif") !important;
         align-items: flex-end !important;
         z-index: 1 !important;
         margin-inline-start: 1px !important;
@@ -121,21 +121,21 @@
         border: 0 !important;
 
         &:hover {
-            list-style-image: url("chrome://collabra/content/sbar-open-hov.gif") !important;
+            list-style-image: url("chrome://nettspend/content/sbar-open-hov.gif") !important;
 
             &:active {
-                list-style-image: url("chrome://collabra/content/sbar-open-act.gif") !important;
+                list-style-image: url("chrome://nettspend/content/sbar-open-act.gif") !important;
             }
         }
 
         &[checked] {
-            list-style-image: url("chrome://collabra/content/sbar-close.gif") !important;
+            list-style-image: url("chrome://nettspend/content/sbar-close.gif") !important;
 
             &:hover {
-                list-style-image: url("chrome://collabra/content/sbar-close-hov.gif") !important;
+                list-style-image: url("chrome://nettspend/content/sbar-close-hov.gif") !important;
 
                 &:active {
-                    list-style-image: url("chrome://collabra/content/sbar-close-act.gif") !important;
+                    list-style-image: url("chrome://nettspend/content/sbar-close-act.gif") !important;
                 }
             } 
         }

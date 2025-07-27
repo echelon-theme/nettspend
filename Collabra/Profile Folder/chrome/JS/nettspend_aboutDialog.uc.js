@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name			 Collabra :: About Dialog
+// @name			 Nettspend :: About Dialog
 // @description 	 Replaces normal About Firefox dialog with a custom one
 // @author			 Travis
 // @include			 main

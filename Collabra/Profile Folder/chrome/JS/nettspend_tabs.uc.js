@@ -1,19 +1,19 @@
 // ==UserScript==
-// @name			Collabra :: Tabs
+// @name			Nettspend :: Tabs
 // @description 	Tabs
 // @author			Travis
 // @include			main
 // ==/UserScript==
 
 {
-    var { waitForElement, PrefUtils } = ChromeUtils.import("chrome://userscripts/content/collabra_utils.uc.js");
+    var { waitForElement, PrefUtils } = ChromeUtils.import("chrome://userscripts/content/nettspend_utils.uc.js");
     waitForElement = waitForElement.bind(window);
 
     waitForElement("#tabbrowser-arrowscrollbox").then(e => {
         function hideTabs()
         {
             let numTabs = gBrowser.tabs.length;
-            let hideTabsPref = PrefUtils.tryGetBoolPref("collabra.tabbrowser.hideononetab");
+            let hideTabsPref = PrefUtils.tryGetBoolPref("nettspend.tabbrowser.hideononetab");
             let ifHide = hideTabsPref ? numTabs <= 1 : false;
 
             document.querySelector("#TabsToolbar").setAttribute("hidden", ifHide ? "true" : "false");

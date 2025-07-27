@@ -1,6 +1,6 @@
 // ==UserScript==
-// @name			 Collabra :: Utils
-// @description 	 Common utilities for Collabra scripts.
+// @name			 Nettspend :: Utils
+// @description 	 Common utilities for Nettspend scripts.
 // @author			 ephemeralViolette
 // @include			 main
 // @include          chrome://browser/content/browser.xhtml

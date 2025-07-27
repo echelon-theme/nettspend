@@ -1,7 +1,7 @@
-var g_collabraAbout;
+var g_nettspendAbout;
 
 {
-    var { PrefUtils, BrandUtils } = ChromeUtils.import("chrome://userscripts/content/collabra_utils.uc.js");
+    var { PrefUtils, BrandUtils } = ChromeUtils.import("chrome://userscripts/content/nettspend_utils.uc.js");
 
     class AboutColonPageManager {
         get releaseNotesURL() {
@@ -191,7 +191,7 @@ var g_collabraAbout;
         }
 
         init() {
-            let branding = PrefUtils.tryGetBoolPref("collabra.appearance.mozilla");
+            let branding = PrefUtils.tryGetBoolPref("nettspend.appearance.mozilla");
             let innerHTML = branding ? this.mozillaFragment : this.fragment;
             let stylesheet = branding ? this.mozillaStylesheet : this.stylesheet;
 
@@ -211,6 +211,6 @@ var g_collabraAbout;
         }
     }
 
-    g_collabraAbout = new AboutColonPageManager;
-    g_collabraAbout.init();
+    g_nettspendAbout = new AboutColonPageManager;
+    g_nettspendAbout.init();
 }

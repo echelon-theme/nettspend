@@ -5,7 +5,7 @@
 
 #urlbar-container {
     border: 3px solid transparent !important;
-    border-image: url("chrome://collabra/content/navbar/nav-bar-inner.gif") 3 stretch !important;
+    border-image: url("chrome://nettspend/content/navbar/nav-bar-inner.gif") 3 stretch !important;
     margin: 6px 0px 3px 5px !important;
     padding-inline: 5px !important;
     
@@ -59,7 +59,7 @@
             border-right: 1px solid #D2DAE1 !important;
             border-bottom: 1px solid #D2DAE1 !important;
             border-left: 1px solid #A5ACB5 !important;
-            background: url("chrome://collabra/content/toolbar/urlbar-mid.gif") #EDF5F7 bottom repeat-x !important;
+            background: url("chrome://nettspend/content/toolbar/urlbar-mid.gif") #EDF5F7 bottom repeat-x !important;
             height: var(--urlbar-root-height) !important;
             border-radius: 0 !important;
             outline: none !important;
@@ -76,13 +76,13 @@
             height: 12px !important;
             appearance: none !important;
             margin: 0px 3px 2px 0px !important;
-            list-style-image: url("chrome://collabra/content/toolbar/ubhist-arrow.gif") !important;
+            list-style-image: url("chrome://nettspend/content/toolbar/ubhist-arrow.gif") !important;
             align-self: center !important;
         }
 
         &[open] {
             .autocomplete-history-dropmarker {
-                list-style-image: url("chrome://collabra/content/toolbar/ubhist-arrow-act.gif") !important;
+                list-style-image: url("chrome://nettspend/content/toolbar/ubhist-arrow-act.gif") !important;
             }
         }
 

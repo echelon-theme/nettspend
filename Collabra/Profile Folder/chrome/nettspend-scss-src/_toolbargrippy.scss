@@ -7,7 +7,7 @@ toolbargrippy {
     border-right: 1px solid #86929E;
     border-bottom: 1px solid #86929E;
     border-left: 1px solid #EEF0F3;
-    list-style-image: url("chrome://collabra/content/toolbar/tbgrip-arrow.gif");
+    list-style-image: url("chrome://nettspend/content/toolbar/tbgrip-arrow.gif");
 
     .toolbargrippy-arrow {
         margin: 0px 1px 3px 1px;
@@ -18,14 +18,14 @@ toolbargrippy {
     &:hover:active {
         border-color: #67737E;
         background-color: #9DA9B6;
-        list-style-image: url("chrome://collabra/content/toolbar/tbgrip-arrow-act.gif");
+        list-style-image: url("chrome://nettspend/content/toolbar/tbgrip-arrow-act.gif");
     }
 
     &[tbgrippy-collapsed="true"] {
         justify-content: flex-start;
         flex-direction: row;
         width: 40px;
-        list-style-image: url("chrome://collabra/content/toolbar/tbgrip-arrow-clps.gif");
+        list-style-image: url("chrome://nettspend/content/toolbar/tbgrip-arrow-clps.gif");
 
         .toolbargrippy-arrow {
             margin: 1px 0px 1px 3px;
@@ -35,7 +35,7 @@ toolbargrippy {
 
         &:hover:active {
             .toolbargrippy-arrow {
-                list-style-image: url("chrome://collabra/content/toolbar/tbgrip-arrow-clps-act.gif");
+                list-style-image: url("chrome://nettspend/content/toolbar/tbgrip-arrow-clps-act.gif");
             }
         }
     }
@@ -47,14 +47,14 @@ toolbargrippy {
 
 .toolbar-primary-grippy {
     border: none;
-    background: url("chrome://collabra/content/toolbar/prtb-grip-mid.gif") repeat-y;
-    list-style-image: url("chrome://collabra/content/toolbar/prtb-grip-btm.gif");
+    background: url("chrome://nettspend/content/toolbar/prtb-grip-mid.gif") repeat-y;
+    list-style-image: url("chrome://nettspend/content/toolbar/prtb-grip-btm.gif");
     margin-inline-end: 3px !important;
 
     .toolbargrippy-texture {
         width: 13px;
         height: 0px;
-        background-image: url("chrome://collabra/content/toolbar/prtb-grip-top.gif");
+        background-image: url("chrome://nettspend/content/toolbar/prtb-grip-top.gif");
         background-size: 13px 100%;
     }
 
@@ -66,11 +66,11 @@ toolbargrippy {
     }
 
     &:hover:active {
-        background-image: url("chrome://collabra/content/toolbar/prtb-grip-mid-act.gif");
-        list-style-image: url("chrome://collabra/content/toolbar/prtb-grip-btm-act.gif");
+        background-image: url("chrome://nettspend/content/toolbar/prtb-grip-mid-act.gif");
+        list-style-image: url("chrome://nettspend/content/toolbar/prtb-grip-btm-act.gif");
 
         .toolbargrippy-texture {
-            background-image: url("chrome://collabra/content/toolbar/prtb-grip-top-act.gif");
+            background-image: url("chrome://nettspend/content/toolbar/prtb-grip-top-act.gif");
         }
     }
 }

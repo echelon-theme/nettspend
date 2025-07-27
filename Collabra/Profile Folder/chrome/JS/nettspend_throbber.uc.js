@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name			Collabra :: Throbber
+// @name			Nettspend :: Throbber
 // @description 	Throbber Behavior
 // @author			Travis
 // @include         main

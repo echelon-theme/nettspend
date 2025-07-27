@@ -7,12 +7,12 @@
         border-bottom: 1px solid #B9BFC7;
         border-left: 1px solid #F4FAFF;
         background-color: #DDE3EB;
-        list-style-image: url("chrome://collabra/content/toolbar/mbgrip-arrow.gif");
+        list-style-image: url("chrome://nettspend/content/toolbar/mbgrip-arrow.gif");
 
         &:hover:active {
             border-color: #67737E;
             background-color: #9DA9B6;
-            list-style-image: url("chrome://collabra/content/toolbar/tbgrip-arrow-act.gif");
+            list-style-image: url("chrome://nettspend/content/toolbar/tbgrip-arrow-act.gif");
         }
     }
 

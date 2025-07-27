@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name			Collabra :: Status Bar
+// @name			Nettspend :: Status Bar
 // @description 	Restore separate Status Bar
 // @author			Travis
 // @include         main
@@ -10,11 +10,11 @@ var g_ReadMail;
 {
 	var { ctypes } = ChromeUtils.importESModule("resource://gre/modules/ctypes.sys.mjs");
 	var { Registry } = ChromeUtils.importESModule("chrome://modules/content/Registry.sys.mjs");
-	var { PrefUtils, LocaleUtils, waitForElement, setAttributes } = ChromeUtils.import("chrome://userscripts/content/collabra_utils.uc.js");
+	var { PrefUtils, LocaleUtils, waitForElement, setAttributes } = ChromeUtils.import("chrome://userscripts/content/nettspend_utils.uc.js");
     waitForElement = waitForElement.bind(window);
 
-    let menusBundle = "chrome://collabra/locale/properties/menus.properties";
-	let statusBundle = "chrome://collabra/locale/properties/statusbar.properties";
+    let menusBundle = "chrome://nettspend/locale/properties/menus.properties";
+	let statusBundle = "chrome://nettspend/locale/properties/statusbar.properties";
 
 	class MailClientUtils {
         runFile(filePath, commandLineArgs) {
@@ -102,7 +102,7 @@ var g_ReadMail;
 		);
 	}
 
-	var CollabraStatusBarManager = {
+	var NettspendStatusBarManager = {
 		get fragment() {
 			return `
 				<vbox id="browser-bottombox">
@@ -127,7 +127,7 @@ var g_ReadMail;
 
 		get menuFragment() {
 			return `
-				<menuitem oncommand="CollabraStatusBarManager.setStatusBarState(Boolean(this.getAttribute('checked')))" type="checkbox" />
+				<menuitem oncommand="NettspendStatusBarManager.setStatusBarState(Boolean(this.getAttribute('checked')))" type="checkbox" />
 			`;
 		},
 
@@ -198,7 +198,7 @@ var g_ReadMail;
 		renderComponentBar() {
 			let componentBarItems = this.componentBar;
 			let componentBarElem = document.querySelector("#status-bar #component-bar");
-			let branding = PrefUtils.tryGetBoolPref("collabra.appearance.mozilla");
+			let branding = PrefUtils.tryGetBoolPref("nettspend.appearance.mozilla");
 
 			for (const taskbutton of Object.keys(componentBarItems)) {
 				let taskbuttonElem = document.createXULElement("toolbarbutton");
@@ -230,13 +230,13 @@ var g_ReadMail;
 				{
 					try
 					{
-						PrefUtils.trySetBoolPref("collabra.status-bar.enabled", true);
+						PrefUtils.trySetBoolPref("nettspend.status-bar.enabled", true);
 					}
 					catch (e) {}
 				}
 			}
 			
-			Services.prefs.addObserver("collabra.status-bar.enabled", this._applyStatusBarEnabledPrefs.bind(this));
+			Services.prefs.addObserver("nettspend.status-bar.enabled", this._applyStatusBarEnabledPrefs.bind(this));
 		},
 
 		_moveStatusPanel() {
@@ -246,14 +246,14 @@ var g_ReadMail;
 		},
 
 		_onPopupShowing() {
-			let item = document.querySelectorAll("#menu_CollabraStatusBar");
+			let item = document.querySelectorAll("#menu_NettspendStatusBar");
 			if (item)
 			{
 				item.forEach(elem => {
-					elem.label = LocaleUtils.str(menusBundle, "collabra_statusbar_label");
-					elem.accessKey = LocaleUtils.str(menusBundle, "collabra_statusbar_accesskey");
+					elem.label = LocaleUtils.str(menusBundle, "nettspend_statusbar_label");
+					elem.accessKey = LocaleUtils.str(menusBundle, "nettspend_statusbar_accesskey");
 
-					let pref = Services.prefs.getBoolPref("collabra.status-bar.enabled");
+					let pref = Services.prefs.getBoolPref("nettspend.status-bar.enabled");
 
 					if (pref == true)
 					{
@@ -269,12 +269,12 @@ var g_ReadMail;
 
 		setStatusBarState(state)
 		{
-			PrefUtils.trySetBoolPref("collabra.status-bar.enabled", state);
+			PrefUtils.trySetBoolPref("nettspend.status-bar.enabled", state);
 			this._hideStatusPanel(state);
 		},
 
 		_applyStatusBarEnabledPrefs() {
-			let newState = Services.prefs.getBoolPref("collabra.status-bar.enabled");
+			let newState = Services.prefs.getBoolPref("nettspend.status-bar.enabled");
 			this._hideStatusPanel(newState);
 		},
 
@@ -290,7 +290,7 @@ var g_ReadMail;
 				panel.setAttribute("hidden", "true");
 			}
 
-			let menuitem = document.querySelectorAll("#menu_CollabraStatusBar");
+			let menuitem = document.querySelectorAll("#menu_NettspendStatusBar");
 
 			if (menuitem) {
 				menuitem.forEach(elem => {
@@ -306,26 +306,26 @@ var g_ReadMail;
 		}
 	};
 
-	document.addEventListener("DOMContentLoaded", CollabraStatusBarManager.init(), false);
+	document.addEventListener("DOMContentLoaded", NettspendStatusBarManager.init(), false);
 
 	waitForElement("#statuspanel").then(e => {
-		CollabraStatusBarManager._moveStatusPanel();
+		NettspendStatusBarManager._moveStatusPanel();
 	});
 
 	waitForElement("#menu_viewPopup").then((menu) => {
-		let statusBarItem = window.MozXULElement.parseXULToFragment(CollabraStatusBarManager.menuFragment).firstChild;
-		statusBarItem.id = "menu_CollabraStatusBar";
+		let statusBarItem = window.MozXULElement.parseXULToFragment(NettspendStatusBarManager.menuFragment).firstChild;
+		statusBarItem.id = "menu_NettspendStatusBar";
 		menu.insertBefore(statusBarItem.cloneNode(), document.querySelector("#viewSidebarMenuMenu"));
-		menu.addEventListener("popupshowing", CollabraStatusBarManager._onPopupShowing);
+		menu.addEventListener("popupshowing", NettspendStatusBarManager._onPopupShowing);
 	});
 
 	// Compact Menu Reloaded Support
     waitForElement("#compact-menu-popup").then((menu) => {
-        menu.addEventListener("popupshowing", CollabraStatusBarManager._onPopupShowing);
+        menu.addEventListener("popupshowing", NettspendStatusBarManager._onPopupShowing);
     });
 
 	waitForElement("#tabbrowser-tabpanels").then(e => {	
-		let browserStackObserver = new MutationObserver(CollabraStatusBarManager._moveStatusPanel);
+		let browserStackObserver = new MutationObserver(NettspendStatusBarManager._moveStatusPanel);
 		browserStackObserver.observe(e, { childList: true, subtree: true });
 	});
 }

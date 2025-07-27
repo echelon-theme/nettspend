@@ -1,12 +1,12 @@
 // ==UserScript==
-// @name			Collabra :: URLbar
+// @name			Nettspend :: URLbar
 // @description 	Several modifications to the URlBar
 // @author			Travis
 // @include         main
 // ==/UserScript==
 
 {
-    var { waitForElement, LocaleUtils } = ChromeUtils.import("chrome://userscripts/content/collabra_utils.uc.js");
+    var { waitForElement, LocaleUtils } = ChromeUtils.import("chrome://userscripts/content/nettspend_utils.uc.js");
     waitForElement = waitForElement.bind(window);
 
     waitForElement("#urlbar").then(e => {

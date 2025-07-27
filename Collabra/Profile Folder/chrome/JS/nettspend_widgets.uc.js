@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name			Collabra :: Widget Manager
+// @name			Nettspend :: Widget Manager
 // @description 	Manages the installation of custom CustomizableUI widgets.
 // @author			ephemeralViolette
 // @include         main
@@ -7,10 +7,10 @@
 
 {
 
-let { LocaleUtils } = ChromeUtils.import("chrome://userscripts/content/collabra_utils.uc.js");
-let throbberBundle = "chrome://Collabra/locale/properties/custom-widgets.properties";
+let { LocaleUtils } = ChromeUtils.import("chrome://userscripts/content/nettspend_utils.uc.js");
+let throbberBundle = "chrome://Nettspend/locale/properties/custom-widgets.properties";
 
-class CollabraWidgetManager
+class NettspendWidgetManager
 {
     static alreadyRan = false;
 
@@ -88,6 +88,6 @@ class CollabraWidgetManager
     }
 }
 
-CollabraWidgetManager.queueCustomWidgetInstallation();
+NettspendWidgetManager.queueCustomWidgetInstallation();
 
 }

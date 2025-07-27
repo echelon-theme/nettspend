@@ -2,10 +2,10 @@ content userchromejs                                                ./
 content userscripts                                                 ../JS/
 content modules                                                     ../JS/modules/
 
-locale  collabra                                                    en-US ../locale/en-US/
+locale  nettspend                                                    en-US ../locale/en-US/
 
 skin	userstyles	                                                classic/1.0	../CSS/
 content userchrome                                                  ../ contentaccessible=yes
-content collabra                                                    ../assets/images/ contentaccessible=yes
+content nettspend                                                    ../assets/images/ contentaccessible=yes
 
 override resource://gre-resources/scrollbars.css                    ../assets/override/scrollbars.css
