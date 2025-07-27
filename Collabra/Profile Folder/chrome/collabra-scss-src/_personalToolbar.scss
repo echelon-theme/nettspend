@@ -89,9 +89,8 @@
             background-color: transparent !important;
         }
         
-        &#home-button {
-            list-style-image: url("chrome://collabra/content/bookmarks/home.gif") !important;
-
+        &#home-button,
+        &#search-button {
             .toolbarbutton-icon {
                 width: 22px !important;
                 height: 17px !important;
@@ -99,6 +98,14 @@
                 background-image: none !important;
                 list-style-image: inherit !important;
             }
+        }
+
+        &#home-button {
+            list-style-image: url("chrome://collabra/content/bookmarks/home.gif") !important;
+        }
+
+        &#search-button {
+            list-style-image: url("chrome://collabra/content/bookmarks/search-btn.gif") !important;
         }
     }
 

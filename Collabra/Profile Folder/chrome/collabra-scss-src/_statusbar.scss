@@ -1,0 +1,123 @@
+#status-bar {
+    border-top: 1px solid #494F5D !important;
+    background-color: #C7D0D9 !important;
+    color: #22262F !important;
+    font-size: smaller !important;
+
+    :root[inFullscreen] & {
+        display: none !important;
+    }
+
+    statusbarpanel { 
+        align-items: center !important;
+        border-top: 1px solid #E0ECF6 !important;
+        border-right: 1px solid #8997A1 !important;
+        border-left: 1px solid #E0ECF6 !important;
+        padding: 0px 4px !important;
+    }
+
+    #statuspanel {
+        display: flex !important;
+        position: static !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+        min-width: 100% !important;
+        align-items: center !important;
+
+        #statuspanel-label {
+            margin: 0 !important;
+            border: 0 !important;
+            padding: 0 !important;
+            background-color: transparent !important;
+        }
+
+        &[inactive] {
+            #statuspanel-label {
+                opacity: 0 !important;
+            }
+        }
+    }
+
+    .statusbarpanel-iconic {
+        padding: 0px !important;
+    }
+
+    .statusbar-resizerpanel {
+        border: 0 !important;
+        padding: 0 !important;
+    }
+
+    #component-bar {
+        padding: 1px 3px 0px 3px;
+
+        .taskbutton {
+            appearance: none !important;
+            margin: 0px 3px !important;
+            border: none !important;
+            padding: 0px !important;
+        }
+
+        #mini-nav {
+            list-style-image: url("chrome://branding/content/navigator.gif");
+            margin-right: 2px;
+
+            &:hover:active {
+                list-style-image: url("chrome://branding/content/navigator-act.gif");
+            }
+        }
+        
+        #mini-mail {
+            list-style-image: url("chrome://collabra/content/taskbar/mail.gif");
+            margin-left: 1px;
+
+            &:hover:active {
+                list-style-image: url("chrome://collabra/content/taskbar/mail-act.gif");
+            }
+        }
+
+        #mini-addr {
+            list-style-image: url("chrome://collabra/content/taskbar/addressbook.gif");
+
+            &:hover:active {
+                list-style-image: url("chrome://collabra/content/taskbar/addressbook-act.gif");
+            }
+        }
+        
+        #mini-comp {
+            list-style-image: url("chrome://collabra/content/taskbar/composer.gif");
+
+            &:hover:active {
+                list-style-image: url("chrome://collabra/content/taskbar/composer-act.gif");
+            }
+        }
+
+        #mini-irc {
+            list-style-image: url("chrome://collabra/content/taskbar/taskbar-irc.gif");
+        }
+    }
+    
+    .fakeresizer {
+        list-style-image: url("chrome://collabra/content/resizer.png") !important;
+        cursor: se-resize !important;
+        width: 15px !important;
+        height: 15px !important;
+    }
+
+    #offline-status {
+        list-style-image: url("chrome://collabra/content/online.gif");
+
+        &[offline] {
+            list-style-image: url("chrome://collabra/content/offline.gif");
+        }
+    }
+
+    #security-button {
+        list-style-image: url("chrome://collabra/content/lock-insecure.gif");
+
+        &[level="high"] {
+            list-style-image: url("chrome://collabra/content/lock-secure.gif");
+        }
+    }
+}

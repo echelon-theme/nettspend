@@ -8,6 +8,10 @@
     border-bottom: 1px solid #BAC2CD !important;
     padding-block-end: 3px !important;
 
+    :root[inFullscreen] & {
+        display: none !important;
+    }
+
     #tabbrowser-tabs {
         margin-block-start: 1px !important;
         
@@ -30,6 +34,12 @@
 
         .tab-content {
             padding-inline: 6px !important;
+
+            .tab-text {
+                width: 100% !important;
+                text-overflow: ellipsis !important;
+                overflow: hidden !important;
+            }
 
             .tab-throbber, 
             .tab-icon-pending, 

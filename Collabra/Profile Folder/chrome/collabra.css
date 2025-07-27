@@ -410,15 +410,18 @@ toolbargrippy[tbgrippy-collapsed=true]:hover:active .toolbargrippy-arrow {
   min-height: auto !important;
   background-color: transparent !important;
 }
-#PersonalToolbar .toolbarbutton-1:not(#sidebar-button)#home-button {
-  list-style-image: url("chrome://collabra/content/bookmarks/home.gif") !important;
-}
-#PersonalToolbar .toolbarbutton-1:not(#sidebar-button)#home-button .toolbarbutton-icon {
+#PersonalToolbar .toolbarbutton-1:not(#sidebar-button)#home-button .toolbarbutton-icon, #PersonalToolbar .toolbarbutton-1:not(#sidebar-button)#search-button .toolbarbutton-icon {
   width: 22px !important;
   height: 17px !important;
   margin-inline-end: 1px !important;
   background-image: none !important;
   list-style-image: inherit !important;
+}
+#PersonalToolbar .toolbarbutton-1:not(#sidebar-button)#home-button {
+  list-style-image: url("chrome://collabra/content/bookmarks/home.gif") !important;
+}
+#PersonalToolbar .toolbarbutton-1:not(#sidebar-button)#search-button {
+  list-style-image: url("chrome://collabra/content/bookmarks/search-btn.gif") !important;
 }
 #PersonalToolbar #sidebar-button {
   margin: 0 !important;
@@ -530,6 +533,110 @@ toolbargrippy[tbgrippy-collapsed=true]:hover:active .toolbargrippy-arrow {
 #urlbar-container #urlbar[open] .autocomplete-history-dropmarker {
   list-style-image: url("chrome://collabra/content/toolbar/ubhist-arrow-act.gif") !important;
 }
+#urlbar-container #urlbar .urlbarView {
+  display: flex !important;
+  width: 100% !important;
+  margin-inline: 0 !important;
+  background-color: Field !important;
+  border: 1px solid #22262F !important;
+  overflow: visible !important;
+  padding: 0 2px !important;
+  color: -moz-DialogText !important;
+}
+#urlbar-container #urlbar .urlbarView::after {
+  content: "" !important;
+  display: inline-block !important;
+  width: calc(100% - 3px) !important;
+  height: calc(100% - 2px) !important;
+  position: absolute !important;
+  left: 6px !important;
+  top: 5px !important;
+  z-index: -1 !important;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  filter: blur(1px) !important;
+}
+#urlbar-container #urlbar .urlbarView strong {
+  font-weight: normal !important;
+}
+#urlbar-container #urlbar .urlbarView .urlbarView-body-outer .urlbarView-body-inner {
+  border: 0 !important;
+}
+#urlbar-container #urlbar .urlbarView .urlbarView-body-outer .urlbarView-body-inner .urlbarView-results {
+  padding-block: 0 !important;
+}
+#urlbar-container #urlbar .urlbarView .urlbarView-body-outer .urlbarView-body-inner .urlbarView-results .urlbarView-row {
+  min-height: 18px !important;
+  max-height: 18px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  margin-block-start: 0 !important;
+  color: #555566 !important;
+}
+#urlbar-container #urlbar .urlbarView .urlbarView-body-outer .urlbarView-body-inner .urlbarView-results .urlbarView-row .urlbarView-row-inner {
+  min-height: 18px !important;
+  max-height: 18px !important;
+  padding-inline: 12px !important;
+  padding-block: 0 !important;
+  padding-bottom: 1px !important;
+}
+#urlbar-container #urlbar .urlbarView .urlbarView-body-outer .urlbarView-body-inner .urlbarView-results .urlbarView-row .urlbarView-row-inner .urlbarView-url {
+  flex-basis: 100% !important;
+  flex-grow: 0 !important;
+  font-size: unset !important;
+  color: -moz-DialogText !important;
+  order: -1 !important;
+  margin-right: 15px !important;
+}
+#urlbar-container #urlbar .urlbarView .urlbarView-body-outer .urlbarView-body-inner .urlbarView-results .urlbarView-row .urlbarView-row-inner .urlbarView-no-wrap {
+  max-width: 35% !important;
+  flex-basis: 35% !important;
+  flex-grow: 1 !important;
+  box-sizing: border-box !important;
+}
+#urlbar-container #urlbar .urlbarView .urlbarView-body-outer .urlbarView-body-inner .urlbarView-results .urlbarView-row[row-selectable]:not([selected]):hover, #urlbar-container #urlbar .urlbarView .urlbarView-body-outer .urlbarView-body-inner .urlbarView-results .urlbarView-row[selected] {
+  color: White !important;
+  background-color: #9499AC !important;
+}
+#urlbar-container #urlbar .urlbarView .urlbarView-body-outer .urlbarView-body-inner .urlbarView-results .urlbarView-row[row-selectable]:not([selected]):hover .urlbarView-url, #urlbar-container #urlbar .urlbarView .urlbarView-body-outer .urlbarView-body-inner .urlbarView-results .urlbarView-row[selected] .urlbarView-url {
+  color: White !important;
+}
+#urlbar-container #urlbar .urlbarView .urlbarView-body-outer .urlbarView-body-inner .urlbarView-results .urlbarView-row[type=search] .urlbarView-row-inner .urlbarView-no-wrap, #urlbar-container #urlbar .urlbarView .urlbarView-body-outer .urlbarView-body-inner .urlbarView-results .urlbarView-row[has-action=true] .urlbarView-row-inner .urlbarView-no-wrap {
+  width: 100% !important;
+  flex-basis: unset !important;
+  max-width: 100% !important;
+}
+#urlbar-container #urlbar .urlbarView .urlbarView-body-outer .urlbarView-body-inner .urlbarView-results .urlbarView-row[type=search] .urlbarView-row-inner .urlbarView-url, #urlbar-container #urlbar .urlbarView .urlbarView-body-outer .urlbarView-body-inner .urlbarView-results .urlbarView-row[has-action=true] .urlbarView-row-inner .urlbarView-url {
+  visibility: collapse !important;
+}
+@media screen and (min-height: 600px) {
+  #urlbar-container #urlbar .urlbarView .urlbarView-body-outer .urlbarView-results[wrap] > .urlbarView-row[has-url] > .urlbarView-row-inner > .urlbarView-url:-moz-locale-dir(ltr) {
+    padding-inline-start: 0 !important;
+  }
+  #urlbar-container #urlbar .urlbarView .urlbarView-body-outer .urlbarView-results[wrap] > .urlbarView-row[has-url] > .urlbarView-row-inner > .urlbarView-url,
+  #urlbar-container #urlbar .urlbarView .urlbarView-body-outer .urlbarView-results[wrap] > .urlbarView-row[type=bestmatch] > .urlbarView-row-inner > .urlbarView-row-body > .urlbarView-row-body-top > .urlbarView-url {
+    margin-top: 0 !important;
+  }
+  #urlbar-container #urlbar .urlbarView .urlbarView-body-outer .urlbarView-results[wrap] > .urlbarView-row:where(:not([rich-suggestion=with-icon])) > .urlbarView-row-inner {
+    flex-wrap: nowrap !important;
+  }
+}
+#urlbar-container #urlbar .urlbarView .search-one-offs:not([hidden]),
+#urlbar-container #urlbar .urlbarView .urlbarView-favicon,
+#urlbar-container #urlbar .urlbarView .urlbarView-type-icon,
+#urlbar-container #urlbar .urlbarView .urlbarView-title-separator,
+#urlbar-container #urlbar .urlbarView .urlbarView-tags,
+#urlbar-container #urlbar .urlbarView .urlbarView-action,
+#urlbar-container #urlbar .urlbarView .urlbarView-button,
+#urlbar-container #urlbar .urlbarView .urlbarView-row[label]::before {
+  visibility: collapse !important;
+}
+#urlbar-container #urlbar:not([open]) > .urlbarView, #urlbar-container #urlbar:not([breakout]) > .urlbarView {
+  display: none !important;
+}
+#urlbar-container #urlbar .urlbarView-overflowable[overflow], #urlbar-container #urlbar .urlbarView-url[overflow] {
+  mask-image: none !important;
+  text-overflow: ellipsis !important;
+}
 
 :root {
   --tab-min-height: 21px !important;
@@ -540,6 +647,9 @@ toolbargrippy[tbgrippy-collapsed=true]:hover:active .toolbargrippy-arrow {
   border-top: 1px solid #494F5D !important;
   border-bottom: 1px solid #BAC2CD !important;
   padding-block-end: 3px !important;
+}
+:root[inFullscreen] #TabsToolbar {
+  display: none !important;
 }
 #TabsToolbar #tabbrowser-tabs {
   margin-block-start: 1px !important;
@@ -559,6 +669,11 @@ toolbargrippy[tbgrippy-collapsed=true]:hover:active .toolbargrippy-arrow {
 }
 #TabsToolbar .tabbrowser-tab .tab-content {
   padding-inline: 6px !important;
+}
+#TabsToolbar .tabbrowser-tab .tab-content .tab-text {
+  width: 100% !important;
+  text-overflow: ellipsis !important;
+  overflow: hidden !important;
 }
 #TabsToolbar .tabbrowser-tab .tab-content .tab-throbber:not([pinned]),
 #TabsToolbar .tabbrowser-tab .tab-content .tab-icon-pending:not([pinned]),
@@ -658,6 +773,33 @@ toolbargrippy[tbgrippy-collapsed=true]:hover:active .toolbargrippy-arrow {
   border-top: 1px solid #000 !important;
 }
 
+#main-menubar {
+  margin-block: 1px !important;
+}
+
+menubar > menu {
+  color: -moz-DialogText !important;
+  border: 1px solid transparent;
+  background-color: transparent !important;
+  padding: 1px 4px 2px 4px !important;
+  margin: 1px 0px 1px 0px !important;
+}
+menubar > menu[_moz-menuactive=true] {
+  border-top: 1px solid #F4F6F9 !important;
+  border-left: 1px solid #F4F6F9 !important;
+  border-bottom: 1px solid #7A7D82 !important;
+  border-right: 1px solid #7A7D82 !important;
+}
+menubar > menu[_moz-menuactive=true][open=true] {
+  border-right: 1px solid #F4F6F9 !important;
+  border-bottom: 1px solid #F4F6F9 !important;
+  border-top: 1px solid #7A7D82 !important;
+  border-left: 1px solid #7A7D82 !important;
+}
+menubar > menu .menubar-text {
+  margin: 0 !important;
+}
+
 @media not (-moz-windows-non-native-menus) {
   menupopup {
     appearance: none !important;
@@ -738,6 +880,104 @@ toolbargrippy[tbgrippy-collapsed=true]:hover:active .toolbargrippy-arrow {
   menupopup menuitem[checked=true] .menu-iconic-icon {
     display: flex !important;
   }
+}
+#status-bar {
+  border-top: 1px solid #494F5D !important;
+  background-color: #C7D0D9 !important;
+  color: #22262F !important;
+  font-size: smaller !important;
+}
+:root[inFullscreen] #status-bar {
+  display: none !important;
+}
+#status-bar statusbarpanel {
+  align-items: center !important;
+  border-top: 1px solid #E0ECF6 !important;
+  border-right: 1px solid #8997A1 !important;
+  border-left: 1px solid #E0ECF6 !important;
+  padding: 0px 4px !important;
+}
+#status-bar #statuspanel {
+  display: flex !important;
+  position: static !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  padding: 0 !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+  align-items: center !important;
+}
+#status-bar #statuspanel #statuspanel-label {
+  margin: 0 !important;
+  border: 0 !important;
+  padding: 0 !important;
+  background-color: transparent !important;
+}
+#status-bar #statuspanel[inactive] #statuspanel-label {
+  opacity: 0 !important;
+}
+#status-bar .statusbarpanel-iconic {
+  padding: 0px !important;
+}
+#status-bar .statusbar-resizerpanel {
+  border: 0 !important;
+  padding: 0 !important;
+}
+#status-bar #component-bar {
+  padding: 1px 3px 0px 3px;
+}
+#status-bar #component-bar .taskbutton {
+  appearance: none !important;
+  margin: 0px 3px !important;
+  border: none !important;
+  padding: 0px !important;
+}
+#status-bar #component-bar #mini-nav {
+  list-style-image: url("chrome://branding/content/navigator.gif");
+  margin-right: 2px;
+}
+#status-bar #component-bar #mini-nav:hover:active {
+  list-style-image: url("chrome://branding/content/navigator-act.gif");
+}
+#status-bar #component-bar #mini-mail {
+  list-style-image: url("chrome://collabra/content/taskbar/mail.gif");
+  margin-left: 1px;
+}
+#status-bar #component-bar #mini-mail:hover:active {
+  list-style-image: url("chrome://collabra/content/taskbar/mail-act.gif");
+}
+#status-bar #component-bar #mini-addr {
+  list-style-image: url("chrome://collabra/content/taskbar/addressbook.gif");
+}
+#status-bar #component-bar #mini-addr:hover:active {
+  list-style-image: url("chrome://collabra/content/taskbar/addressbook-act.gif");
+}
+#status-bar #component-bar #mini-comp {
+  list-style-image: url("chrome://collabra/content/taskbar/composer.gif");
+}
+#status-bar #component-bar #mini-comp:hover:active {
+  list-style-image: url("chrome://collabra/content/taskbar/composer-act.gif");
+}
+#status-bar #component-bar #mini-irc {
+  list-style-image: url("chrome://collabra/content/taskbar/taskbar-irc.gif");
+}
+#status-bar .fakeresizer {
+  list-style-image: url("chrome://collabra/content/resizer.png") !important;
+  cursor: se-resize !important;
+  width: 15px !important;
+  height: 15px !important;
+}
+#status-bar #offline-status {
+  list-style-image: url("chrome://collabra/content/online.gif");
+}
+#status-bar #offline-status[offline] {
+  list-style-image: url("chrome://collabra/content/offline.gif");
+}
+#status-bar #security-button {
+  list-style-image: url("chrome://collabra/content/lock-insecure.gif");
+}
+#status-bar #security-button[level=high] {
+  list-style-image: url("chrome://collabra/content/lock-secure.gif");
 }
 
 /*# sourceMappingURL=collabra.css.map */

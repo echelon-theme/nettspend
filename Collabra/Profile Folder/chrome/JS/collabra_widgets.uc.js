@@ -50,6 +50,25 @@ class CollabraWidgetManager
                 return button;
             },
         });
+        
+        this.createWidget({
+            id: "search-button",
+            type: "button",
+            removable: true,
+
+            label: LocaleUtils.str(throbberBundle, "search_button.label"),
+            defaultArea: CustomizableUI.AREA_NAVBAR,
+
+            onClick: function(e) {
+                if (e.button == "0") {
+                    openTrustedLinkIn(Services.search.getDefaultEngineInfo()?.defaultSearchEngineData.submissionURL, "tab");
+                }
+            },
+            
+            onCreated: function(button) {
+                return button;
+            },
+        });
 
         this.alreadyRan = true;
     }

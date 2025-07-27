@@ -153,9 +153,9 @@ var g_collabraAbout;
                             <td>
                                 <img src="about:logo" alt="${BrandUtils.getBrandingKey("brandShortName")}" width="200" height="200" />
                             </td>
-                            <td id="ver">
+                            <td id="mozver">
                                 <h1>
-                                    <a id="mozlink" href="">${BrandUtils.getBrandingKey("brandShortName")} 1.0</a>
+                                    <a id="mozlink" href="">${BrandUtils.getBrandingKey("brandShortName")} 1.7</a>
                                 </h1>
                             </td>
                         </tr>

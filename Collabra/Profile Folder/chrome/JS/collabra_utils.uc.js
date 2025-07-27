@@ -176,4 +176,13 @@ class LocaleUtils
     }
 }
 
-let EXPORTED_SYMBOLS = [ "PrefUtils", "waitForElement", "renderElement", "BrandUtils", "LocaleUtils" ];
+class setAttributes
+{
+	static set(element, attributes) {
+		Object.keys(attributes).forEach(attr => {
+			element.setAttribute(attr, attributes[attr]);
+		});	
+	}
+}
+
+let EXPORTED_SYMBOLS = [ "PrefUtils", "waitForElement", "renderElement", "BrandUtils", "LocaleUtils", "setAttributes" ];
