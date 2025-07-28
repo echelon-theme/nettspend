@@ -1,0 +1,97 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+/* ===== button.css =====================================================
+  == Styles used by the XUL button element.
+  ======================================================================= */
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+/* :::::::::: button :::::::::: */
+button {
+  appearance: none;
+  margin: 5px;
+  border: 1px solid #000000;
+  outline: 2px solid transparent;
+  border-radius: 3px;
+  min-width: 6em;
+  background-color: #AAB6C4;
+  background-clip: padding-box;
+  box-shadow: inset 1px 1px 0 #BBC6D1, inset -1px -1px 0 #97A6B6, inset 2px 2px 0 #B1BBC9, inset -2px 0 #A7B4C1, inset 0 -2px 0 #9DAAB9;
+  color: #000000;
+  font: menu;
+}
+
+button:where(:hover:active) {
+  box-shadow: inset 0 0 0 1px #8290A5, inset 0 0 0 2px #899AAC;
+  background-color: #90A1B3;
+  color: #ffffff;
+}
+
+.button-text {
+  margin-top: 2px !important;
+  margin-bottom: 2px !important;
+  margin-inline-start: 4px !important;
+  margin-inline-end: 6px !important;
+  text-align: center;
+}
+
+/* .......... focused state .......... */
+button:focus-visible {
+  outline-color: #98A5B2;
+}
+
+/* .......... default/hover/focused state .......... */
+@media (prefers-contrast) and (-moz-windows-compositor) {
+  /* This is for high-contrast black and white themes on Windows 8 and later,
+   where the native appearance renders a different background (which
+   appears to be equivalent to the Highlight color) if the button is in the
+   default, hovered or focused state. However, if these states overlap with
+   the active, disabled, open or checked state, the appearance reverts back
+   to the default background. */
+  button:where([default=true], :hover, :focus):where(:not(:active, [disabled=true], [open=true], [checked=true])) {
+    color: HighlightText;
+  }
+}
+/* .......... disabled state .......... */
+button:where([disabled=true]) {
+  box-shadow: inset 1px 1px 0 #C6CDD7, inset -1px -1px 0 #A9B5C1, inset 2px 2px 0 #BCC5D1, inset -2px -2px #B2BAC7;
+  border-color: #8290A5;
+  background-color: #B7BFCB;
+  color: #8C99AB;
+}
+
+@media (-moz-windows-classic) {
+  button:where([disabled=true]) {
+    color: ThreeDShadow;
+    text-shadow: 1px 1px ThreeDHighlight;
+  }
+}
+/* ::::: menu buttons ::::: */
+.button-menu-dropmarker {
+  appearance: none;
+  list-style-image: url("chrome://global/skin/icons/arrow-down-12.svg");
+  -moz-context-properties: fill;
+  fill: currentColor;
+  width: 12px;
+  height: 12px;
+}
+
+/* ::::: plain buttons ::::: */
+button.plain {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+button[type=disclosure] {
+  margin: 0;
+  appearance: none;
+  list-style-image: url("chrome://global/skin/icons/arrow-right-12.svg");
+  -moz-context-properties: fill;
+  fill: currentColor;
+  min-width: 0;
+}
+
+button[type=disclosure][open=true] {
+  list-style-image: url("chrome://global/skin/icons/arrow-down-12.svg");
+}
+
+/*# sourceMappingURL=button.css.map */

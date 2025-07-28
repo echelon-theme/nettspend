@@ -1,0 +1,69 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import url("chrome://global/skin/menulist-shared.css");
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+label {
+    margin: 0 3px;
+}
+
+:host {
+    appearance: none;
+    margin: 1px 4px;
+    border: 2px solid transparent;
+    min-height: 19px;
+    color: #000000;
+    font: message-box;
+
+    &:where(:focus) {
+        border-color: #98A5B2;
+        border-radius: 7px;
+        background-color: #98A5B2;
+    }
+}
+
+#label-box {
+    border: 1px solid #000;
+    border-right-style: none;
+    background-color: #A6B3C0;
+    box-shadow: inset 1px 1px 0 #BBC4D1,
+                inset 0 -1px 0 #99A7B7,
+                inset 2px 2px 0 #B3BBC9,
+                inset 0 -2px 0 #9EACBB;
+    padding-inline-start: 8px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    padding-block: 2px;
+}
+
+dropmarker {
+    appearance: none;
+    border: 1px solid #000;
+    border-left-color: #6D7C8F;
+    background-color: #A6B3C0;
+    box-shadow: inset 1px 1px 0 #BBC4D1,
+                inset -1px -1px 0 #99A7B7,
+                inset -2px -2px 0 #9EACBB,
+                inset 0 2px 0 #B3BBC9;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    height: auto;
+    width: auto;
+
+    &::part(icon) {
+        width: 10px;
+        height: 5px;
+        list-style-image: url("chrome://nettspend/content/menulist/mlist-arrow.png");
+        margin: 1px 2px 0px;
+    }
+
+    &[open="true"]::part(icon) {
+        list-style-image: url("chrome://nettspend/content/menulist/mlist-act-arrow.png");
+    }
+}

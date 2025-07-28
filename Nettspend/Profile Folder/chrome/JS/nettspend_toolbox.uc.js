@@ -71,7 +71,7 @@ var g_NettspendToolbox
             try
             {
                 this.createCollapsedGrippy(toolbar);
-                toolbar.setAttribute("collapsed", "true");
+                toolbar.setAttribute("nettspend_collapsed", "true");
             }
             catch (e) {
                 throw e
@@ -83,7 +83,7 @@ var g_NettspendToolbox
             var idString = aGrippyID.substring("moz_tb_collapsed_".length, aGrippyID.length);
             var toolbar = document.getElementById(idString);
 
-            toolbar.setAttribute("collapsed", "false");
+            toolbar.setAttribute("nettspend_collapsed", "false");
 
             var collapsedTray = document.querySelector(".collapsed-tray-holder .collapsed-tray");
             var collapsedToolbar = document.getElementById("moz_tb_collapsed_" + toolbar.id);

@@ -8,4 +8,6 @@ skin	userstyles	                                                classic/1.0	../C
 content userchrome                                                  ../ contentaccessible=yes
 content nettspend                                                    ../assets/images/ contentaccessible=yes
 
-override resource://gre-resources/scrollbars.css                    ../assets/override/scrollbars.css
+override chrome://global/skin/global.css                            ../assets/override/global/skin/global.css
+override chrome://global/skin/button.css                            ../assets/override/global/skin/button.css
+override chrome://global/skin/menulist.css                          ../assets/override/global/skin/menulist.css

@@ -98,6 +98,11 @@ menubar {
             &[disabled="true"] {
                 list-style-image: url("chrome://nettspend/content/menu/menu-arrow-dis.gif") !important;
             }
+
+            & > image {
+                width: auto !important;
+                height: auto !important;
+            }
         }
 
         menuitem {
@@ -128,6 +133,30 @@ menubar {
                 .menu-iconic-icon {
                     display: flex !important;
                 }
+            }
+        }
+    }
+    
+    #context-navigation {
+        background: transparent !important;
+        flex-direction: column !important;
+
+        & > .menuitem-iconic {
+            width: unset !important;
+
+            & > .menu-iconic-left {
+                appearance: none !important;
+                margin: 0px 2px 0px 0px !important;
+
+                & > .menu-iconic-icon {
+                    display: none !important;
+                }
+            }
+            
+            .menu-iconic-text {
+                display: block !important;
+                appearance: none !important;
+                margin: 0px 2px 0px 0px !important;
             }
         }
     }

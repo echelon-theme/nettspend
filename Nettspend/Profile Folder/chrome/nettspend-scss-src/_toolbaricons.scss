@@ -68,3 +68,11 @@ $iconRegionMap: (
     @include set-background("close.png");
     @include set-horizontal-states(0, 15px, 30px);
 }
+
+.default-favicon {
+    content: var(--page-icon) !important;
+}
+
+image.default-favicon {
+    list-style-image: var(--page-icon) !important;
+}

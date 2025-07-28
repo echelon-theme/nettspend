@@ -182,6 +182,14 @@
   background-position-x: -30px !important;
 }
 
+.default-favicon {
+  content: var(--page-icon) !important;
+}
+
+image.default-favicon {
+  list-style-image: var(--page-icon) !important;
+}
+
 toolbargrippy {
   display: flex;
   flex-direction: column-reverse;
@@ -217,6 +225,9 @@ toolbargrippy[tbgrippy-collapsed=true] .toolbargrippy-arrow {
 toolbargrippy[tbgrippy-collapsed=true]:hover:active .toolbargrippy-arrow {
   list-style-image: url("chrome://nettspend/content/toolbar/tbgrip-arrow-clps-act.gif");
 }
+toolbargrippy:not(.toolbar-primary-grippy) {
+  margin-inline-end: 1px !important;
+}
 
 .collapsed-tray-holder {
   background-color: #C7D0D9;
@@ -246,6 +257,10 @@ toolbargrippy[tbgrippy-collapsed=true]:hover:active .toolbargrippy-arrow {
 }
 .toolbar-primary-grippy:hover:active .toolbargrippy-texture {
   background-image: url("chrome://nettspend/content/toolbar/prtb-grip-top-act.gif");
+}
+
+[nettspend_collapsed=true] {
+  visibility: collapse !important;
 }
 
 /*
@@ -859,6 +874,10 @@ menubar > menu .menubar-text {
   menupopup .menu-right[disabled=true] {
     list-style-image: url("chrome://nettspend/content/menu/menu-arrow-dis.gif") !important;
   }
+  menupopup .menu-right > image {
+    width: auto !important;
+    height: auto !important;
+  }
   menupopup menuitem[checked=true] {
     list-style-image: url("chrome://nettspend/content/menu/menu-check.gif") !important;
   }
@@ -879,6 +898,25 @@ menubar > menu .menubar-text {
   }
   menupopup menuitem[checked=true] .menu-iconic-icon {
     display: flex !important;
+  }
+  #context-navigation {
+    background: transparent !important;
+    flex-direction: column !important;
+  }
+  #context-navigation > .menuitem-iconic {
+    width: unset !important;
+  }
+  #context-navigation > .menuitem-iconic > .menu-iconic-left {
+    appearance: none !important;
+    margin: 0px 2px 0px 0px !important;
+  }
+  #context-navigation > .menuitem-iconic > .menu-iconic-left > .menu-iconic-icon {
+    display: none !important;
+  }
+  #context-navigation > .menuitem-iconic .menu-iconic-text {
+    display: block !important;
+    appearance: none !important;
+    margin: 0px 2px 0px 0px !important;
   }
 }
 #status-bar {

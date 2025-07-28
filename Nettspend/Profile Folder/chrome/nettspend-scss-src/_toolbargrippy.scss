@@ -39,6 +39,10 @@ toolbargrippy {
             }
         }
     }
+
+    &:not(.toolbar-primary-grippy) {
+        margin-inline-end: 1px !important;
+    }
 }
 
 .collapsed-tray-holder {
@@ -73,4 +77,8 @@ toolbargrippy {
             background-image: url("chrome://nettspend/content/toolbar/prtb-grip-top-act.gif");
         }
     }
+}
+
+[nettspend_collapsed="true"] {
+    visibility: collapse !important;
 }

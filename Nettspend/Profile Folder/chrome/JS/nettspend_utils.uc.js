@@ -183,6 +183,12 @@ class setAttributes
 			element.setAttribute(attr, attributes[attr]);
 		});	
 	}
+
+	static remove(element, attributes) {
+		Object.keys(attributes).forEach(attr => {
+			element.removeAttribute(attr);
+		});	
+	}
 }
 
 let EXPORTED_SYMBOLS = [ "PrefUtils", "waitForElement", "renderElement", "BrandUtils", "LocaleUtils", "setAttributes" ];

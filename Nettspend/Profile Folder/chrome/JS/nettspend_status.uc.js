@@ -13,7 +13,6 @@ var g_ReadMail;
 	var { PrefUtils, LocaleUtils, waitForElement, setAttributes } = ChromeUtils.import("chrome://userscripts/content/nettspend_utils.uc.js");
     waitForElement = waitForElement.bind(window);
 
-    let menusBundle = "chrome://nettspend/locale/properties/menus.properties";
 	let statusBundle = "chrome://nettspend/locale/properties/statusbar.properties";
 
 	class MailClientUtils {
@@ -111,10 +110,10 @@ var g_ReadMail;
 						</statusbarpanel>
 						<statusbarpanel id="statusbar-display" flex="1">
 						</statusbarpanel>
-						<statusbarpanel id="offline-status" class="statusbarpanel-iconic" label="PLACEHOLDER" onclick="BrowserOffline.toggleOfflineStatus();">
+						<statusbarpanel id="offline-status" class="statusbarpanel-iconic" label="${LocaleUtils.str(statusBundle, "statusbar_panel_offlinestatus.label")}" onclick="BrowserOffline.toggleOfflineStatus();">
 							<image class="statusbarpanel-icon" />
 						</statusbarpanel>			
-						<statusbarpanel id="security-button" class="statusbarpanel-iconic" onclick="BrowserPageInfo(null, 'securityTab')">
+						<statusbarpanel id="security-button" class="statusbarpanel-iconic" tooltiptext="${LocaleUtils.str(statusBundle, "statusbar_panel_securitybutton.tooltiptext")}" onclick="BrowserPageInfo(null, 'securityTab')">
 							<image class="statusbarpanel-icon" />
 						</statusbarpanel>
 						<statusbarpanel class="statusbar-resizerpanel">
@@ -185,14 +184,21 @@ var g_ReadMail;
 		},
 
 		setOfflineStatus(state) {
+			let offlineStatus = document.querySelector("#status-bar #offline-status");
+			let offlineStatusTooltipText;
+
 			if (state) {
-				document.querySelector("#status-bar #offline-status").setAttribute("offline", "true");
-				document.querySelector("#status-bar #offline-status").setAttribute("checked", "true");
+				offlineStatusTooltipText = LocaleUtils.str(statusBundle, "statusbar_panel_offlinestatus_offline.tooltiptext");
+				offlineStatus.setAttribute("offline", "true");
+				offlineStatus.setAttribute("checked", "true");
 			}
 			else {
-				document.querySelector("#status-bar #offline-status").removeAttribute("offline");
-				document.querySelector("#status-bar #offline-status").removeAttribute("checked");
+				offlineStatusTooltipText = LocaleUtils.str(statusBundle, "statusbar_panel_offlinestatus.tooltiptext");
+				offlineStatus.removeAttribute("offline");
+				offlineStatus.removeAttribute("checked");
 			}
+
+			offlineStatus.setAttribute("tooltiptext", offlineStatusTooltipText);
 		},
 
 		renderComponentBar() {
@@ -250,8 +256,8 @@ var g_ReadMail;
 			if (item)
 			{
 				item.forEach(elem => {
-					elem.label = LocaleUtils.str(menusBundle, "nettspend_statusbar_label");
-					elem.accessKey = LocaleUtils.str(menusBundle, "nettspend_statusbar_accesskey");
+					elem.label = LocaleUtils.str(statusBundle, "nettspend_statusbar.label");
+					elem.accessKey = LocaleUtils.str(statusBundle, "nettspend_statusbar.accesskey");
 
 					let pref = Services.prefs.getBoolPref("nettspend.status-bar.enabled");
 
