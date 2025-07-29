@@ -1,7 +1,7 @@
 var g_nettspendAbout;
 
 {
-    var { PrefUtils, BrandUtils } = ChromeUtils.import("chrome://userscripts/content/nettspend_utils.uc.js");
+    var { PrefUtils, BrandUtils } = ChromeUtils.import("chrome://userscripts/content/nettspend_utils.sys.mjs");
 
     class AboutColonPageManager {
         get releaseNotesURL() {

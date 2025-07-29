@@ -6,7 +6,7 @@
 // ==/UserScript===
 
 {
-    let { BrandUtils } = ChromeUtils.import("chrome://userscripts/content/nettspend_utils.uc.js");
+    let { BrandUtils } = ChromeUtils.import("chrome://userscripts/content/nettspend_utils.sys.js");
 
     let root = document.documentElement;
     let fullName = BrandUtils.getBrandingKey("brandFullName");

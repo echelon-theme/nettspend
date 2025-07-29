@@ -6,7 +6,6 @@
 // @include          chrome://browser/content/browser.xhtml
 // @include			 chrome://browser/content/aboutDialog.xhtml
 // @loadOrder        1
-// @backgroundmodule
 // ==/UserScript==
 
 function renderElement(nodeName, attrMap = {}, childrenArr = [])

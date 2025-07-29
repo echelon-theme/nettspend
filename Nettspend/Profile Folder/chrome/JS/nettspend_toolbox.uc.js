@@ -8,7 +8,7 @@
 var g_NettspendToolbox
 
 {
-    var { PrefUtils } = ChromeUtils.import("chrome://userscripts/content/nettspend_utils.uc.js");
+    var { PrefUtils } = ChromeUtils.import("chrome://userscripts/content/nettspend_utils.sys.mjs");
 
     class ToolbarGrippyElement extends MozXULElement
     {

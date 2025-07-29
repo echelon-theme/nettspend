@@ -7,7 +7,7 @@
 
 {
 
-let { LocaleUtils } = ChromeUtils.import("chrome://userscripts/content/nettspend_utils.uc.js");
+let { LocaleUtils } = ChromeUtils.import("chrome://userscripts/content/nettspend_utils.sys.mjs");
 let throbberBundle = "chrome://Nettspend/locale/properties/custom-widgets.properties";
 
 class NettspendWidgetManager

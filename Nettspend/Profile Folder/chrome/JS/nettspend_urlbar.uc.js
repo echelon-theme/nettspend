@@ -6,7 +6,7 @@
 // ==/UserScript==
 
 {
-    var { waitForElement, LocaleUtils } = ChromeUtils.import("chrome://userscripts/content/nettspend_utils.uc.js");
+    var { waitForElement, LocaleUtils } = ChromeUtils.import("chrome://userscripts/content/nettspend_utils.sys.mjs");
     waitForElement = waitForElement.bind(window);
 
     waitForElement("#urlbar").then(e => {
