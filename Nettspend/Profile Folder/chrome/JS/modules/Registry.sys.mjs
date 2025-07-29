@@ -8,6 +8,8 @@ export class Registry {
     };
 
     static getRegKeyValue(hive, subkey, key, expectedType) {
+	    var { ctypes } = ChromeUtils.importESModule("resource://gre/modules/ctypes.sys.mjs");
+
         // Check if the provided hive is valid
         if (!(hive in Registry.hives)) {
             console.error("Invalid hive specified.");

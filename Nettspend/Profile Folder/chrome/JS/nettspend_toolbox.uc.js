@@ -213,7 +213,10 @@ var g_NettspendToolbox
                     if (toolbar.id == "nav-bar") {
                         toolbargrippy.setAttribute("class", "toolbar-primary-grippy");
                     }
-                    toolbar.insertBefore(toolbargrippy, toolbar.firstChild);
+                    
+                    if (toolbar.id !== "notifications-toolbar") {
+                        toolbar.insertBefore(toolbargrippy, toolbar.firstChild);
+                    }
 
                     internalBox.appendChild(toolbar);
                 }

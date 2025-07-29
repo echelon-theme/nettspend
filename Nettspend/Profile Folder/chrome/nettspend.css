@@ -510,7 +510,8 @@ toolbargrippy:not(.toolbar-primary-grippy, [tbgrippy-collapsed=true]) {
 #urlbar-container #urlbar #identity-permission-box,
 #urlbar-container #urlbar #urlbar-go-button,
 #urlbar-container #urlbar #identity-box,
-#urlbar-container #urlbar #page-action-buttons {
+#urlbar-container #urlbar #page-action-buttons,
+#urlbar-container #urlbar #urlbar-searchmode-switcher {
   visibility: collapse !important;
 }
 #urlbar-container #urlbar #urlbar-input {
@@ -667,6 +668,10 @@ toolbargrippy:not(.toolbar-primary-grippy, [tbgrippy-collapsed=true]) {
   display: none !important;
 }
 #TabsToolbar #tabbrowser-tabs {
+  border: 0 !important;
+  padding-inline: 0 !important;
+  margin-inline: 0 !important;
+  min-height: var(--tab-min-height) !important;
   margin-block-start: 1px !important;
 }
 #TabsToolbar #tabbrowser-tabs:not([movingtab]) {
@@ -793,6 +798,8 @@ toolbargrippy:not(.toolbar-primary-grippy, [tbgrippy-collapsed=true]) {
 }
 
 menubar > menu {
+  border-radius: 0 !important;
+  appearance: none !important;
   color: -moz-DialogText !important;
   border: 1px solid transparent;
   background-color: transparent !important;
@@ -847,6 +854,7 @@ menubar > menu .menubar-text {
   }
   menupopup menu,
   menupopup menuitem {
+    border-radius: 0 !important;
     padding: 2px !important;
     appearance: none !important;
   }

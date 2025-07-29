@@ -4,6 +4,8 @@
 
 menubar {
     > menu {
+        border-radius: 0 !important;
+        appearance: none !important;
         color: -moz-DialogText !important;
         border: 1px solid transparent;
         background-color: transparent !important;
@@ -68,6 +70,7 @@ menubar {
 
         menu,
         menuitem {
+            border-radius: 0 !important;
             padding: 2px !important;
             appearance: none !important;
             
