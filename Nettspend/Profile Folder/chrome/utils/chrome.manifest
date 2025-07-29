@@ -11,3 +11,5 @@ content nettspend                                                    ../assets/i
 override chrome://global/skin/global.css                            ../assets/override/global/skin/global.css
 override chrome://global/skin/button.css                            ../assets/override/global/skin/button.css
 override chrome://global/skin/menulist.css                          ../assets/override/global/skin/menulist.css
+
+override chrome://global/content/commonDialog.xhtml                 ../windows/commonDialog/commonDialog.xhtml

@@ -1,0 +1,26 @@
+/* commonDialog icons */
+.message-icon {
+    width: 46px !important;
+    height: 39px !important;
+    list-style-image: url("chrome://nettspend/content/icons/alert-message.gif") !important;
+}
+
+.alert-dialog #infoIcon,
+.alert-icon {
+    width: 46px !important;
+    height: 39px !important;
+    list-style-image: url("chrome://nettspend/content/icons/alert-exclam.gif") !important;
+}
+
+.error-icon {
+    width: 46px !important;
+    height: 39px !important;
+    list-style-image: url("chrome://nettspend/content/icons/alert-error.gif") !important;
+}
+
+.question-icon {
+    width: 46px !important;
+    height: 39px !important;
+    list-style-image: url("chrome://nettspend/content/icons/alert-question.gif") !important;
+}
+

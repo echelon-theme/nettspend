@@ -8,6 +8,8 @@
 var g_NettspendToolbox
 
 {
+    var { PrefUtils } = ChromeUtils.import("chrome://userscripts/content/nettspend_utils.uc.js");
+
     class ToolbarGrippyElement extends MozXULElement
     {
         static get fragment() {
@@ -39,6 +41,36 @@ var g_NettspendToolbox
             }
             return val;
         }
+
+        get toolbarStates() {
+			return JSON.parse(Services.prefs.getCharPref("nettspend.toolbar.states"));
+		}
+
+        setToolbarStates(states) {
+            PrefUtils.trySetStringPref("nettspend.toolbar.states", JSON.stringify(states));
+        }
+
+        writeGrippyState(toolbarNode, state)
+        {
+            const toolbarStates = this.toolbarStates;
+            let toolbarNodeID = toolbarNode.id;
+
+            const collapsedToolbar = {
+                id: toolbarNodeID,
+                collapsed: state,
+            };
+
+            let duplicate = toolbarStates.find(prop => prop.id == toolbarNodeID);
+
+            if (duplicate) {
+                duplicate.collapsed = state;
+            }
+            else {
+                toolbarStates.push(collapsedToolbar);
+            }
+
+            this.setToolbarStates(toolbarStates);
+        } 
 
         connectedCallback() {
             if (this.delayConnectedCallback())
@@ -72,6 +104,7 @@ var g_NettspendToolbox
             {
                 this.createCollapsedGrippy(toolbar);
                 toolbar.setAttribute("nettspend_collapsed", "true");
+                this.writeGrippyState(toolbar, true);
             }
             catch (e) {
                 throw e
@@ -84,6 +117,7 @@ var g_NettspendToolbox
             var toolbar = document.getElementById(idString);
 
             toolbar.setAttribute("nettspend_collapsed", "false");
+            this.writeGrippyState(toolbar, false);
 
             var collapsedTray = document.querySelector(".collapsed-tray-holder .collapsed-tray");
             var collapsedToolbar = document.getElementById("moz_tb_collapsed_" + toolbar.id);
@@ -195,6 +229,7 @@ var g_NettspendToolbox
             }
 
             this.appendTabBarCloseButton();
+            this.setToolbarStates();
         }
 
         appendTabBarCloseButton()
@@ -209,6 +244,47 @@ var g_NettspendToolbox
             `);
 
             tabsToolbar.querySelector("#TabsToolbar-customization-target").appendChild(closeButton);
+        }
+
+        setToolbarStates()
+        {
+            this.createToolbarStatePref();
+            
+            let pref = JSON.parse(Services.prefs.getCharPref("nettspend.toolbar.states"));
+
+            pref.forEach(toolbarNode => {
+                document.getElementById(toolbarNode.id).setAttribute("nettspend_collapsed", toolbarNode.collapsed);
+                
+                // Create the collapsed grippy
+                if (toolbarNode.collapsed) {
+                    customElements.get("toolbargrippy").prototype.createCollapsedGrippy(document.getElementById(toolbarNode.id));
+                }
+            });
+        }
+
+        createToolbarStatePref()
+        {
+            try
+			{
+				Services.prefs.getCharPref("nettspend.toolbar.states");
+			}
+			catch (e)
+			{
+				if (e.name == "NS_ERROR_UNEXPECTED") // preference does not exist
+				{
+					try
+					{
+						Services.prefs.setCharPref("nettspend.toolbar.states", "[]");
+					}
+					catch (e) {}
+				}
+			}
+
+            let pref = Services.prefs.getCharPref("nettspend.toolbar.states");
+
+            if (pref == "") {
+                Services.prefs.setCharPref("nettspend.toolbar.states", "[]");
+            }
         }
     }
 

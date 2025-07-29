@@ -225,7 +225,7 @@ toolbargrippy[tbgrippy-collapsed=true] .toolbargrippy-arrow {
 toolbargrippy[tbgrippy-collapsed=true]:hover:active .toolbargrippy-arrow {
   list-style-image: url("chrome://nettspend/content/toolbar/tbgrip-arrow-clps-act.gif");
 }
-toolbargrippy:not(.toolbar-primary-grippy) {
+toolbargrippy:not(.toolbar-primary-grippy, [tbgrippy-collapsed=true]) {
   margin-inline-end: 1px !important;
 }
 
@@ -1016,6 +1016,32 @@ menubar > menu .menubar-text {
 }
 #status-bar #security-button[level=high] {
   list-style-image: url("chrome://nettspend/content/lock-secure.gif");
+}
+
+/* commonDialog icons */
+.message-icon {
+  width: 46px !important;
+  height: 39px !important;
+  list-style-image: url("chrome://nettspend/content/icons/alert-message.gif") !important;
+}
+
+.alert-dialog #infoIcon,
+.alert-icon {
+  width: 46px !important;
+  height: 39px !important;
+  list-style-image: url("chrome://nettspend/content/icons/alert-exclam.gif") !important;
+}
+
+.error-icon {
+  width: 46px !important;
+  height: 39px !important;
+  list-style-image: url("chrome://nettspend/content/icons/alert-error.gif") !important;
+}
+
+.question-icon {
+  width: 46px !important;
+  height: 39px !important;
+  list-style-image: url("chrome://nettspend/content/icons/alert-question.gif") !important;
 }
 
 /*# sourceMappingURL=nettspend.css.map */
