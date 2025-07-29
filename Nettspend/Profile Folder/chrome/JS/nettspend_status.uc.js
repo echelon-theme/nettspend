@@ -10,7 +10,7 @@ var g_ReadMail;
 {
 	var { ctypes } = ChromeUtils.importESModule("resource://gre/modules/ctypes.sys.mjs");
 	var { Registry } = ChromeUtils.importESModule("chrome://modules/content/Registry.sys.mjs");
-	var { PrefUtils, LocaleUtils, waitForElement, setAttributes } = ChromeUtils.import("chrome://userscripts/content/nettspend_utils.sys.mjs");
+	var { PrefUtils, LocaleUtils, waitForElement, setAttributes } = ChromeUtils.importESModule("chrome://userscripts/content/nettspend_utils.sys.mjs");
     waitForElement = waitForElement.bind(window);
 
 	let statusBundle = "chrome://nettspend/locale/properties/statusbar.properties";

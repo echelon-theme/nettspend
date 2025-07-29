@@ -6,7 +6,7 @@
 // ==/UserScript===
 
 {
-    var { waitForElement } = ChromeUtils.import("chrome://userscripts/content/nettspend_utils.sys.mjs");
+    var { waitForElement } = ChromeUtils.importESModule("chrome://userscripts/content/nettspend_utils.sys.mjs");
     waitForElement = waitForElement.bind(window);
 
     /* Add labels to navigation items so they can look exactly like normal items again */

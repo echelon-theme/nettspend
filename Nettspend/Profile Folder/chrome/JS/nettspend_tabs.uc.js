@@ -6,7 +6,7 @@
 // ==/UserScript==
 
 {
-    var { waitForElement, PrefUtils } = ChromeUtils.import("chrome://userscripts/content/nettspend_utils.sys.mjs");
+    var { waitForElement, PrefUtils } = ChromeUtils.importESModule("chrome://userscripts/content/nettspend_utils.sys.mjs");
     waitForElement = waitForElement.bind(window);
 
     waitForElement("#tabbrowser-arrowscrollbox").then(e => {

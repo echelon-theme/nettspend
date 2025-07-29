@@ -8,7 +8,7 @@
 // @loadOrder        1
 // ==/UserScript==
 
-function renderElement(nodeName, attrMap = {}, childrenArr = [])
+export function renderElement(nodeName, attrMap = {}, childrenArr = [])
 {
 	let namespace = "html";
 	let nodeNameParts = nodeName.split(":");
@@ -46,7 +46,7 @@ function renderElement(nodeName, attrMap = {}, childrenArr = [])
 	return element;
 }
 
-async function waitForElement(query, parent = this.document, timeout = -1)
+export async function waitForElement(query, parent = this.document, timeout = -1)
 {
 	let startTime = Date.now();
 	
@@ -62,7 +62,7 @@ async function waitForElement(query, parent = this.document, timeout = -1)
 	return parent.querySelector(query);
 }
 
-class PrefUtils
+export class PrefUtils
 {
 	static #internalTryGetPref(name, fallback, func)
 	{
@@ -143,7 +143,7 @@ class PrefUtils
 	}
 }
 
-class BrandUtils
+export class BrandUtils
 {	
 	static bundle = Services.strings.createBundle("chrome://branding/locale/brand.properties");
 
@@ -153,7 +153,7 @@ class BrandUtils
 	}
 }
 
-class LocaleUtils
+export class LocaleUtils
 {
 	static str(bundle, l10nId, ...extra)
     {
@@ -175,7 +175,7 @@ class LocaleUtils
     }
 }
 
-class setAttributes
+export class setAttributes
 {
 	static set(element, attributes) {
 		Object.keys(attributes).forEach(attr => {
@@ -190,4 +190,4 @@ class setAttributes
 	}
 }
 
-let EXPORTED_SYMBOLS = [ "PrefUtils", "waitForElement", "renderElement", "BrandUtils", "LocaleUtils", "setAttributes" ];
+// let EXPORTED_SYMBOLS = [ "PrefUtils", "waitForElement", "renderElement", "BrandUtils", "LocaleUtils", "setAttributes" ];
