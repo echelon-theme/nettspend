@@ -1,0 +1,158 @@
+#sidebar-box {
+    border-left: 1px solid #8998AA;
+    background-color: #B9C4D0 !important;
+
+    #sidebar-header {
+        font-size: 1em !important;
+        border: 0 !important;
+    }
+}
+
+.box-texttab {
+    color: #000000;
+    border-left: 1px solid #DAE3ED;
+
+    .sidebar-tab-left-box,
+    .sidebar-tab-right-box {
+        margin-bottom: 3px;
+    }
+
+    .sidebar-tab-left-box {
+        border-top: 1px solid #8A9DAF;
+        padding-top: 1px;
+        box-shadow: inset 0 1px 0 #D4E1EA;
+        border-bottom: 2px solid #B9C4D0;
+        min-width: 90px;
+
+        .sidebar-tab-left {
+            width: 10px;
+            background: url("chrome://nettspend/content/sidebar/sbtab-lft.gif") no-repeat;
+        }
+
+        .sidebar-tab-text {
+            margin: 0px !important;
+            background: url("chrome://nettspend/content/sidebar/sbtab-mid.gif") repeat-x top;
+        }
+    }
+
+    .sidebar-tab-right-img {
+        width: 32px;
+        height: 13px;
+        list-style-image: url("chrome://nettspend/content/sidebar/sbtab-rit-top.gif");
+    }
+
+    .sidebar-tab-right-btm {
+        min-height: 5px;
+    }
+
+    .sidebar-tab-right-line {
+        border-bottom: 1px solid #DAE3ED;
+        border-top: 1px solid #96A7B8;
+        height: min-content;
+        align-self: flex-end;
+    }
+
+    &:not([selected]):hover {
+        .sidebar-tab-left-box {
+            box-shadow: inset 0 1px 0 #D4E1EA, inset 0 -1px 0 #9CADBB;
+            padding-bottom: 1px;
+            border-bottom: 1px solid #CCD7E2;
+        }
+
+        .sidebar-tab-right-img  {
+            list-style-image: url("chrome://nettspend/content/sidebar/sbtab-rit-top-hov.gif");
+        }
+        
+        .sidebar-tab-right-btm {
+            background: url("chrome://nettspend/content/sidebar/sbtab-rit-btm-hov.gif") no-repeat bottom left;
+        }
+
+        &:active {
+            border-left: none;
+            color: #FFFFFF;
+
+            .sidebar-tab-left-box {
+                border-top: 1px solid #8A9DAF;
+                border-left: 1px solid #737E8A;
+                border-bottom: 1px solid #D8E2EC;
+                box-shadow: inset 1px 0 0 #90A0AD, inset 0 1px 0 #748490, inset 0 2px 0 #9FADB9;
+                background-color: #A1B1BE;
+                
+                .sidebar-tab-left {
+                    background-image: url("chrome://nettspend/content/sidebar/sbtab-lft-act.gif");
+                }
+
+                .sidebar-tab-text {
+                    background-image: url("chrome://nettspend/content/sidebar/sbtab-mid-act.gif");
+                }
+            }
+
+            .sidebar-tab-right-img {
+                list-style-image: url("chrome://nettspend/content/sidebar/sbtab-rit-top-act.gif");
+            }
+
+            .sidebar-tab-right-btm {
+                background-image: url("chrome://nettspend/content/sidebar/sbtab-rit-btm-act.gif");
+            }
+        }
+    }
+
+    &[selected] {
+        border-left: 1px solid #E8EEF5 !important;
+        border-bottom: 1px solid #CBD5E0 !important;
+        color: #000000 !important;
+
+        .sidebar-tab-left-box {
+            border-bottom: none !important;
+            border-left: none !important;
+            background-color: #CBD5E0 !important;
+
+            .sidebar-tab-left {
+                background-image: url("chrome://nettspend/content/sidebar/sbtab-lft-sel.gif") !important;
+            }
+
+            .sidebar-tab-text {
+                background-image: url("chrome://nettspend/content/sidebar/sbtab-mid-sel.gif") !important;
+            }
+        }
+
+        
+        .sidebar-tab-right-img {
+            list-style-image: url("chrome://nettspend/content/sidebar/sbtab-rit-top-sel.gif");
+        }
+
+        .sidebar-tab-right-btm {
+                background: #CBD5E0 !important;
+        }
+
+        .sidebar-tab-right-line {
+            border-bottom: 1px solid #E2EAF4 !important;
+            border-top: 1px solid #8CA2B3 !important;
+        }
+
+        .sidebar-tab-left-box,
+        .sidebar-tab-right-box {
+            margin-bottom: 0 !important;
+        }
+    }
+}
+
+#sidebar {
+    border-bottom: 1px solid #96A7B8;
+    box-shadow: 0 1px 0 #DAE3ED;
+    margin-bottom: 5px !important;
+    background-color: Field;
+}
+
+#sidebar-search-container {
+    background-color: #CBD5E0 !important;
+}
+
+.sidebar-splitter {
+    background-color: #C1CBD5 !important;
+    min-width: 9px !important;
+    margin-inline-start: 0 !important;
+    border: 0 !important;
+    box-shadow: inset 1px 0 0 #97A4B2, inset -1px -1px 0 #AAB4BF, inset 2px 0 0 #DFE5EF;
+    border-inline-end: 1px solid #3B414F !important;
+}
