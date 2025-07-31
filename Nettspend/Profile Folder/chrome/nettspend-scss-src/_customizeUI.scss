@@ -1,0 +1,20 @@
+:root[customizing="true"] {
+    #browser {
+        flex: initial !important;
+        visibility: visible !important;
+
+        #sidebar-box,
+        #sidebar-splitter {
+            visibility: collapse !important;
+            overflow: hidden !important;
+        }
+
+        #sidebar-box,
+        #sidebar-splitter,
+        #tabbrowser-tabbox,
+        .browserStack {
+            min-height: 0 !important;
+            max-height: 0 !important;
+        }
+    }
+}

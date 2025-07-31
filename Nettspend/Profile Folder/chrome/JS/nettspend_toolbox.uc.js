@@ -221,8 +221,7 @@ var g_NettspendToolbox
                     internalBox.appendChild(toolbar);
                 }
                 else {
-
-                    document.body.insertBefore(toolbar, document.querySelector("#browser"));
+                    document.querySelector("#appcontent").insertBefore(toolbar, document.querySelector("#appcontent").firstChild);
                     toolbar.removeAttribute("flex");
                 }
             });
@@ -233,7 +232,31 @@ var g_NettspendToolbox
 
             this.appendTabBarCloseButton();
             this.setToolbarStates();
+
+            window.addEventListener(
+                "customizationstarting",
+                this.customizeModeManager
+            );
+            window.addEventListener(
+                "aftercustomization",
+                this.customizeModeManager
+            );
         }
+
+        customizeModeManager = new (class {
+            handleEvent(event)
+            {
+                switch (event.type)
+                {
+                    case "customizationstarting":
+                        document.querySelector("#browser").removeAttribute("flex");
+                        break;
+                    case "aftercustomization":
+                        document.querySelector("#browser").setAttribute("flex", "1");
+                        break;
+                }
+            }
+        });
 
         appendTabBarCloseButton()
         {

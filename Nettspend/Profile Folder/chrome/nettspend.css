@@ -826,6 +826,23 @@ toolbargrippy:not(.toolbar-primary-grippy, [tbgrippy-collapsed=true]) {
   border-top: 1px solid #000 !important;
 }
 
+:root[customizing=true] #browser {
+  flex: initial !important;
+  visibility: visible !important;
+}
+:root[customizing=true] #browser #sidebar-box,
+:root[customizing=true] #browser #sidebar-splitter {
+  visibility: collapse !important;
+  overflow: hidden !important;
+}
+:root[customizing=true] #browser #sidebar-box,
+:root[customizing=true] #browser #sidebar-splitter,
+:root[customizing=true] #browser #tabbrowser-tabbox,
+:root[customizing=true] #browser .browserStack {
+  min-height: 0 !important;
+  max-height: 0 !important;
+}
+
 #main-menubar {
   margin-block: 1px !important;
 }
