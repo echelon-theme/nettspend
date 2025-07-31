@@ -3,8 +3,88 @@
     background-color: #B9C4D0 !important;
 
     #sidebar-header {
+        padding: 0 !important;
         font-size: 1em !important;
         border: 0 !important;
+        background-image: url("chrome://nettspend/content/sidebar/sbar-top-tabopen.gif");
+        background-repeat: no-repeat;
+
+        .sidebar-header-text {
+            font-weight: bold;
+            color: #000;
+        }
+
+        #sidebar-switcher-target {
+            flex: 0 !important;
+            margin-right: 1px !important;
+            margin-top: 1px !important;
+            padding: 2px !important;
+            border-radius: 0 !important;
+            border: 1px solid transparent;
+            background-color: transparent !important;
+
+            &:hover {
+                border-top: 1px solid #E3E7EC !important;
+                border-left: 1px solid #E3E7EC !important;
+                border-right: 1px solid #697077 !important;
+                border-bottom: 1px solid #697077 !important;
+            }
+
+            &:hover:active,
+            &[open="true"] {
+                border-top: 1px solid #697077 !important;
+                border-left: 1px solid #697077 !important;
+                border-right: 1px solid #E3E7EC !important;
+                border-bottom: 1px solid #E3E7EC !important;
+            }
+
+            #sidebar-icon {
+                visibility: collapse !important;
+            }
+
+            #sidebar-switcher-arrow {
+                width: 9px !important;
+                height: 5px !important;
+                margin-right: 2px !important;
+                margin-left: 6px !important;
+                list-style-image: url("chrome://nettspend/content/sidebar/sbpicker-arrow.gif") !important;
+            }
+
+            #sidebar-title {
+                margin-block: 1px 2px !important;
+                margin-inline: 2px 4px !important;
+                padding: 0 !important;
+            }
+        }
+
+        #sidebar-close {
+            width: auto !important;
+            height: 100% !important;
+            background-image: none !important;
+            list-style-image: url("chrome://nettspend/content/closebox.gif") !important;
+            margin: 0px 1px;
+            margin-inline-end: 1px !important;
+            padding: 4px 2px 4px 4px !important;
+            border: 1px solid transparent !important;
+
+            .toolbarbutton-icon {
+                margin-inline-end: 2px !important;
+            }
+
+            &:hover {
+                border-top: 1px solid #E3E7EC !important;
+                border-left: 1px solid #E3E7EC !important;
+                border-right: 1px solid #697077 !important;
+                border-bottom: 1px solid #697077 !important;
+
+                &:active {
+                    border-top: 1px solid #697077 !important;
+                    border-left: 1px solid #697077 !important;
+                    border-right: 1px solid #E3E7EC !important;
+                    border-bottom: 1px solid #E3E7EC !important;
+                }
+            }
+        }
     }
 }
 
@@ -155,4 +235,29 @@
     border: 0 !important;
     box-shadow: inset 1px 0 0 #97A4B2, inset -1px -1px 0 #AAB4BF, inset 2px 0 0 #DFE5EF;
     border-inline-end: 1px solid #3B414F !important;
+}
+
+@mixin textbox {
+    appearance: none !important;
+    margin: 2px 4px;
+    padding: 2px 1px 2px 3px;
+    background-color: #FFFFFF;
+    color: #000000;
+    font: inherit;
+    
+    box-shadow: inset 0 0 0 1px #5D616E;
+    border-top: 1px solid #BEC3D3;
+    border-left: 1px solid #BEC3D3;
+    border-right: 1px solid #C7D0D9;
+    border-bottom: 1px solid #C7D0D9;
+
+    &[focused] {
+        border-color: #98A5B2;
+        box-shadow: inset 0 0 0 1px #000000;
+    }
+}
+
+#search-box {
+    @include textbox;
+    border-radius: 0 !important;
 }

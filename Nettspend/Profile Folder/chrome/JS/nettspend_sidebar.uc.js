@@ -8,8 +8,10 @@
 var g_NettspendSidebarUI;
 
 {
-    var { waitForElement } = ChromeUtils.importESModule("chrome://userscripts/content/nettspend_utils.sys.mjs");
+    var { LocaleUtils, waitForElement, setAttributes } = ChromeUtils.importESModule("chrome://userscripts/content/nettspend_utils.sys.mjs");
     waitForElement = waitForElement.bind(window);
+
+	let sidebarBundle = "chrome://nettspend/locale/properties/sidebar.properties";
 
     class SplitterGrippyElement extends MozXULElement
     {
@@ -80,6 +82,18 @@ var g_NettspendSidebarUI;
 
                 let observer = new MutationObserver(this.setActive);
                 observer.observe(e, { attributes: true, attributesFilter: ["sidebarcommand"] });
+
+                let sidebarHeaderLabel = document.createXULElement("label");
+                let sidebarHeaderLabelAttrs = {
+                    "class": "sidebar-header-text",
+                    "crop": "right",
+                    "flex": "1",
+                    "value": LocaleUtils.str(sidebarBundle, "sidebar_header_text.value"),
+                };
+                setAttributes.set(sidebarHeaderLabel, sidebarHeaderLabelAttrs);
+
+                e.querySelector("#sidebar-header").insertBefore(sidebarHeaderLabel, e.querySelector("#sidebar-header").firstChild);
+                e.querySelector("#sidebar-spacer").remove();
             });
         }
 
