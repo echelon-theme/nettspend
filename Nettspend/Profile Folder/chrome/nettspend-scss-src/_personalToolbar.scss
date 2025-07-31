@@ -70,7 +70,7 @@
         }
     }
 
-    .toolbarbutton-1:not(#sidebar-button) {
+    .toolbarbutton-1:not(#sidebar-button, #PlacesChevron) {
         .toolbarbutton-badge-stack,
         .toolbarbutton-icon {
             width: 16px !important;

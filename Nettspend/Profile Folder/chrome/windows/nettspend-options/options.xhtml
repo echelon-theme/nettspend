@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+<?xml-stylesheet href="chrome://global/content/xul.css" type="text/css"?>
+
+<?xml-stylesheet href="chrome://userchrome/content/windows/nettspend-options/options.css" type="text/css"?>
+
+<!DOCTYPE window SYSTEM "chrome://nettspend/locale/dtd/nettspend-options.dtd">
+
+<dialog xmlns:html="http://www.w3.org/1999/xhtml"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="nettspendOptions"
+        windowtype="Browser:NettspendOptions"
+        buttons="accept"
+        title="&nettspendOptions.pageTitle;">
+
+    <vbox class="options-container">
+        <dialogheader id="header" title="&nettspendOptions.pageTitle;">
+            <label class="dialogheader-title" crop="right" flex="1" value="&nettspendOptions.pageTitle;" />
+        </dialogheader>
+        <vbox flex="1">
+            <checkbox native="" label="&nettspendOptions.mozilla;" preference="nettspend.appearance.mozilla"/>
+            <checkbox native="" label="&nettspendOptions.hideononetab;" preference="nettspend.tabbrowser.hideononetab"/>
+            <checkbox native="" label="&nettspendOptions.hideAddons;" preference="nettspend.unified-extensions.disabled"/>
+        </vbox>
+    </vbox>
+
+    <script src="chrome://userchrome/content/windows/nettspend-options/options.js" type="text/javascript"></script>
+
+</dialog>

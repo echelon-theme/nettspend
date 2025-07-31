@@ -25,3 +25,36 @@
         padding: 0 !important;
     }
 }
+
+#nav-bar-overflow-button,
+#PlacesChevron {
+    padding: 1px 2px !important;
+    border: 1px solid transparent !important;
+    background-color: transparent !important;
+    list-style-image: url("chrome://nettspend/content/chevron.gif") !important;
+
+    &:hover {
+        border-top-color: #EEF0F3 !important;
+        border-right-color: #86929E !important;
+        border-bottom-color: #86929E !important;
+        border-left-color: #EEF0F3 !important;
+    }
+
+    &:hover:active,
+    &[open="true"] {
+        border-top-color: #86929E !important;
+        border-right-color: #EEF0F3 !important;
+        border-bottom-color: #EEF0F3 !important;
+        border-left-color: #86929E !important;
+        padding: 2px 1px 0px 3px !important;
+    }
+
+    .toolbarbutton-icon {
+        width: 8px !important;
+        height: 5px !important;
+        background-color: transparent !important;
+        border-radius: 0 !important;
+        margin-inline-end: 2px !important;
+        padding: 0 !important;
+    }
+}

@@ -1,0 +1,18 @@
+#nettspendOptions {
+    min-width: 320px;
+}
+
+#header {
+    margin: 0px 5px 5px 5px;
+	padding: 8px 10px 7px;
+	background-color: #90A1B3;
+	color: black;
+	box-shadow: inset 1px 1px 0 #858B97, inset -1px -1px 0 white, inset 0 0 0 2px #2D3B49;
+	align-items: center;
+
+    .dialogheader-title {
+        flex: 1;
+        font-weight: bold;
+        font-size: 125%;
+    }
+}

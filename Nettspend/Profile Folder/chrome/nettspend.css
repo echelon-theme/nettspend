@@ -341,6 +341,39 @@ toolbargrippy:not(.toolbar-primary-grippy, [tbgrippy-collapsed=true]) {
   padding: 0 !important;
 }
 
+#nav-bar-overflow-button,
+#PlacesChevron {
+  padding: 1px 2px !important;
+  border: 1px solid transparent !important;
+  background-color: transparent !important;
+  list-style-image: url("chrome://nettspend/content/chevron.gif") !important;
+}
+#nav-bar-overflow-button:hover,
+#PlacesChevron:hover {
+  border-top-color: #EEF0F3 !important;
+  border-right-color: #86929E !important;
+  border-bottom-color: #86929E !important;
+  border-left-color: #EEF0F3 !important;
+}
+#nav-bar-overflow-button:hover:active, #nav-bar-overflow-button[open=true],
+#PlacesChevron:hover:active,
+#PlacesChevron[open=true] {
+  border-top-color: #86929E !important;
+  border-right-color: #EEF0F3 !important;
+  border-bottom-color: #EEF0F3 !important;
+  border-left-color: #86929E !important;
+  padding: 2px 1px 0px 3px !important;
+}
+#nav-bar-overflow-button .toolbarbutton-icon,
+#PlacesChevron .toolbarbutton-icon {
+  width: 8px !important;
+  height: 5px !important;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  margin-inline-end: 2px !important;
+  padding: 0 !important;
+}
+
 #PersonalToolbar {
   transition: none !important;
   height: 24px !important;
@@ -409,8 +442,8 @@ toolbargrippy:not(.toolbar-primary-grippy, [tbgrippy-collapsed=true]) {
 #PersonalToolbar .bookmark-item .toolbarbutton-icon {
   margin-inline-end: 2px !important;
 }
-#PersonalToolbar .toolbarbutton-1:not(#sidebar-button) .toolbarbutton-badge-stack,
-#PersonalToolbar .toolbarbutton-1:not(#sidebar-button) .toolbarbutton-icon {
+#PersonalToolbar .toolbarbutton-1:not(#sidebar-button, #PlacesChevron) .toolbarbutton-badge-stack,
+#PersonalToolbar .toolbarbutton-1:not(#sidebar-button, #PlacesChevron) .toolbarbutton-icon {
   width: 16px !important;
   height: 16px !important;
   padding: 0 !important;
@@ -418,24 +451,24 @@ toolbargrippy:not(.toolbar-primary-grippy, [tbgrippy-collapsed=true]) {
   background-color: transparent !important;
   margin-inline-end: 2px !important;
 }
-#PersonalToolbar .toolbarbutton-1:not(#sidebar-button) .toolbarbutton-text {
+#PersonalToolbar .toolbarbutton-1:not(#sidebar-button, #PlacesChevron) .toolbarbutton-text {
   display: flex !important;
   border-radius: 0 !important;
   padding: 0 !important;
   min-height: auto !important;
   background-color: transparent !important;
 }
-#PersonalToolbar .toolbarbutton-1:not(#sidebar-button)#home-button .toolbarbutton-icon, #PersonalToolbar .toolbarbutton-1:not(#sidebar-button)#search-button .toolbarbutton-icon {
+#PersonalToolbar .toolbarbutton-1:not(#sidebar-button, #PlacesChevron)#home-button .toolbarbutton-icon, #PersonalToolbar .toolbarbutton-1:not(#sidebar-button, #PlacesChevron)#search-button .toolbarbutton-icon {
   width: 22px !important;
   height: 17px !important;
   margin-inline-end: 1px !important;
   background-image: none !important;
   list-style-image: inherit !important;
 }
-#PersonalToolbar .toolbarbutton-1:not(#sidebar-button)#home-button {
+#PersonalToolbar .toolbarbutton-1:not(#sidebar-button, #PlacesChevron)#home-button {
   list-style-image: url("chrome://nettspend/content/bookmarks/home.gif") !important;
 }
-#PersonalToolbar .toolbarbutton-1:not(#sidebar-button)#search-button {
+#PersonalToolbar .toolbarbutton-1:not(#sidebar-button, #PlacesChevron)#search-button {
   list-style-image: url("chrome://nettspend/content/bookmarks/search-btn.gif") !important;
 }
 #PersonalToolbar #sidebar-button {

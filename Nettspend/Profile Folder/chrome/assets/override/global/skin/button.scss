@@ -30,6 +30,12 @@ button:where(:hover:active) {
     color: #ffffff;
 }
 
+button[default="true"] {
+    margin: 4px;
+    border-radius: 4px;
+    border: 2px solid #000000;
+}
+
 .button-text {
     margin-top: 2px !important;
     margin-bottom: 2px !important;
@@ -40,7 +46,7 @@ button:where(:hover:active) {
 
 /* .......... focused state .......... */
 
-button:focus-visible {
+button:focus {
     outline-color: #98A5B2;
 }
 

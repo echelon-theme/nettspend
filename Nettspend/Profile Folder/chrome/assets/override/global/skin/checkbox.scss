@@ -1,0 +1,64 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@namespace html url("http://www.w3.org/1999/xhtml");
+
+checkbox {
+    appearance: none;
+    align-items: center;
+    margin: 0px 2px;
+    border: 2px solid transparent;
+    padding: 1px 2px 1px 4px;
+}
+
+.checkbox-icon[src] {
+    margin-inline-end: 2px;
+}
+
+.checkbox-label {
+    margin-block: 1px 2px;
+    margin-inline: 6px 5px;
+}
+
+/* ..... focused state ..... */
+
+checkbox:focus {
+    border-color: #98A5B2;
+    border-radius: 4px;
+}
+
+/* ..... disabled state ..... */
+
+checkbox[disabled="true"] > .checkbox-label-box > .checkbox-label {
+    color: #8C99AB !important;
+}
+
+/* ::::: checkmark image ::::: */
+
+.checkbox-check {
+    width: 13px;
+    height: 13px;
+    list-style-image: url("chrome://nettspend/content/checkbox/cbox.gif");
+
+    checkbox:hover:active > & {
+        list-style-image: url("chrome://nettspend/content/checkbox/cbox-act.gif");
+    }
+
+    &[disabled="true"] {
+        list-style-image: url("chrome://nettspend/content/checkbox/cbox-dis.gif");
+    }
+
+    &[checked="true"] {
+        list-style-image: url("chrome://nettspend/content/checkbox/cbox-check.gif");
+
+        checkbox:hover:active > & {
+            list-style-image: url("chrome://nettspend/content/checkbox/cbox-act-check.gif");
+        }
+
+        &[disabled="true"] {
+            list-style-image: url("chrome://nettspend/content/checkbox/cbox-dis-check.gif");
+        }
+    }
+}
