@@ -76,3 +76,59 @@ $iconRegionMap: (
 image.default-favicon {
     list-style-image: var(--page-icon) !important;
 }
+
+.toolbarbutton-1[type="menu-button"] {
+    .toolbarbutton-menubutton-button {
+        padding: 0 !important;
+        appearance: none !important;
+    }
+
+    .toolbarbutton-menubutton-dropmarker {
+        appearance: none !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 20px 5px 15px 40px !important;
+        width: 13px !important;
+        height: 11px !important;
+        list-style-image: url("chrome://nettspend/content/button/tbmbtn-arrow.gif") !important;
+
+        &:hover {
+            list-style-image: url("chrome://nettspend/content/button/tbmbtn-arrow-hov.gif") !important;
+
+            &:active {
+                list-style-image: url("chrome://nettspend/content/button/tbmbtn-arrow-act.gif") !important;
+            }
+        }
+    }
+}
+
+#print-button {
+    .toolbarbutton-menubutton-stack {
+        height: 100% !important;
+    }
+    
+    .toolbarbutton-menubutton-button {
+        height: 100% !important;
+        align-items: flex-start !important;
+
+        .toolbarbutton-icon {
+            list-style-image: none !important;
+            width: 50px !important;
+            height: 34px !important;
+            background-image: url("chrome://nettspend/content/btn2.gif") !important;
+            background-position-x: inherit !important;
+        }
+
+        &:hover {
+            background-position-x: -100px !important;
+
+            &:active {
+                background-position-x: -200px !important;
+            }
+        }
+    }
+
+    .toolbarbutton-menubutton-dropmarker {
+        margin: 20px 0px 0px 40px !important;
+    }
+}

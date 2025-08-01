@@ -9,7 +9,8 @@
 var g_NettspendToolbox
 
 {
-    var { PrefUtils } = ChromeUtils.importESModule("chrome://userscripts/content/nettspend_utils.sys.mjs");
+    var { waitForElement, PrefUtils } = ChromeUtils.importESModule("chrome://userscripts/content/nettspend_utils.sys.mjs");
+    waitForElement = waitForElement.bind(window);
 
     class ToolbarGrippyElement extends MozXULElement
     {
@@ -233,6 +234,7 @@ var g_NettspendToolbox
 
             this.appendTabBarCloseButton();
             this.setToolbarStates();
+            this.createPrintMenuButtion();
 
             window.addEventListener(
                 "customizationstarting",
@@ -312,6 +314,31 @@ var g_NettspendToolbox
             if (pref == "") {
                 Services.prefs.setCharPref("nettspend.toolbar.states", "[]");
             }
+        }
+
+        createPrintMenuButtion()
+        {
+            waitForElement("#print-button").then((printButton) => {
+                let fragment = `
+                    <!--
+                    <menupopup id="printMenu">
+                        <menuitem id="printMenuItemToolbar" default="true" />
+                        <menuitem id="printPreviewMenuItemToolbar" />
+                    </menupopup>
+                    -->
+                    <stack class="box-inherit toolbarbutton-menubutton-stack" flex="1">
+                        <toolbarbutton class="box-inherit toolbarbutton-menubutton-button">
+                        </toolbarbutton>
+                        <dropmarker class="toolbarbutton-menubutton-dropmarker" />
+                    </stack>
+                `;
+
+                printButton.setAttribute("type", "menu-button");
+                printButton.querySelector(".toolbarbutton-icon").remove();
+                printButton.querySelector(".toolbarbutton-text").remove();
+
+                printButton.appendChild(window.MozXULElement.parseXULToFragment(fragment));
+            });
         }
     }
 
