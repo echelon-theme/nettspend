@@ -1,7 +1,8 @@
 // ==UserScript==
 // @name			Nettspend :: Sidebar
 // @description 	AYE FUCK FIREFOX THIS CODE MAKES ME WANNA CRY
-// @author			Travis
+// @author			travy-patty
+// @github          https://github.com/travy-patty
 // @include         main
 // ==/UserScript==
 

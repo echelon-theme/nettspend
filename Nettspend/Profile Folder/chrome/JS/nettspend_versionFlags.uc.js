@@ -1,7 +1,8 @@
 // ==UserScript==
 // @name			Nettspend :: Version Flags
 // @description 	HELP THE PAIN IT'S UNBEARABLE
-// @author			Travis
+// @author			travy-patty
+// @github          https://github.com/travy-patty
 // @include         main
 // @loadOrder       1
 // ==/UserScript==

@@ -1,7 +1,8 @@
 // ==UserScript==
 // @name			Nettspend :: Toolbox
-// @description 	HELP THE PAIN
-// @author			Travis
+// @description 	Restores the toolbargrippies and other things
+// @author			travy-patty
+// @github          https://github.com/travy-patty
 // @include			main
 // ==/UserScript==
 

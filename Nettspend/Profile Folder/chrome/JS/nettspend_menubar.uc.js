@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name           Nettspend :: Menu Bar
 // @description    Scripts to restore the "Go" and "Windows" menu
-// @author	       aubymori, Travis
+// @author	       aubymori, travy-patty
 // ==/UserScript==
 
 var g_WindowMenu;

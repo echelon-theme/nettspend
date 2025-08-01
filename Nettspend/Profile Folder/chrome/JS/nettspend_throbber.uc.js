@@ -1,7 +1,8 @@
 // ==UserScript==
 // @name			Nettspend :: Throbber
 // @description 	Throbber Behavior
-// @author			Travis
+// @author			travy-patty
+// @github          https://github.com/travy-patty
 // @include         main
 // ==/UserScript==
 

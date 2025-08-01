@@ -1,7 +1,8 @@
 // ==UserScript==
 // @name			Nettspend :: Status Bar
 // @description 	Restore separate Status Bar
-// @author			Travis
+// @author			travy-patty
+// @github          https://github.com/travy-patty
 // @include         main
 // ==/UserScript==
 

@@ -1,7 +1,8 @@
 // ==UserScript==
 // @name			Nettspend :: Title Text
 // @description 	Changes the window title formats.
-// @author			Travis
+// @author			travy-patty
+// @github          https://github.com/travy-patty
 // @include			main
 // ==/UserScript===
 
