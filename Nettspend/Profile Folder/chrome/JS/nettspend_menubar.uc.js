@@ -160,4 +160,10 @@ var g_WindowMenu;
         let fragment = MozXULElement.parseXULToFragment(WINDOW_MENU_XUL);
         menu.insertAdjacentElement("afterend", fragment.children[0]);
     });
+
+    waitForElement("#history-menu").then((menu) => {
+        menu.setAttribute("label", LocaleUtils.str(menusBundle, "history_menu.label"));
+        menu.setAttribute("accesskey", LocaleUtils.str(menusBundle, "history_menu.accesskey"));
+        menu.removeAttribute("data-l10n-id");
+    });
 }
