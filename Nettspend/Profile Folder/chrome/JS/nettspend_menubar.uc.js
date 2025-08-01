@@ -2,6 +2,8 @@
 // @name           Nettspend :: Menu Bar
 // @description    Scripts to restore the "Go" and "Windows" menu
 // @author	       aubymori, travy-patty
+// @github         https://github.com/aubymori
+// @github         https://github.com/travy-patty
 // ==/UserScript==
 
 var g_WindowMenu;

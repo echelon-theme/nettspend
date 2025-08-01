@@ -2,6 +2,7 @@
 // @name			Nettspend :: Branding
 // @description 	Register brand FTLs.
 // @author			aubymori
+// @github          https://github.com/aubymori
 // @include			main
 // @onlyonce
 // ==/UserScript===

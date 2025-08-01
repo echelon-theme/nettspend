@@ -2,6 +2,8 @@
 // @name			Nettspend :: About Pages
 // @description 	Manages the custom about: pages of Namoroka.
 // @author			aubymori, ephemeralViolette
+// @github          https://github.com/aubymori
+// @github          https://github.com/ephemeralViolette
 // @include			main
 // ==/UserScript==
 

@@ -2,6 +2,7 @@
 // @name			Nettspend :: Context Menu
 // @description 	Changes to the content area context menu
 // @author			aubymori
+// @github          https://github.com/aubymori
 // @include			main
 // ==/UserScript===
 

@@ -2,6 +2,7 @@
 // @name			Nettspend :: Default Favicon
 // @description 	Adds a class to bookmarks to identify those with a default favicon.
 // @author			aubymori
+// @github          https://github.com/aubymori
 // @include			main
 // ==/UserScript==
 

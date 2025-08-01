@@ -2,6 +2,7 @@
 // @name			Nettspend :: Boot
 // @description 	Initializes Nettspend modules for different pages.
 // @author			aubymori
+// @github          https://github.com/aubymori
 // @include			(.*)
 // @loadOrder       0
 // ==/UserScript==

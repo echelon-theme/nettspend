@@ -2,6 +2,7 @@
 // @name			Nettspend :: Options
 // @description 	Adds the menu item to launch Nettspend's Options window
 // @author			aubymori
+// @github          https://github.com/aubymori
 // @include			main
 // ==/UserScript==
 

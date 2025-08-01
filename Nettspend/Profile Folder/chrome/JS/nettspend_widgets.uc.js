@@ -2,6 +2,7 @@
 // @name			Nettspend :: Widget Manager
 // @description 	Manages the installation of custom CustomizableUI widgets.
 // @author			ephemeralViolette
+// @github          https://github.com/ephemeralViolette
 // @include         main
 // ==/UserScript==
 

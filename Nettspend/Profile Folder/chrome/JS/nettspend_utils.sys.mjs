@@ -2,6 +2,7 @@
 // @name			 Nettspend :: Utils
 // @description 	 Common utilities for Nettspend scripts.
 // @author			 ephemeralViolette
+// @github           https://github.com/ephemeralViolette
 // @include			 main
 // @include          chrome://browser/content/browser.xhtml
 // @include			 chrome://browser/content/aboutDialog.xhtml
