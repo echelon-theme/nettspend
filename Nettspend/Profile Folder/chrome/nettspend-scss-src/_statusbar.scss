@@ -121,3 +121,23 @@
         }
     }
 }
+
+.icon-navigator16 {
+    list-style-image: url("chrome://branding/content/navigator-16.gif") !important;
+}
+
+.icon-mail16 {
+    list-style-image: url("chrome://nettspend/content/taskbar/mail-16.gif") !important;
+}
+
+.icon-composer16 {
+    list-style-image: url("chrome://nettspend/content/taskbar/composer-16.gif") !important;
+}
+
+.icon-addressbook16 {
+    list-style-image: url("chrome://nettspend/content/taskbar/addressbook-16.gif") !important;
+}
+
+#tasksMenuIRC {
+    list-style-image: url("chrome://nettspend/content/taskbar/chatzilla-16.gif") !important;
+}

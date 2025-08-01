@@ -908,10 +908,18 @@ menubar > menu .menubar-text {
     padding: 2px !important;
     appearance: none !important;
   }
+  menupopup menu:where([_moz-menuactive=true]),
+  menupopup menuitem:where([_moz-menuactive=true]) {
+    background-color: #424F63 !important;
+  }
   menupopup menu:where([_moz-menuactive=true]):not([disabled=true]),
   menupopup menuitem:where([_moz-menuactive=true]):not([disabled=true]) {
-    background-color: #424F63 !important;
     color: white !important;
+  }
+  menupopup menu[disabled=true],
+  menupopup menuitem[disabled=true] {
+    text-shadow: none !important;
+    color: #8C99AB !important;
   }
   menupopup .menu-accel,
   menupopup .menu-iconic-accel {
@@ -963,6 +971,9 @@ menubar > menu .menubar-text {
   }
   #context-navigation > .menuitem-iconic {
     width: unset !important;
+  }
+  #context-navigation > .menuitem-iconic[hidden=true] {
+    display: flex !important;
   }
   #context-navigation > .menuitem-iconic > .menu-iconic-left {
     appearance: none !important;
@@ -1074,6 +1085,26 @@ menubar > menu .menubar-text {
 }
 #status-bar #security-button[level=high] {
   list-style-image: url("chrome://nettspend/content/lock-secure.gif");
+}
+
+.icon-navigator16 {
+  list-style-image: url("chrome://branding/content/navigator-16.gif") !important;
+}
+
+.icon-mail16 {
+  list-style-image: url("chrome://nettspend/content/taskbar/mail-16.gif") !important;
+}
+
+.icon-composer16 {
+  list-style-image: url("chrome://nettspend/content/taskbar/composer-16.gif") !important;
+}
+
+.icon-addressbook16 {
+  list-style-image: url("chrome://nettspend/content/taskbar/addressbook-16.gif") !important;
+}
+
+#tasksMenuIRC {
+  list-style-image: url("chrome://nettspend/content/taskbar/chatzilla-16.gif") !important;
 }
 
 /* commonDialog icons */

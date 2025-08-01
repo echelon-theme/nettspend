@@ -74,9 +74,17 @@ menubar {
             padding: 2px !important;
             appearance: none !important;
             
-            &:where([_moz-menuactive="true"]):not([disabled="true"]) {
+            &:where([_moz-menuactive="true"]) {
                 background-color: #424F63 !important;
-                color: white !important;
+
+                &:not([disabled="true"]) {
+                    color: white !important;
+                }
+            }
+
+            &[disabled="true"] {
+                text-shadow: none !important;
+                color: #8C99AB !important;
             }
         }
 
@@ -146,6 +154,10 @@ menubar {
 
         & > .menuitem-iconic {
             width: unset !important;
+            
+            &[hidden="true"] {
+                display: flex !important;
+            }
 
             & > .menu-iconic-left {
                 appearance: none !important;
