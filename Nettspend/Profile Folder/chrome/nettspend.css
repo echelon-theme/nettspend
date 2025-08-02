@@ -569,7 +569,7 @@ toolbargrippy:not(.toolbar-primary-grippy, [tbgrippy-collapsed=true]) {
 }
 #urlbar-container #urlbar {
   font-size: 1em !important;
-  color: -moz-DialogText !important;
+  color: #000 !important;
   width: calc(100% - 10px) !important;
   left: 5px !important;
   top: calc((33px - var(--urlbar-height)) / 2) !important;
@@ -639,7 +639,7 @@ toolbargrippy:not(.toolbar-primary-grippy, [tbgrippy-collapsed=true]) {
   border: 1px solid #22262F !important;
   overflow: visible !important;
   padding: 0 2px !important;
-  color: -moz-DialogText !important;
+  color: #000 !important;
 }
 #urlbar-container #urlbar .urlbarView::after {
   content: "" !important;
@@ -681,7 +681,7 @@ toolbargrippy:not(.toolbar-primary-grippy, [tbgrippy-collapsed=true]) {
   flex-basis: 100% !important;
   flex-grow: 0 !important;
   font-size: unset !important;
-  color: -moz-DialogText !important;
+  color: #000 !important;
   order: -1 !important;
   margin-right: 15px !important;
 }
@@ -767,6 +767,7 @@ toolbargrippy:not(.toolbar-primary-grippy, [tbgrippy-collapsed=true]) {
   border-bottom: 1px solid #000 !important;
 }
 #TabsToolbar .tabbrowser-tab {
+  color: #000 !important;
   padding: 0 !important;
 }
 #TabsToolbar .tabbrowser-tab .tab-content {
@@ -899,7 +900,7 @@ toolbargrippy:not(.toolbar-primary-grippy, [tbgrippy-collapsed=true]) {
 menubar > menu {
   border-radius: 0 !important;
   appearance: none !important;
-  color: -moz-DialogText !important;
+  color: #000 !important;
   border: 1px solid transparent !important;
   background-color: transparent !important;
   padding: 1px 4px 2px 4px !important;
@@ -956,6 +957,10 @@ menubar > menu .menubar-text {
     border-radius: 0 !important;
     padding: 2px !important;
     appearance: none !important;
+  }
+  menupopup menu:not([disabled=true]),
+  menupopup menuitem:not([disabled=true]) {
+    color: #000 !important;
   }
   menupopup menu:where([_moz-menuactive=true]),
   menupopup menuitem:where([_moz-menuactive=true]) {
@@ -1071,6 +1076,7 @@ menubar > menu .menubar-text {
   border: 0 !important;
   padding: 0 !important;
   background-color: transparent !important;
+  color: #000 !important;
 }
 #status-bar #statuspanel[inactive] #statuspanel-label {
   opacity: 0 !important;

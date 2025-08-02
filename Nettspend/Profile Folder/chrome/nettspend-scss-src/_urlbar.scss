@@ -11,7 +11,7 @@
     
     #urlbar {
         font-size: 1em !important;
-        color: -moz-DialogText !important;
+        color: #000 !important;
         width: calc(100% - 10px) !important;
         left: 5px !important;
         top: calc((33px - var(--urlbar-height)) / 2) !important;
@@ -95,7 +95,7 @@
             border: 1px solid #22262F !important;
             overflow: visible !important;
             padding: 0 2px !important;
-            color: -moz-DialogText !important;
+            color: #000 !important;
 
             &::after {
                 content: '' !important;
@@ -140,7 +140,7 @@
                                     flex-basis: 100% !important;
                                     flex-grow: 0 !important;
                                     font-size: unset !important;
-                                    color: -moz-DialogText !important;
+                                    color: #000 !important;
                                     order: -1 !important;
                                     margin-right: 15px !important;
                                 }
