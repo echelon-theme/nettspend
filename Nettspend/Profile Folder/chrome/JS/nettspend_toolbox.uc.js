@@ -57,15 +57,22 @@ var g_NettspendToolbox
             const toolbarStates = this.toolbarStates;
             let toolbarNodeID = toolbarNode.id;
 
+            var width = toolbarNode.clientHeight > 20 ? toolbarNode.clientHeight : 23;
+            var height = toolbarNode.clientWidth > 10 ? toolbarNode.clientWidth : 13;
+
             const collapsedToolbar = {
                 id: toolbarNodeID,
                 collapsed: state,
+                width: `${width}px`,
+                height: `${height}px`,
             };
 
             let duplicate = toolbarStates.find(prop => prop.id == toolbarNodeID);
 
             if (duplicate) {
                 duplicate.collapsed = state;
+                duplicate.width = `${width}px`;
+                duplicate.height = `${height}px`;
             }
             else {
                 toolbarStates.push(collapsedToolbar);
@@ -287,6 +294,10 @@ var g_NettspendToolbox
                 // Create the collapsed grippy
                 if (toolbarNode.collapsed) {
                     customElements.get("toolbargrippy").prototype.createCollapsedGrippy(document.getElementById(toolbarNode.id));
+
+                    // Set the height and width from the saved value
+                    document.getElementById(`moz_tb_collapsed_${toolbarNode.id}`).style.width = toolbarNode.width;
+                    document.getElementById(`moz_tb_collapsed_${toolbarNode.id}`).style.height = toolbarNode.height;
                 }
             });
         }
