@@ -225,10 +225,10 @@ image.default-favicon {
   background-position-x: inherit !important;
 }
 #print-button .toolbarbutton-menubutton-button:hover {
-  background-position-x: -100px !important;
+  background-position-x: -50px !important;
 }
 #print-button .toolbarbutton-menubutton-button:hover:active {
-  background-position-x: -200px !important;
+  background-position-x: -100px !important;
 }
 #print-button .toolbarbutton-menubutton-dropmarker {
   margin: 20px 0px 0px 40px !important;
@@ -243,6 +243,7 @@ toolbargrippy {
   border-right: 1px solid #86929E;
   border-bottom: 1px solid #86929E;
   border-left: 1px solid #EEF0F3;
+  order: -1 !important;
   list-style-image: url("chrome://nettspend/content/toolbar/tbgrip-arrow.gif");
 }
 toolbargrippy .toolbargrippy-arrow {
@@ -441,7 +442,7 @@ toolbargrippy:not(.toolbar-primary-grippy, [tbgrippy-collapsed=true]) {
   border-left: 1px solid #DAE3ED;
 }
 #PersonalToolbar .toolbarbutton-1,
-#PersonalToolbar .bookmark-item {
+#PersonalToolbar .bookmark-item:not(.menuitem-iconic, .menu-iconic) {
   padding: 1px 2px !important;
   align-items: center !important;
   cursor: pointer;
@@ -452,39 +453,43 @@ toolbargrippy:not(.toolbar-primary-grippy, [tbgrippy-collapsed=true]) {
   margin-block: 1px !important;
 }
 #PersonalToolbar .toolbarbutton-1:hover,
-#PersonalToolbar .bookmark-item:hover {
+#PersonalToolbar .bookmark-item:not(.menuitem-iconic, .menu-iconic):hover {
   text-decoration: underline !important;
 }
 #PersonalToolbar .toolbarbutton-1:hover:active, #PersonalToolbar .toolbarbutton-1[open=true],
-#PersonalToolbar .bookmark-item:hover:active,
-#PersonalToolbar .bookmark-item[open=true] {
+#PersonalToolbar .bookmark-item:not(.menuitem-iconic, .menu-iconic):hover:active,
+#PersonalToolbar .bookmark-item:not(.menuitem-iconic, .menu-iconic)[open=true] {
   padding: 2px 1px 0px 3px !important;
 }
 #PersonalToolbar .toolbarbutton-1[container=true],
-#PersonalToolbar .bookmark-item[container=true] {
-  list-style-image: url("chrome://nettspend/content/bookmarks/bookmark-folder-closed.gif") !important;
+#PersonalToolbar .bookmark-item:not(.menuitem-iconic, .menu-iconic)[container=true] {
   cursor: default;
   text-decoration: none !important;
 }
 #PersonalToolbar .toolbarbutton-1[container=true]:hover,
-#PersonalToolbar .bookmark-item[container=true]:hover {
+#PersonalToolbar .bookmark-item:not(.menuitem-iconic, .menu-iconic)[container=true]:hover {
   border-top-color: #EEF0F3 !important;
   border-right-color: #86929E !important;
   border-bottom-color: #86929E !important;
   border-left-color: #EEF0F3 !important;
 }
 #PersonalToolbar .toolbarbutton-1[container=true]:hover:active, #PersonalToolbar .toolbarbutton-1[container=true][open=true],
-#PersonalToolbar .bookmark-item[container=true]:hover:active,
-#PersonalToolbar .bookmark-item[container=true][open=true] {
-  list-style-image: url("chrome://nettspend/content/bookmarks/bookmark-folder-open.gif") !important;
+#PersonalToolbar .bookmark-item:not(.menuitem-iconic, .menu-iconic)[container=true]:hover:active,
+#PersonalToolbar .bookmark-item:not(.menuitem-iconic, .menu-iconic)[container=true][open=true] {
   border-top-color: #86929E !important;
   border-right-color: #EEF0F3 !important;
   border-bottom-color: #EEF0F3 !important;
   border-left-color: #86929E !important;
 }
 #PersonalToolbar .toolbarbutton-1 .toolbarbutton-icon,
-#PersonalToolbar .bookmark-item .toolbarbutton-icon {
+#PersonalToolbar .bookmark-item:not(.menuitem-iconic, .menu-iconic) .toolbarbutton-icon {
   margin-inline-end: 2px !important;
+}
+#PersonalToolbar .bookmark-item[container=true] {
+  list-style-image: url("chrome://nettspend/content/bookmarks/bookmark-folder-closed.gif") !important;
+}
+#PersonalToolbar .bookmark-item[container=true]:hover:active, #PersonalToolbar .bookmark-item[container=true][open=true] {
+  list-style-image: url("chrome://nettspend/content/bookmarks/bookmark-folder-open.gif") !important;
 }
 #PersonalToolbar .toolbarbutton-1:not(#sidebar-button, #PlacesChevron) .toolbarbutton-badge-stack,
 #PersonalToolbar .toolbarbutton-1:not(#sidebar-button, #PlacesChevron) .toolbarbutton-icon {
@@ -1008,6 +1013,9 @@ menubar > menu .menubar-text {
   }
   menupopup menuitem[checked=true] .menu-iconic-icon {
     display: flex !important;
+  }
+  menupopup[placespopup] {
+    --panel-shadow-margin: 0 !important;
   }
   #context-navigation {
     background: transparent !important;

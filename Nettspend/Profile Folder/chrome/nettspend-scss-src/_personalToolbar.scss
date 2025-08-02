@@ -24,7 +24,7 @@
     }
 
     .toolbarbutton-1,
-    .bookmark-item {
+    .bookmark-item:not(.menuitem-iconic, .menu-iconic) {
         padding: 1px 2px !important;
         align-items: center !important;
         cursor: pointer;
@@ -44,7 +44,6 @@
         }
 
         &[container="true"] {
-            list-style-image: url("chrome://nettspend/content/bookmarks/bookmark-folder-closed.gif") !important;
             cursor: default;
             text-decoration: none !important;
 
@@ -57,7 +56,6 @@
 
             &:hover:active,
             &[open="true"] {
-                list-style-image: url("chrome://nettspend/content/bookmarks/bookmark-folder-open.gif") !important;
                 border-top-color: #86929E !important;
                 border-right-color: #EEF0F3 !important;
                 border-bottom-color: #EEF0F3 !important;
@@ -67,6 +65,17 @@
 
         .toolbarbutton-icon {
             margin-inline-end: 2px !important;
+        }
+    }
+
+    .bookmark-item {
+        &[container="true"] {
+            list-style-image: url("chrome://nettspend/content/bookmarks/bookmark-folder-closed.gif") !important;
+
+            &:hover:active,
+            &[open="true"] {
+                list-style-image: url("chrome://nettspend/content/bookmarks/bookmark-folder-open.gif") !important;
+            }
         }
     }
 

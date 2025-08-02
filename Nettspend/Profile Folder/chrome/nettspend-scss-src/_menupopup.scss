@@ -146,6 +146,10 @@ menubar {
                 }
             }
         }
+
+        &[placespopup] {
+            --panel-shadow-margin: 0 !important;
+        }
     }
     
     #context-navigation {
