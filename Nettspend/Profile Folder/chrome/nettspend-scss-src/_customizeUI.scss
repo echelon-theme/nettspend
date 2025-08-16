@@ -18,3 +18,23 @@
         }
     }
 }
+
+#customization-container {
+    background-color: #C7D0D9 !important;
+    color: black !important;
+
+    #customization-header {
+        margin: 5px !important;
+        padding: 8px 10px 7px !important;
+        background-color: #90A1B3 !important;
+        color: black !important;
+        box-shadow: inset 1px 1px 0 #858B97, inset -1px -1px 0 white, inset 0 0 0 2px #2D3B49 !important;
+        align-items: center !important;
+        font-weight: bold !important;
+        font-size: 125% !important;
+    }
+    
+    #customization-panel-container {
+        visibility: collapse !important;
+    }
+}

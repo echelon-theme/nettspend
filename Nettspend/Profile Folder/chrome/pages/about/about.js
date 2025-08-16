@@ -1,7 +1,7 @@
 var g_nettspendAbout;
 
 {
-    var { PrefUtils, BrandUtils } = ChromeUtils.importESModule("chrome://userscripts/content/nettspend_utils.sys.mjs");
+    var { PrefCalls, BrandUtils } = ChromeUtils.importESModule("chrome://userscripts/content/nettspend_utils.sys.mjs");
 
     class AboutColonPageManager {
         get releaseNotesURL() {
@@ -191,7 +191,7 @@ var g_nettspendAbout;
         }
 
         init() {
-            let branding = PrefUtils.tryGetBoolPref("nettspend.appearance.mozilla");
+            let branding = PrefCalls.getPref("nettspend.appearance.mozilla");
             let innerHTML = branding ? this.mozillaFragment : this.fragment;
             let stylesheet = branding ? this.mozillaStylesheet : this.stylesheet;
 

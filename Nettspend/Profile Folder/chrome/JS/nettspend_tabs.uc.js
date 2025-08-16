@@ -7,14 +7,14 @@
 // ==/UserScript==
 
 {
-    var { waitForElement, PrefUtils } = ChromeUtils.importESModule("chrome://userscripts/content/nettspend_utils.sys.mjs");
+    var { waitForElement, PrefCalls } = ChromeUtils.importESModule("chrome://userscripts/content/nettspend_utils.sys.mjs");
     waitForElement = waitForElement.bind(window);
 
     waitForElement("#tabbrowser-arrowscrollbox").then(e => {
         function hideTabs()
         {
             let numTabs = gBrowser.tabs.length;
-            let hideTabsPref = PrefUtils.tryGetBoolPref("nettspend.tabbrowser.hideononetab");
+            let hideTabsPref = PrefCalls.getPref("nettspend.tabbrowser.hideononetab");
             let ifHide = hideTabsPref ? numTabs <= 1 : false;
 
             document.querySelector("#TabsToolbar").setAttribute("hidden", ifHide ? "true" : "false");

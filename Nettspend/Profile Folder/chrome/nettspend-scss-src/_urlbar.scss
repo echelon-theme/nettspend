@@ -6,6 +6,9 @@
 #urlbar-container {
     border: 3px solid transparent !important;
     border-image: url("chrome://nettspend/content/navbar/nav-bar-inner.gif") 3 stretch !important;
+    &.unified-search-button {
+        border-image: url("chrome://nettspend/content/navbar/nav-bar-inner-start.gif") 3 stretch !important;
+    }
     margin: 6px 0px 3px 5px !important;
     padding-inline: 5px !important;
     

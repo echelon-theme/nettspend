@@ -63,84 +63,115 @@ export async function waitForElement(query, parent = this.document, timeout = -1
 	return parent.querySelector(query);
 }
 
-export class PrefUtils
+export class PrefCalls
 {
-	static #internalTryGetPref(name, fallback, func)
+	static getPrefBranch()
 	{
-		let result = fallback;
-		try
-		{
-			result = func(name);
-		}
-		catch (e) {}
-		return result;
+		return Services.prefs.getBranch(null);
 	}
 
-	static #internalTryDeletePref(name)
+	static getDefaultPrefBranch()
+	{
+		return Services.prefs.getDefaultBranch(null);
+	}
+
+	static setPref(prefName, value, defaultBranch)
 	{
 		try 
 		{
-			Services.prefs.clearUserPref(name);
-			return true;
+			let prefBranch = defaultBranch ? this.getDefaultPrefBranch() : this.getPrefBranch();
+
+			switch (typeof value)
+			{
+				case "string":
+					prefBranch.setStringPref(prefName, value);
+					break;
+				case "number":
+					prefBranch.setIntPref(prefName, value);
+					break;
+				case "boolean":
+					prefBranch.setBoolPref(prefName, value);
+					break;
+				default:
+					return;
+			}
 		} 
 		catch (e) 
 		{
-			return false;
+			throw e;
 		}
 	}
 
-	static tryGetBoolPref(name, fallback = false)
+	static defaultPref(prefName, value)
 	{
-		return this.#internalTryGetPref(name, fallback, Services.prefs.getBoolPref);
+		this.setPref(prefName, value, true);
 	}
 
-	static tryGetIntPref(name, fallback = 0)
+	static lockPref(prefName, value)
 	{
-		return this.#internalTryGetPref(name, fallback, Services.prefs.getIntPref);
-	}
-
-	static tryGetStringPref(name, fallback = "")
-	{
-		return this.#internalTryGetPref(name, fallback, Services.prefs.getStringPref);
-	}
-
-	static tryGetPref(name) {
 		try 
 		{
-			return Services.prefs.getPrefType(name) != 0;
+			let prefBranch = this.getPrefBranch();
+
+			if (prefBranch.prefIsLocked(prefName))
+				prefBranch.unlockPref(prefName);
+
+			this.defaultPref(prefName, value);
+
+			prefBranch.lockPref(prefName);
 		} 
 		catch (e) 
 		{
-			return false;
+			throw e;
+		}
+	}
+	
+	static unlockPref(prefName)
+	{
+		try 
+		{
+			let prefBranch = this.getPrefBranch();
+
+			prefBranch.unlockPref(prefName);
+		} 
+		catch (e) 
+		{
+			throw e;
 		}
 	}
 
-	static tryDeletePref(name) {
-		return this.#internalTryDeletePref(name);
+	
+	static getPref(prefName) {
+		try 
+		{
+			let prefBranch = this.getPrefBranch();
+
+			switch (prefBranch.getPrefType(prefName)) 
+			{
+				case prefBranch.PREF_STRING:
+					return prefBranch.getStringPref(prefName);
+				case prefBranch.PREF_INT:
+					return prefBranch.getIntPref(prefName);
+				case prefBranch.PREF_BOOL:
+					return prefBranch.getBoolPref(prefName);
+				default:
+					return null;
+			}
+		} 
+		catch (e) 
+		{
+			throw e;
+		}
+
+		return;
 	}
 
-	static #internalTrySetPref(name, value, func)
-	{
+	static clearPref(prefName) {
 		try
 		{
-			func(name, value);
-		}
-		catch (e) {}
-	}
-
-	static trySetBoolPref(name, value)
-	{
-		this.#internalTrySetPref(name, value, Services.prefs.setBoolPref);
-	}
-
-	static trySetIntPref(name, value)
-	{
-		this.#internalTrySetPref(name, value, Services.prefs.setIntPref);
-	}
-
-	static trySetStringPref(name, value)
-	{
-		this.#internalTrySetPref(name, value, Services.prefs.setStringPref);
+			let prefBranch = this.getPrefBranch();
+			prefBranch.clearUserPref(prefName);
+		} catch (e) {};
 	}
 }
 
@@ -190,5 +221,3 @@ export class setAttributes
 		});	
 	}
 }
-
-// let EXPORTED_SYMBOLS = [ "PrefUtils", "waitForElement", "renderElement", "BrandUtils", "LocaleUtils", "setAttributes" ];

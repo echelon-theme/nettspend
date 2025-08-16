@@ -9,7 +9,7 @@
 var g_NettspendToolbox
 
 {
-    var { waitForElement, PrefUtils } = ChromeUtils.importESModule("chrome://userscripts/content/nettspend_utils.sys.mjs");
+    var { waitForElement, PrefCalls } = ChromeUtils.importESModule("chrome://userscripts/content/nettspend_utils.sys.mjs");
     waitForElement = waitForElement.bind(window);
 
     class ToolbarGrippyElement extends MozXULElement
@@ -49,7 +49,7 @@ var g_NettspendToolbox
 		}
 
         setToolbarStates(states) {
-            PrefUtils.trySetStringPref("nettspend.toolbar.states", JSON.stringify(states));
+            PrefCalls.setPref("nettspend.toolbar.states", JSON.stringify(states));
         }
 
         writeGrippyState(toolbarNode, state)

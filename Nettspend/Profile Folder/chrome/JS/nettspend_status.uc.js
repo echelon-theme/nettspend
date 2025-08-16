@@ -11,7 +11,7 @@ var g_ReadMail;
 {
 	var { ctypes } = ChromeUtils.importESModule("resource://gre/modules/ctypes.sys.mjs");
 	var { Registry } = ChromeUtils.importESModule("chrome://modules/content/Registry.sys.mjs");
-	var { PrefUtils, LocaleUtils, waitForElement, setAttributes } = ChromeUtils.importESModule("chrome://userscripts/content/nettspend_utils.sys.mjs");
+	var { PrefCalls, LocaleUtils, waitForElement, setAttributes } = ChromeUtils.importESModule("chrome://userscripts/content/nettspend_utils.sys.mjs");
     waitForElement = waitForElement.bind(window);
 
 	let statusBundle = "chrome://nettspend/locale/properties/statusbar.properties";
@@ -205,7 +205,7 @@ var g_ReadMail;
 		renderComponentBar() {
 			let componentBarItems = this.componentBar;
 			let componentBarElem = document.querySelector("#status-bar #component-bar");
-			let branding = PrefUtils.tryGetBoolPref("nettspend.appearance.mozilla");
+			let branding = PrefCalls.getPref("nettspend.appearance.mozilla");
 
 			for (const taskbutton of Object.keys(componentBarItems)) {
 				let taskbuttonElem = document.createXULElement("toolbarbutton");
@@ -237,7 +237,7 @@ var g_ReadMail;
 				{
 					try
 					{
-						PrefUtils.trySetBoolPref("nettspend.status-bar.enabled", true);
+						PrefCalls.setPref("nettspend.status-bar.enabled", true)
 					}
 					catch (e) {}
 				}
@@ -276,7 +276,7 @@ var g_ReadMail;
 
 		setStatusBarState(state)
 		{
-			PrefUtils.trySetBoolPref("nettspend.status-bar.enabled", state);
+			PrefCalls.setPref("nettspend.status-bar.enabled", state)
 			this._hideStatusPanel(state);
 		},
 

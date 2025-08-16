@@ -373,6 +373,57 @@ toolbargrippy:not(.toolbar-primary-grippy, [tbgrippy-collapsed=true]) {
   border-bottom: 1px solid #95A0AD;
   border-left: none;
 }
+#nav-bar #search-button {
+  border: 1px solid #000000;
+  border-radius: 3px;
+  background-color: #AAB6C4;
+  background-clip: padding-box;
+  box-shadow: inset 1px 1px 0 #BBC6D1, inset -1px -1px 0 #97A6B6, inset 2px 2px 0 #B1BBC9, inset -2px 0 #A7B4C1, inset 0 -2px 0 #9DAAB9;
+  color: #000000;
+  font-weight: bold;
+  align-self: center !important;
+  list-style-image: url("chrome://nettspend/content/navbar/search.gif") !important;
+  padding-block: 2px !important;
+}
+#nav-bar #search-button:hover:active {
+  box-shadow: inset 0 0 0 1px #8290A5;
+  background-color: #90A1B3;
+  color: #ffffff !important;
+}
+#nav-bar #search-button .toolbarbutton-icon {
+  width: auto !important;
+  height: auto !important;
+  margin-inline-start: 2px !important;
+}
+#nav-bar #search-button .toolbarbutton-text {
+  display: flex !important;
+  min-height: auto !important;
+  margin-inline-start: 4px !important;
+  margin-inline-end: 6px !important;
+}
+#nav-bar #search-button .toolbarbutton-icon,
+#nav-bar #search-button .toolbarbutton-text {
+  border-radius: 0 !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+}
+#nav-bar #search-button.unified {
+  position: relative;
+  margin-inline-start: 1px !important;
+  margin-block-start: 1px !important;
+  margin-inline-end: 13px !important;
+}
+#nav-bar #search-button.unified::before {
+  content: "";
+  display: flex;
+  border: 3px solid transparent !important;
+  border-left: none !important;
+  border-image: url("chrome://nettspend/content/navbar/nav-bar-inner-end.gif") 3 stretch !important;
+  pointer-events: none !important;
+  position: absolute;
+  inset-block: -9px -10px;
+  inset-inline: -2px -13px;
+}
 
 #PanelUI-button {
   margin-inline-start: -1px !important;
@@ -566,6 +617,9 @@ toolbargrippy:not(.toolbar-primary-grippy, [tbgrippy-collapsed=true]) {
   border-image: url("chrome://nettspend/content/navbar/nav-bar-inner.gif") 3 stretch !important;
   margin: 6px 0px 3px 5px !important;
   padding-inline: 5px !important;
+}
+#urlbar-container.unified-search-button {
+  border-image: url("chrome://nettspend/content/navbar/nav-bar-inner-start.gif") 3 stretch !important;
 }
 #urlbar-container #urlbar {
   font-size: 1em !important;
@@ -891,6 +945,24 @@ toolbargrippy:not(.toolbar-primary-grippy, [tbgrippy-collapsed=true]) {
 :root[customizing=true] #browser .browserStack {
   min-height: 0 !important;
   max-height: 0 !important;
+}
+
+#customization-container {
+  background-color: #C7D0D9 !important;
+  color: black !important;
+}
+#customization-container #customization-header {
+  margin: 5px !important;
+  padding: 8px 10px 7px !important;
+  background-color: #90A1B3 !important;
+  color: black !important;
+  box-shadow: inset 1px 1px 0 #858B97, inset -1px -1px 0 white, inset 0 0 0 2px #2D3B49 !important;
+  align-items: center !important;
+  font-weight: bold !important;
+  font-size: 125% !important;
+}
+#customization-container #customization-panel-container {
+  visibility: collapse !important;
 }
 
 #main-menubar {

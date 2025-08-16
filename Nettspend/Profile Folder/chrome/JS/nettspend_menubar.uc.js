@@ -9,7 +9,7 @@
 var g_WindowMenu;
 
 {
-    var { PrefUtils, LocaleUtils, waitForElement } = ChromeUtils.importESModule("chrome://userscripts/content/nettspend_utils.sys.mjs");
+    var { PrefCalls, LocaleUtils, waitForElement } = ChromeUtils.importESModule("chrome://userscripts/content/nettspend_utils.sys.mjs");
     waitForElement = waitForElement.bind(window);
 
     let menusBundle = "chrome://nettspend/locale/properties/menus.properties";
@@ -128,7 +128,7 @@ var g_WindowMenu;
             }
 
             for (const tasksMenu of Object.keys(this.tasksMenus)) {
-                let branding = PrefUtils.tryGetBoolPref("nettspend.appearance.mozilla");
+                let branding = PrefCalls.getPref("nettspend.appearance.mozilla");
                 let tasksMenuItem = document.createXULElement("menuitem");
 
 				const taskMenusItemAttrs = {
