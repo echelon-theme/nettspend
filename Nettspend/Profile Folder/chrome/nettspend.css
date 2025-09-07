@@ -376,7 +376,7 @@ toolbargrippy:not(.toolbar-primary-grippy, [tbgrippy-collapsed=true]) {
 #nav-bar #search-button {
   border: 1px solid #000000;
   border-radius: 3px;
-  background-color: #AAB6C4;
+  background-color: #AAB6C4 !important;
   background-clip: padding-box;
   box-shadow: inset 1px 1px 0 #BBC6D1, inset -1px -1px 0 #97A6B6, inset 2px 2px 0 #B1BBC9, inset -2px 0 #A7B4C1, inset 0 -2px 0 #9DAAB9;
   color: #000000;
@@ -387,7 +387,7 @@ toolbargrippy:not(.toolbar-primary-grippy, [tbgrippy-collapsed=true]) {
 }
 #nav-bar #search-button:hover:active {
   box-shadow: inset 0 0 0 1px #8290A5;
-  background-color: #90A1B3;
+  background-color: #90A1B3 !important;
   color: #ffffff !important;
 }
 #nav-bar #search-button .toolbarbutton-icon {

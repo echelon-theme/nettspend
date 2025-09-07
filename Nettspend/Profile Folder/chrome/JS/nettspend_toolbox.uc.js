@@ -349,6 +349,10 @@ var g_NettspendToolbox
                 printButton.querySelector(".toolbarbutton-text").remove();
 
                 printButton.appendChild(window.MozXULElement.parseXULToFragment(fragment));
+
+                if (!printButton.shadowRoot) {
+                    printButton.querySelector(".toolbarbutton-menubutton-dropmarker").appendChild(document.createXULElement("image"));
+                }
             });
         }
     }
