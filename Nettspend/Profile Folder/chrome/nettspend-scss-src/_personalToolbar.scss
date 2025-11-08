@@ -5,6 +5,14 @@
     background-color: #C7D0D9 !important;
     background: url("chrome://nettspend/content/toolbar/tb-mid.gif") repeat-x top;
 
+    #PlacesToolbarItems {
+        toolbarseparator {
+            &::before {
+                content: none !important;
+            }
+        }
+    }
+
     toolbargrippy {
         border-top: 1px solid #CED6DD;
         border-right: 1px solid #95A0AD;

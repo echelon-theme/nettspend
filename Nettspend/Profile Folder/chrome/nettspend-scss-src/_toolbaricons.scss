@@ -58,9 +58,23 @@ $iconRegionMap: (
     }
 }
 
+toolbarseparator {
+    appearance: none !important;
+    width: 0 !important;
+    margin: 0 !important;
+    margin-inline: 0.2em !important;
+    border-inline-start: 1px solid rgb(149, 160, 173) !important;
+    border-inline-end: 1px solid rgb(226, 231, 235) !important;
+    padding: 0 !important;
+}
+
 #reload-button,
 #stop-button {
     display: flex !important;
+
+    .toolbarbutton-animatable-box {
+        display: none !important
+    }
 }
 
 .close-icon {

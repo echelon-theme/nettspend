@@ -76,6 +76,10 @@
                 content: var(--page-icon) !important;
             }
 
+            :root:not([browser-chrome-favicons="true"], [busy="true"]) & .tab-icon-image {
+                content: var(--page-icon) !important;
+            }
+
             .tab-secondary-label {
                 visibility: collapse !important;
             }

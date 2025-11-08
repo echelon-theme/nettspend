@@ -13,7 +13,8 @@ let NETTSPEND_BOOT_CONFIG = {
 		prefs: [
 			"nettspend.unified-extensions.disabled",
 			"nettspend.appearance.mozilla",
-			"nettspend.tabbrowser.hideononetab"
+			"nettspend.tabbrowser.hideononetab",
+			"browser.chrome.favicons"
 		],
 		nativeControls: true
 	},

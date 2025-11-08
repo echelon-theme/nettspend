@@ -158,9 +158,23 @@
   background-position-x: calc(var(--btn1-icon-width) * -3);
 }
 
+toolbarseparator {
+  appearance: none !important;
+  width: 0 !important;
+  margin: 0 !important;
+  margin-inline: 0.2em !important;
+  border-inline-start: 1px solid rgb(149, 160, 173) !important;
+  border-inline-end: 1px solid rgb(226, 231, 235) !important;
+  padding: 0 !important;
+}
+
 #reload-button,
 #stop-button {
   display: flex !important;
+}
+#reload-button .toolbarbutton-animatable-box,
+#stop-button .toolbarbutton-animatable-box {
+  display: none !important;
 }
 
 .close-icon {
@@ -476,6 +490,9 @@ toolbargrippy:not(.toolbar-primary-grippy, [tbgrippy-collapsed=true]) {
   padding-inline: 0 !important;
   background-color: #C7D0D9 !important;
   background: url("chrome://nettspend/content/toolbar/tb-mid.gif") repeat-x top;
+}
+#PersonalToolbar #PlacesToolbarItems toolbarseparator::before {
+  content: none !important;
 }
 #PersonalToolbar toolbargrippy {
   border-top: 1px solid #CED6DD;
@@ -853,6 +870,9 @@ toolbargrippy:not(.toolbar-primary-grippy, [tbgrippy-collapsed=true]) {
 #TabsToolbar .tabbrowser-tab .tab-content .tab-icon-image:not([busy=true]):-moz-broken,
 #TabsToolbar .tabbrowser-tab .tab-content .tab-icon-image:not([busy=true])[src="chrome://branding/content/icon32.png"] {
   display: flex !important;
+  content: var(--page-icon) !important;
+}
+:root:not([browser-chrome-favicons=true], [busy=true]) #TabsToolbar .tabbrowser-tab .tab-content .tab-icon-image {
   content: var(--page-icon) !important;
 }
 #TabsToolbar .tabbrowser-tab .tab-content .tab-secondary-label {

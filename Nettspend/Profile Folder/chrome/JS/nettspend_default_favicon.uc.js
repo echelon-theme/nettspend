@@ -24,15 +24,12 @@
                 try
                 {
                     fetch(mut.target.getAttribute("src")).then(async (r) => {
-                        if ((await r.text()) == defaultFavicon)
-                        {
-                            mut.target.classList.add("default-favicon");
+                        mut.target.classList.add("default-favicon");
 
-                            if (mut.target.nodeName == "image")
-                            {
-                                mut.target.removeAttribute("src");
-                            }
-                        }   
+                        if (mut.target.nodeName == "image")
+                        {
+                            mut.target.removeAttribute("src");
+                        }
                     });
                 }
                 catch (e)
