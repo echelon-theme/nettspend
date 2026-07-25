@@ -1,0 +1,11 @@
+content     userchrome                                  ./
+
+content     userscripts                                 nettspend/userscripts/
+content     modules                                     nettspend/userscripts/modules/
+
+skin	    nettspend-global                            nettspend/1.0                                               nettspend/global/skin/
+content     nettspend                                   nettspend/global/content/                                   contentaccessible=yes
+
+locale      nettspend                                   en-US                                                       nettspend/global/locale/en-US/
+
+override    chrome://global/content/commonDialog.xhtml  nettspend/global/content/windows/commonDialog/commonDialog.xhtml

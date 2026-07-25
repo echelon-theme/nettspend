@@ -1,0 +1,148 @@
+@import "_mixins.scss";
+
+:root {
+    --btn1-icon-width: 42px !important;
+    --btn1-icon-height: 39px !important;
+    --page-icon: url("chrome://nettspend/skin/images/bookmarks/bookmark-item.gif") !important;
+}
+
+$iconRegionMap: (
+    "back-button": 0,
+    "forward-button": 1,
+    "stop-button": 3,
+    "reload-button": 2,
+    "home-button": 4,
+    "unified-extensions-button": 5,
+);
+
+.toolbarbutton-1 {
+    @each $icon, $offset in $iconRegionMap {
+        &##{$icon} {
+            padding: 0 !important;
+            opacity: 1 !important;
+            align-items: flex-start !important;
+
+            .toolbarbutton-icon {
+                // FUCK SCSS
+                --icon-offset: -#{$offset} !important;
+                list-style-image: none !important;
+                background-image: url("chrome://nettspend/skin/images/btn1.gif") !important;
+                background-position-y: calc(var(--btn1-icon-height) * var(--icon-offset)) !important;
+
+                width: var(--btn1-icon-width) !important;
+                height: var(--btn1-icon-height) !important;
+                padding: 0 !important;
+                border-radius: 0 !important;
+                margin-inline-end: 2px !important;
+            }
+
+            &:not([disabled="true"]):hover {
+                .toolbarbutton-icon {
+                    background-position-x: calc(var(--btn1-icon-width) * -1) !important;
+                }
+            }
+
+            &:not([disabled="true"]):hover:active,
+            &:not([disabled="true"])[open="true"] {
+                .toolbarbutton-icon {
+                    background-position-x: calc(var(--btn1-icon-width) * -2) !important;
+                }
+            }
+
+            &[disabled="true"] {
+                .toolbarbutton-icon {
+                    background-position-x: calc(var(--btn1-icon-width) * -3);
+                }
+            }
+        }
+    }
+}
+
+toolbarseparator {
+    appearance: none !important;
+    width: 0 !important;
+    margin: 0 !important;
+    margin-inline: 0.2em !important;
+    border-inline-start: 1px solid rgb(149, 160, 173) !important;
+    border-inline-end: 1px solid rgb(226, 231, 235) !important;
+    padding: 0 !important;
+}
+
+#reload-button,
+#stop-button {
+    display: flex !important;
+
+    .toolbarbutton-animatable-box {
+        display: none !important
+    }
+}
+
+.close-icon {
+    @include set-size(15px, 16px);
+    @include set-background("close.png");
+    @include set-horizontal-states(0, 15px, 30px);
+}
+
+.default-favicon {
+    content: var(--page-icon) !important;
+}
+
+image.default-favicon {
+    list-style-image: var(--page-icon) !important;
+}
+
+.toolbarbutton-1[type="menu-button"] {
+    .toolbarbutton-menubutton-button {
+        padding: 0 !important;
+        appearance: none !important;
+    }
+
+    .toolbarbutton-menubutton-dropmarker {
+        appearance: none !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 20px 5px 15px 40px !important;
+        width: 13px !important;
+        height: 11px !important;
+        list-style-image: url("chrome://nettspend/skin/images/button/tbmbtn-arrow.gif") !important;
+
+        &:hover {
+            list-style-image: url("chrome://nettspend/skin/images/button/tbmbtn-arrow-hov.gif") !important;
+
+            &:active {
+                list-style-image: url("chrome://nettspend/skin/images/button/tbmbtn-arrow-act.gif") !important;
+            }
+        }
+    }
+}
+
+#print-button {
+    .toolbarbutton-menubutton-stack {
+        height: 100% !important;
+    }
+    
+    .toolbarbutton-menubutton-button {
+        height: 100% !important;
+        align-items: flex-start !important;
+
+        .toolbarbutton-icon {
+            list-style-image: none !important;
+            width: 50px !important;
+            height: 34px !important;
+            background-image: url("chrome://nettspend/skin/images/btn2.gif") !important;
+            background-position-x: inherit !important;
+        }
+
+        &:hover {
+            background-position-x: -50px !important;
+
+            &:active {
+                background-position-x: -100px !important;
+            }
+        }
+    }
+
+    .toolbarbutton-menubutton-dropmarker {
+        margin: 20px 0px 0px 40px !important;
+    }
+}

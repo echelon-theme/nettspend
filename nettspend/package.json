@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "watch": "sass --watch .:.",
+    "compile": "sass .:."
+  },
+  "devDependencies": {
+    "sass": "^1.101.7"
+  }
+}

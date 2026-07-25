@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+    <Description about="urn:mozilla:install-manifest">
+        <em:id>{0752ce63-af91-4a6e-b98f-0094f1813a62}</em:id>
+        <em:version>1.0</em:version>
+
+        <!-- Target Application this theme can install into,
+        with minimum and maximum supported versions. -->
+        <em:targetApplication>
+            <Description>
+                <em:id>Nocturne</em:id>
+                <em:minVersion>140.0</em:minVersion>
+                <em:maxVersion>140.*</em:maxVersion>
+            </Description>
+        </em:targetApplication>
+
+        <em:targetApplication>
+            <Description>
+                <em:id>Marble</em:id>
+                <em:minVersion>140.0</em:minVersion>
+                <em:maxVersion>140.*</em:maxVersion>
+            </Description>
+        </em:targetApplication>
+
+        <!-- Front End MetaData -->
+        <em:name>Nettspend</em:name>
+        <em:description>EAT MY PUSSY</em:description>
+        <em:creator>travy-patty</em:creator>
+        <em:homepageURL>https://github.com/echelon-theme/namoroka</em:homepageURL>
+
+        <em:internalName>nettspend</em:internalName>
+    </Description>
+
+</RDF>

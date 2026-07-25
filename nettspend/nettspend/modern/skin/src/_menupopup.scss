@@ -1,0 +1,191 @@
+#main-menubar {
+    margin-block: 1px !important;
+}
+
+menubar {
+    > menu {
+        border-radius: 0 !important;
+        appearance: none !important;
+        color: #000 !important;
+        border: 1px solid transparent !important;
+        background-color: transparent !important;
+        padding: 1px 4px 2px 4px !important;
+        margin: 1px 0px 1px 0px !important; 
+
+        &[_moz-menuactive="true"] {
+            border-top: 1px solid #F4F6F9 !important;
+            border-left: 1px solid #F4F6F9 !important;
+            border-bottom: 1px solid #7A7D82 !important;
+            border-right: 1px solid #7A7D82 !important;
+
+            &[open="true"] {
+                border-right: 1px solid #F4F6F9 !important;
+                border-bottom: 1px solid #F4F6F9 !important;
+                border-top: 1px solid #7A7D82 !important;
+                border-left: 1px solid #7A7D82 !important;
+            }
+        }
+
+        .menubar-text {
+            margin: 0 !important;
+        }
+    }
+}
+
+@media not (-moz-windows-non-native-menus) {
+    menupopup {
+        appearance: none !important;
+        border: 1px solid #7F8893 !important;
+        box-shadow: inset 1px 1px 0 #EEF4FC, inset -1px -1px 0 #B9BFC7 !important;
+        background-color: #DDE3EB !important;
+
+        menuseparator {
+            appearance: none !important;
+            padding: 0 !important;
+            border-top: 1px solid #A5ABC0 !important;
+            border-bottom: 1px solid #EEF1F7 !important;
+            margin-inline: 3px !important;
+            margin-block: 2px !important;
+        }
+
+        .menu-iconic, 
+        .menuitem-iconic {
+            .menu-iconic-left {
+                appearance: none !important;
+                width: 16px !important;
+            }
+        }
+
+        menuitem:is([type="checkbox"], [checked="true"]) .menu-iconic-icon {
+            appearance: none !important;
+            width: unset !important;
+        }
+
+        .menu-text, 
+        .menu-iconic-left,
+        .menu-iconic-text {
+            appearance: none !important;
+            margin: 0px 2px 0px 0px !important;
+        }
+
+        .menu-text {
+            padding: 0 !important;
+            margin-left: 18px !important;
+        }
+
+        menu,
+        menuitem {
+            border-radius: 0 !important;
+            padding: 2px !important;
+            appearance: none !important;
+
+            &:not([disabled="true"]) {
+                color: #000 !important;
+            }
+            
+            &:where([_moz-menuactive="true"]) {
+                background-color: #424F63 !important;
+
+                &:not([disabled="true"]) {
+                    color: white !important;
+                }
+            }
+
+            &[disabled="true"] {
+                text-shadow: none !important;
+                color: #8C99AB !important;
+            }
+        }
+
+        .menu-accel,
+        .menu-iconic-accel {
+            margin: 0px 2px 0px 7px !important;
+            padding-right: 14px !important;
+            color: inherit !important;
+        }
+
+        .menu-right {
+            appearance: none !important;
+            margin: 0px 0px 0px 6px !important;
+            width: 8px !important;
+            padding: 0 !important;
+            list-style-image: url("chrome://nettspend/skin/images/menu/menu-arrow.gif") !important;
+
+            &[_moz-menuactive="true"] {
+                list-style-image: url("chrome://nettspend/skin/images/menu/menu-arrow-hov.gif") !important;
+            }
+
+            &[disabled="true"] {
+                list-style-image: url("chrome://nettspend/skin/images/menu/menu-arrow-dis.gif") !important;
+            }
+
+            & > image {
+                width: auto !important;
+                height: auto !important;
+            }
+        }
+
+        menuitem {
+
+            &[checked="true"] {
+                list-style-image: url("chrome://nettspend/skin/images/menu/menu-check.gif") !important;
+
+                &[disabled="true"] {
+                    list-style-image: url("chrome://nettspend/skin/images/menu/menu-check-dis.gif") !important;
+                }
+
+                &[_moz-menuactive="true"] {
+                    list-style-image: url("chrome://nettspend/skin/images/menu/menu-check-hov.gif") !important;
+                }
+
+                &[type="radio"] {
+                    list-style-image: url("chrome://nettspend/skin/images/menu/menu-radio.gif") !important;
+
+                    &[disabled="true"] {
+                        list-style-image: url("chrome://nettspend/skin/images/menu/menu-radio-dis.gif") !important;
+                    }
+
+                    &[_moz-menuactive="true"] {
+                        list-style-image: url("chrome://nettspend/skin/images/menu/menu-radio-hov.gif") !important;
+                    }
+                }
+
+                .menu-iconic-icon {
+                    display: flex !important;
+                }
+            }
+        }
+
+        &[placespopup] {
+            --panel-shadow-margin: 0 !important;
+        }
+    }
+    
+    #context-navigation {
+        background: transparent !important;
+        flex-direction: column !important;
+
+        & > .menuitem-iconic {
+            width: unset !important;
+            
+            &[hidden="true"] {
+                display: flex !important;
+            }
+
+            & > .menu-iconic-left {
+                appearance: none !important;
+                margin: 0px 2px 0px 0px !important;
+
+                & > .menu-iconic-icon {
+                    display: none !important;
+                }
+            }
+            
+            .menu-iconic-text {
+                display: block !important;
+                appearance: none !important;
+                margin: 0px 2px 0px 0px !important;
+            }
+        }
+    }
+}

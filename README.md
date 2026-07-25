@@ -1,2 +1,2 @@
 # nettspend
-A Netscape 7/Mozilla theme for Firefox 115 ESR &amp; Marble 128
+A Netscape 7/Mozilla theme for Nocturne &amp; Marble 140

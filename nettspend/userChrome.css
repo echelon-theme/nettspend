@@ -1,0 +1,16 @@
+/*
+ * Hi! Are you looking to add another style on top of Nettspend?
+ *
+ * This file should probably not be modified directly. Custom changes can be added in
+ * a safe way by creating a new file called "_chrome_user.css". This ensures that your
+ * changes will not be overwrote by Nettspend updates.
+ *
+ * If you wish to contribute to Nettspend, then please contribute changes to the SCSS
+ * source, which is put into _nettspend.css.
+ */
+
+ @import url("chrome://nettspend-global/skin");
+@import url("chrome://nettspend/skin");
+
+/* Additional styles from the user ignored by Git. */
+@import url("_chrome_user.css");
