@@ -8,8 +8,9 @@
  * If you wish to contribute to Nettspend, then please contribute changes to the SCSS
  * source, which is put into _nettspend.css.
  */
+@import url("chrome://branding/content/brand.css");
 
- @import url("chrome://nettspend-global/skin");
+@import url("chrome://nettspend-global/skin");
 @import url("chrome://nettspend/skin");
 
 /* Additional styles from the user ignored by Git. */

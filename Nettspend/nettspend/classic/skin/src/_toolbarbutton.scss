@@ -1,0 +1,123 @@
+toolbarbutton {
+    -moz-default-appearance: toolbarbutton !important;
+    appearance: auto !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    margin: 0 !important;
+    border: 1px solid transparent;
+    border-radius: 0 !important;
+    padding: 3px !important; // + box shadow fake border
+    background-color: transparent !important;
+    color: -moz-DialogText !important;
+    text-shadow: none !important;
+    opacity: 1 !important;
+
+    .toolbarbutton-badge-stack,
+    .toolbarbutton-icon {
+        border-radius: 0 !important;
+        padding: 0 !important;
+        margin-right: 2px !important;
+        background-color: inherit !important;
+    }
+
+    .toolbarbutton-text {
+        background-color: inherit !important;
+        border-radius: 0 !important;
+        color: inherit !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        text-align: center !important;
+        min-height: 0 !important;
+    }
+
+    &:not([disabled="true"]):hover {
+        border-color: ThreeDDarkShadow !important;
+        box-shadow: inset 1px 1px 0 ThreeDHighlight, inset -1px -1px 0 ThreeDShadow !important;
+        color: #0000FF !important;
+    }
+
+    &:not([disabled="true"]):hover:active,
+    &:not([disabled="true"])[open="true"] {
+        border-color: ThreeDDarkShadow !important;
+        box-shadow: inset 1px 1px 0 ThreeDShadow, inset -1px -1px 0 ThreeDHighlight !important;
+        padding: 4px 2px 2px 4px !important;
+        color: #0000FF !important;
+    }
+
+    &[disabled="true"] {
+        border-color: transparent !important;
+        padding: 3px !important;
+        color: GrayText !important;
+    }
+
+    &:not([disabled="true"])[checked="true"] {
+        border-color: ThreeDLightShadow !important;
+        box-shadow: inset 1px 1px 0 ThreeDShadow, inset -1px -1px 0 ThreeDHighlight !important;
+        padding: 3px !important;
+        background-color: ThreeDHighlight !important;
+        color: ButtonText !important;
+    }
+
+    &[type="menu-button"] {
+        align-items: stretch !important;
+
+        & {
+            padding: 0 !important;
+        }
+    }
+}
+
+.toolbarbutton-menubutton-button {
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.toolbarbutton-menubutton-button,
+.toolbarbutton-menubutton-dropmarker {
+    border: 1px solid !important;
+    border-color: transparent !important;
+
+    &[disabled="true"] {
+        border-color: transparent !important;
+    }
+
+    toolbarbutton[type="menu-button"]:not([disabled="true"]):hover > & {
+        border-top-color: ThreeDHighlight !important;
+        border-right-color: ThreeDShadow !important;
+        border-bottom-color: ThreeDShadow !important;
+        border-left-color: ThreeDHighlight !important;
+    }
+
+    toolbarbutton[type="menu-button"]:not([disabled="true"]):hover:active > &,
+    toolbarbutton[type="menu-button"][open="true"] > & {
+        border-top-color: ThreeDShadow !important;
+        border-right-color: ThreeDHighlight !important;
+        border-bottom-color: ThreeDHighlight !important;
+        border-left-color: ThreeDShadow !important;
+    }
+}
+
+.toolbarbutton-menu-dropmarker {
+    list-style-image: url("chrome://nettspend-global/skin/arrow/arrow-dn.gif");
+
+    &[disabled="true"] {
+        list-style-image: url("chrome://nettspend-global/skin/arrow/arrow-dn-dis.gif");
+    }
+}
+
+.toolbarbutton-menubutton-dropmarker {
+    align-items: center !important;
+    padding: 0 0 1px 0;
+    list-style-image: url("chrome://nettspend-global/skin/arrow/arrow-dn.gif");
+
+    &[disabled="true"] {
+        border: 1px solid transparent !important;
+        padding: 0 0 1px 0 !important;
+        list-style-image: url("chrome://nettspend-global/skin/arrow/arrow-dn-dis.gif") !important;
+    }
+
+    toolbarbutton[type="menu-button"][open="true"] > & {
+        padding: 1px 0 0 0 !important;
+    }
+}

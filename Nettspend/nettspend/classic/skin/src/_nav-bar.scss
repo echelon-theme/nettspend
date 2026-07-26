@@ -1,0 +1,176 @@
+$btn1: url("chrome://nettspend/skin/images/icons/btn1.gif");
+$btn2: url("chrome://nettspend/skin/images/icons/btn2.gif");
+
+@mixin sprite-button($row-top, $width, $height) {
+    .toolbarbutton-icon {
+        width: #{$width}px !important;
+        height: #{$height}px !important;
+    }
+
+    -moz-image-region: rect(#{$row-top}px #{$width}px #{($row-top + $height)}px 0) !important;
+
+    &:not([disabled="true"]) {
+        &:hover {
+            -moz-image-region: rect(#{$row-top}px #{($width * 2)}px #{($row-top + $height)}px #{$width}px) !important;
+        }
+
+        &:active {
+            -moz-image-region: rect(#{$row-top}px #{($width * 3)}px #{($row-top + $height)}px #{($width * 2)}px) !important;
+        }
+    }
+
+    &[disabled="true"] {
+        -moz-image-region: rect(#{$row-top}px #{($width * 4)}px #{($row-top + $height)}px #{($width * 3)}px) !important;
+    }
+}
+
+// Main toolbar buttons
+#back-button,
+#forward-button,
+#reload-button {
+    list-style-image: $btn1 !important;
+}
+
+#back-button {
+    @include sprite-button(0, 19, 20);
+}
+
+#forward-button {
+    @include sprite-button(20, 19, 20);
+}
+
+#reload-button {
+    @include sprite-button(40, 22, 20);
+}
+
+// Secondary toolbar buttons
+#print-button,
+#stop-button {
+    list-style-image: $btn2 !important;
+}
+
+#print-button {
+    @include sprite-button(0, 23, 21);
+}
+
+#stop-button {
+    @include sprite-button(21, 22, 20);
+}
+
+#nav-bar {
+    .toolbarbutton-1 {
+        .toolbarbutton-text {
+            display: flex !important;
+        }
+
+        &[type="menu-button"] {
+            flex-direction: row !important;
+            padding: 0 !important;
+        }
+
+        &[type="menu"] > .toolbarbutton-menu-dropmarker {
+            display: none !important;
+        }
+    }
+
+    .toolbarbutton-1,
+    .toolbarbutton-1 > .toolbarbutton-menubutton-button {
+        min-width: 47px !important;
+        flex-direction: column !important;
+    }
+
+    .toolbarbutton-1,
+    .toolbarbutton-1 > .toolbarbutton-menubutton-button,
+    .toolbarbutton-1[disabled="true"]:hover:active {
+        padding: 3px 8px 3px 7px !important;
+    }
+
+    .toolbarbutton-1:hover:active,
+    .toolbarbutton-1[open="true"],
+    .toolbarbutton-1:hover > .toolbarbutton-menubutton-button {
+        padding: 4px 7px 2px 8px !important;
+    }
+}   
+
+
+.button-toolbar {
+    -moz-user-focus: none !important;
+    border: 1px solid transparent !important;
+    border-radius: 0 !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    min-width: 0 !important;
+    padding: 1px !important;
+    color: -moz-DialogText !important;
+
+    > .button-box {
+        margin: 0 !important;
+        padding: 1px 2px !important;
+
+        > .button-icon,
+        > .button-text {
+            margin: 0 !important;
+            margin-inline-end: 2px !important;
+        }
+    }
+
+    &:hover:active > .button-box {
+        padding: 2px 1px 0px 3px !important;
+    }
+
+    &,
+    &[disabled="true"]:hover,
+    &[disabled="true"]:hover:active {
+        border-color: transparent !important;
+        box-shadow: inset 1px 1px 0 ThreeDHighlight, inset -1px -1px 0 ThreeDShadow !important;
+    }
+
+    &:not([disabled="true"]):hover {
+        border-color: ThreeDDarkShadow !important;
+        box-shadow: inset 1px 1px 0 ThreeDHighlight, inset -1px -1px 0 ThreeDShadow !important;
+    }
+
+    &:not([disabled="true"]):hover:active {
+        border-color: ThreeDDarkShadow !important;
+        box-shadow: inset 1px 1px 0 ThreeDShadow, inset -1px -1px 0 ThreeDHighlight !important;
+    }
+}
+
+#search-button {
+    margin: 0px 4px 0px 0px !important;
+    min-height: 25px !important;
+    font: message-box !important;
+    font-weight: bold !important;
+
+    list-style-image: url("chrome://nettspend/skin/images/icons/search.gif") !important;
+
+    &:hover {
+        list-style-image: url("chrome://nettspend/skin/images/icons/search-hov.gif") !important;
+
+        &:active {
+            list-style-image: url("chrome://nettspend/skin/images/icons/search-act.gif") !important;
+        }
+    }
+}
+
+// Hide PanelUI Button, but still let panels open from it
+#nav-bar #PanelUI-menu-button {
+    border: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    min-width: 1px !important;
+    max-width: 1px !important;
+    margin-inline-start: -1px !important;
+    list-style-image: none !important;
+
+    .toolbarbutton-text {
+        display: none !important;
+    }
+}
+
+#stop-reload-button {
+    #stop-button,
+    #reload-button {
+        display: flex !important;
+    }
+}

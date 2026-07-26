@@ -1,0 +1,31 @@
+/*
+*  SHITTY FUCKING HACK HELPPPPPP
+*/
+#toolbar-menubar,
+#nav-bar,
+#PersonalToolbar {
+    padding: 1px !important;
+    position: relative !important;
+    
+    &::after {
+        content: '';
+        display: flex;
+        width: calc(100% - 10px);
+        height: 100%;
+        margin-inline-start: 10px;
+        pointer-events: none;
+        left: 0 !important;
+        top: 0 !important;
+        position: absolute;
+        box-sizing: border-box;
+        border-left: 1px solid ThreeDHighlight !important;
+        border-top: 1px solid ThreeDHighlight !important;
+        border-right: 1px solid ThreeDShadow !important;
+        border-bottom: 1px solid ThreeDShadow !important;
+    }
+}
+
+.browser-toolbar {
+    background-color: inherit !important;
+    color: inherit !important;
+}

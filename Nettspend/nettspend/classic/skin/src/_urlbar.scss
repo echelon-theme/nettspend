@@ -1,0 +1,78 @@
+#urlbar-container {
+    margin: 4px 6px !important;
+    padding: 0 !important;
+    min-height: 0 !important;
+    align-items: center !important;
+}
+
+#urlbar, #searchbar {
+    font-size: 1em !important;
+}
+
+#urlbar {
+    padding: 2px !important;
+    display: flex !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    position: relative !important;
+    border: 1px solid transparent !important;
+    box-shadow: inset 1px 1px 0 ThreeDShadow, inset -1px -1px 0 ThreeDHighlight, inset 0 0 0 2px ThreeDDarkShadow !important;
+    color: -moz-FieldText !important;
+    background-color: -moz-Field !important;
+    background-clip: padding-box !important;
+    margin-inline-end: 4px !important;
+
+    #urlbar-background {
+        visibility: collapse !important;
+    }
+
+    .urlbar-input-container,
+    #urlbar-input-container {
+        border: 0 !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+    }
+
+    #urlbar-input::placeholder {
+        color: GrayText !important;
+        opacity: 0 !important;
+    }
+
+    .urlbar-input-box {
+        margin-inline: 3px !important;
+    }
+}
+
+.urlbar-page-action {
+    width: 16px !important;
+    height: 16px !important;
+    outline: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    background-color: transparent !important;
+}
+
+
+// TODO: we need to implement page-proxy-button
+
+#page-proxy-deck,
+#page-proxy-favicon {
+    width: 16px !important;
+    height: 16px !important;
+}
+
+#page-proxy-deck {
+    cursor: grab !important;
+    margin: 2px 3px !important;
+}
+
+#page-proxy-favicon {
+    visibility: visible !important;
+    content: url("chrome://nettspend/skin/images/bookmarks/location.gif") !important;
+}
+
+#identity-box {
+    visibility: collapse !important;
+    margin-inline-end: 0 !important;
+}
