@@ -36,4 +36,82 @@ menupopup::part(content) {
   max-height: 100% !important;
 }
 
+#notifications-toolbar::part(toolbargrippy) {
+  display: none !important;
+}
+
+*[moz-collapsed=true] {
+  visibility: collapse !important;
+}
+
+#nav-bar::part(toolbar-holder) {
+  background-image: url("chrome://nettspend/skin/images/toolbar/prtb-bg-noline.gif") !important;
+}
+
+:host(:is(#PersonalToolbar)) > toolbargrippy,
+:host(:is(#PersonalToolbar)) > .toolbar-holder {
+  border-top: 1px solid #CED6DD !important;
+  border-right: 1px solid #95A0AD !important;
+  border-bottom: 1px solid #95A0AD !important;
+  border-left: 1px solid #DAE3ED !important;
+}
+:host(:is(#PersonalToolbar)) > toolbargrippy:hover:active {
+  border-color: #67737E !important;
+}
+
+/* ::::: toolbar-primary ::::: */
+.toolbar-primary {
+  min-height: 45px !important;
+  background-color: #B1BDC9 !important;
+}
+
+.toolbar-primary-holder {
+  background: url("chrome://nettspend/skin/images/toolbar/prtb-bg-line.gif") repeat-x top !important;
+  border-top: none !important;
+  border-right: 1px solid #95A0AD !important;
+  border-bottom: 1px solid #95A0AD !important;
+  border-left: none !important;
+}
+
+.toolbar-primary-icon {
+  width: 77px !important;
+  height: 50px !important;
+  background-repeat: no-repeat !important;
+  background-position: top !important;
+}
+
+/* ::::: toolbargrippy ::::: */
+.toolbar-primary-grippy {
+  border: none !important;
+  background: url("chrome://nettspend/skin/images/toolbar/prtb-grip-mid.gif") repeat-y !important;
+  list-style-image: url("chrome://nettspend/skin/images/toolbar/prtb-grip-btm.gif") !important;
+}
+.toolbar-primary-grippy > .toolbargrippy-texture {
+  width: 13px !important;
+  height: 34px !important;
+  background: url("chrome://nettspend/skin/images/toolbar/prtb-grip-top.gif") no-repeat top !important;
+}
+.toolbar-primary-grippy > .toolbargrippy-arrow {
+  margin: 0px !important;
+  width: 13px !important;
+  height: 10px !important;
+  list-style-image: inherit !important;
+}
+.toolbar-primary-grippy:hover:active {
+  background-image: url("chrome://nettspend/skin/images/toolbar/prtb-grip-mid-act.gif") !important;
+  list-style-image: url("chrome://nettspend/skin/images/toolbar/prtb-grip-btm-act.gif") !important;
+}
+.toolbar-primary-grippy:hover:active .toolbargrippy-texture {
+  background-image: url("chrome://nettspend/skin/images/toolbar/prtb-grip-top-act.gif") !important;
+}
+
+/* ::::: toolbar-primary separator ::::: */
+.toolbarseparator-primary {
+  margin: 0px !important;
+  padding: 0px !important;
+  border: none !important;
+  width: 18px !important;
+  background: none !important;
+}
+
 /*# sourceMappingURL=nettspend.au.css.map */

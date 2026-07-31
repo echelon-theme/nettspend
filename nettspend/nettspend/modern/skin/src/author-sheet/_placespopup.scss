@@ -41,3 +41,7 @@ menupopup {
         max-height: 100% !important;
     }
 }
+
+#notifications-toolbar::part(toolbargrippy) {
+    display: none !important;
+}

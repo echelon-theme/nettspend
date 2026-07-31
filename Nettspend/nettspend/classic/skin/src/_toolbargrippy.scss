@@ -1,3 +1,7 @@
+*[moz-collapsed="true"] {
+    visibility: collapse !important;
+}
+
 toolbargrippy {
     flex-direction: column !important;
     justify-content: center !important;

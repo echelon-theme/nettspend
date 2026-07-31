@@ -214,9 +214,20 @@
 
     #search-button {
         -moz-user-focus: none !important;
+        min-width: 0px !important;
         font-weight: bold !important;
-        list-style-image: url("chrome://nettspend/skin/images/navbar/search.gif") !important;        margin: 0 !important;
+        list-style-image: url("chrome://nettspend/skin/images/navbar/search.gif") !important;
+        margin: 0 !important;
         margin-inline-end: 4px !important;
         outline: none !important;
+        padding: 2px 2px 2px 4px !important;
+
+        .button-icon {
+            margin-inline-end: 2px !important;
+        }
+
+        .button-text {
+            margin: 0px 6px 0px 4px !important;
+        }
     }
 }

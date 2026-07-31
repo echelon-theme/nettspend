@@ -1,9 +1,8 @@
 #PersonalToolbar {
     transition: none !important;
-    height: 24px !important;
     padding-inline: 0 !important;
+    background: url("chrome://nettspend/skin/images/toolbar/tb-mid.gif") repeat-x top !important;
     background-color: #C7D0D9 !important;
-    background: url("chrome://nettspend/skin/images/toolbar/tb-mid.gif") repeat-x top;
 
     #PlacesToolbarItems {
         toolbarseparator {
@@ -11,24 +10,6 @@
                 content: none !important;
             }
         }
-    }
-
-    toolbargrippy {
-        border-top: 1px solid #CED6DD;
-        border-right: 1px solid #95A0AD;
-        border-bottom: 1px solid #95A0AD;
-        border-left: 1px solid #DAE3ED;
-
-        &:hover:active {
-            border-color: #67737E;
-        }
-    }
-
-    &::after {
-        border-top: 1px solid #CED6DD;
-        border-right: 1px solid #95A0AD;
-        border-bottom: 1px solid #95A0AD;
-        border-left: 1px solid #DAE3ED;
     }
 
     .toolbarbutton-1,
@@ -40,7 +21,6 @@
         border: 1px solid transparent !important;
         border-radius: 0 !important;
         background-color: transparent !important;
-        margin-block: 1px !important;
 
         &:hover {
             text-decoration: underline !important;

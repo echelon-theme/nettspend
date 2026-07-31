@@ -1,0 +1,21 @@
+*[moz-collapsed="true"] {
+    visibility: collapse !important;
+}
+
+#nav-bar::part(toolbar-holder) {
+    background-image: url("chrome://nettspend/skin/images/toolbar/prtb-bg-noline.gif") !important;
+}
+
+:host(:is(#PersonalToolbar)) {
+    > toolbargrippy,
+    > .toolbar-holder {
+        border-top: 1px solid #CED6DD !important;
+        border-right: 1px solid #95A0AD !important;
+        border-bottom: 1px solid #95A0AD !important;
+        border-left: 1px solid #DAE3ED !important;
+    }
+
+    > toolbargrippy:hover:active {
+        border-color: #67737E !important;
+    }
+}

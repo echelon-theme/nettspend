@@ -1,0 +1,163 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* ===== toolbar.css ====================================================
+  == Styles used by XUL toolbar-related elements.
+  ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* ::::: toolbox ::::: */
+
+toolbox {
+    border-bottom: 1px solid #494F5D;
+}
+
+/* ::::: toolbar ::::: */
+
+toolbar {
+    min-width: 1px;
+    background: #C7D0D9;
+    color: #000000;
+
+    &::part(toolbar-holder) {
+        border-top: 1px solid #EEF0F3;
+        border-right: 1px solid #86929E;
+        border-bottom: 1px solid #86929E;
+        border-left: 1px solid #EEF0F3;
+    }
+}
+
+/* ::::: menubar ::::: */
+menubar {
+    cursor: default;
+    min-width: 1px;
+    background-color: #DDE3EB;
+    color: #000000;
+}
+
+:host(:is(menubar, #toolbar-menubar)) > .toolbar-holder {
+    border-top: 1px solid #EBF4FF !important;
+    border-right: 1px solid #86929E !important;
+    border-bottom: 1px solid #B9BFC7 !important;
+    border-left: 1px solid #EEF4FC !important;
+}
+
+/* ::::: toolbargrippy ::::: */
+ 
+toolbargrippy {
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column-reverse;
+    border-top: 1px solid #EEF0F3;
+    border-right: 1px solid #86929E;
+    border-bottom: 1px solid #86929E;
+    border-left: 1px solid #EEF0F3;
+    list-style-image: url("chrome://nettspend/skin/images/toolbar/tbgrip-arrow.gif");
+
+    &:hover:active {
+        border-color: #67737E;
+        background-color: #9DA9B6;
+        list-style-image: url("chrome://nettspend/skin/images/toolbar/tbgrip-arrow-act.gif");
+    }
+}
+
+.toolbargrippy-arrow {
+    margin: 0px 1px 3px 1px;
+    width: 8px;
+    height: 5px;
+}
+
+/* ::::: menubar grippy ::::: */
+
+:host(:is(menubar, #toolbar-menubar)) > toolbargrippy {
+    border-top: 1px solid #EBF4FF;
+    border-right: 1px solid #B9BFC7;
+    border-bottom: 1px solid #B9BFC7;
+    border-left: 1px solid #F4FAFF;
+    background-color: #DDE3EB;
+    list-style-image: url("chrome://nettspend/skin/images/toolbar/mbgrip-arrow.gif");
+
+    &:hover:active {
+        border-color: #67737E;
+        background-color: #9DA9B6;
+        list-style-image: url("chrome://nettspend/skin/images/toolbar/tbgrip-arrow-act.gif");
+    }
+}
+
+/* ::::: menubar ::::: */
+menubar {
+    cursor: default;
+    min-width: 1px;
+    background-color: #DDE3EB;
+    color: #000000;
+
+    &::part(toolbar-holder) {
+        border-top: 1px solid #EBF4FF;
+        border-right: 1px solid #86929E;
+        border-bottom: 1px solid #B9BFC7;
+        border-left: 1px solid #EEF4FC;
+    }
+}
+
+/* ::::: collapsed toolbargrippy and tray ::::: */
+  
+toolbargrippy[tbgrippy-collapsed="true"] {
+    flex-direction: row;
+    justify-content: center;
+    width: 40px;
+    list-style-image: url("chrome://nettspend/skin/images/toolbar/tbgrip-arrow-clps.gif");
+
+    > .toolbargrippy-arrow {
+        margin: 1px 0px 1px 3px;
+        width: 5px;
+        height: 8px;
+    }
+
+    &:hover:active {
+        > .toolbargrippy-arrow {
+            list-style-image: url("chrome://nettspend/skin/images/toolbar/tbgrip-arrow-clps-act.gif");
+        }
+    }
+}
+
+.collapsed-tray-holder {
+    background-color: #C7D0D9;
+}
+
+/* ::::: toolbarseparator ::::: */
+
+toolbarseparator {
+    margin: 0px 0.2em;
+    border-right: 1px solid #E2E7EB;
+    border-left: 1px solid #95A0AD;
+    width: 0px;
+}
+
+/* ::::: toolbarspacer ::::: */
+
+toolbarspacer {
+    width: 15px;
+}
+
+toolbarpaletteitem {
+    cursor: grab;
+}
+
+/* Drag and drop feedback */
+
+toolbarpaletteitem[place="toolbar"] {
+    margin-inline: -2px;
+    border-inline: 2px solid transparent;
+}
+
+toolbarpaletteitem[dragover="left"] {
+    border-left-color: #000000;
+}
+
+toolbarpaletteitem[dragover="right"] {
+    border-right-color: #000000;
+}

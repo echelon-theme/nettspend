@@ -1,5 +1,6 @@
 skin	    nettspend                                   nettspend-modern/1.0                                skin/
 
+override    chrome://global/skin/toolbar.css            skin/override/global/skin/toolbar.css
 override    chrome://global/skin/global.css             skin/override/global/skin/global.css
 override    chrome://global/skin/button.css             skin/override/global/skin/button.css
 override    chrome://global/skin/menulist.css           skin/override/global/skin/menulist.css
