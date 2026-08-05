@@ -32,8 +32,8 @@ var g_NettspendToolbox;
             navBar.shadowRoot.querySelector(".toolbar-holder").classList.add("toolbar-primary-holder");
 
             if (TabsToolbar) {
-                document.querySelector("#tabbrowser-tabbox").insertBefore(TabsToolbar, document.querySelector("#tabbrowser-tabbox").firstChild);
-                TabsToolbar.removeAttribute("flex");
+                document.getElementById("navigator-toolbox").appendChild(TabsToolbar);
+				TabsToolbar.removeAttribute("flex");
             }
 
             this.appendTabBarCloseButton();
