@@ -1,0 +1,47 @@
+#mini-nav {
+    list-style-image: url("chrome://nettspend/skin/images/taskbar/navigator.gif") !important;
+
+    &:hover {
+        list-style-image: url("chrome://nettspend/skin/images/taskbar/navigator-hov.gif") !important;
+    }
+}
+
+.icon-navigator16 {
+    list-style-image: url("chrome://nettspend/skin/images/taskbar/navigator-16.gif");
+}
+
+#mini-mail {
+    list-style-image: url("chrome://nettspend/skin/images/taskbar/mail.gif") !important;
+
+    &:hover {
+        list-style-image: url("chrome://nettspend/skin/images/taskbar/mail-hov.gif") !important;
+    }
+}
+
+.icon-mail16 {
+    list-style-image: url("chrome://nettspend/skin/images/taskbar/mail-16.gif");
+}
+
+#mini-addr {
+    list-style-image: url("chrome://nettspend/skin/images/taskbar/addressbook.gif") !important;
+
+    &:hover {
+        list-style-image: url("chrome://nettspend/skin/images/taskbar/addressbook-hov.gif") !important;
+    }
+}
+
+.icon-addressbook16 {
+    list-style-image: url("chrome://nettspend/skin/images/taskbar/addressbook-16.gif");
+}
+
+#mini-comp {
+    list-style-image: url("chrome://nettspend/skin/images/taskbar/composer.gif");
+
+    &:hover {
+        list-style-image: url("chrome://nettspend/skin/images/taskbar/composer-hov.gif");
+    }
+}
+
+.icon-composer16 {
+    list-style-image: url("chrome://nettspend/skin/images/taskbar/composer-16.gif");
+}

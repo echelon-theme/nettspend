@@ -1,0 +1,23 @@
+#mini-irc {
+    list-style-image: url("chrome://nettspend-global/skin/images/taskbar/taskbar-irc.gif") !important;
+}
+
+#tasksMenuIRC {
+    list-style-image: url("chrome://nettspend-global/skin/images/taskbar/chatzilla-16.gif") !important;
+}
+
+#offline-status {
+    list-style-image: url("chrome://nettspend/skin/images/icons/online.gif");
+
+    &[offline] {
+        list-style-image: url("chrome://nettspend/skin/images/icons/offline.gif");
+    }
+}
+
+#security-button {
+    list-style-image: url("chrome://nettspend/skin/images/icons/lock-insecure.gif");
+
+    &[level="high"] {
+        list-style-image: url("chrome://nettspend/skin/images/icons/lock-secure.gif");
+    }
+}

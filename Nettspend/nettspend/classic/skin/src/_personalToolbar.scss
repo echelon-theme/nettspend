@@ -1,5 +1,55 @@
 #PersonalToolbar {
     toolbarbutton {
         flex-direction: row !important;
+
+        > .toolbarbutton-text {
+            display: flex !important;
+        }
+
+        > .toolbarbutton-icon {
+            width: 16px !important;
+            height: 16px !important;
+        }
+
+        &:not([container="true"]) {
+            cursor: pointer !important;
+            border: 1px solid transparent !important;
+            box-shadow: none !important;
+
+            &:hover {
+                text-decoration: underline !important;
+            }
+        }
+    }
+
+    #home-button {
+        list-style-image: url("chrome://nettspend/skin/images/bookmarks/home.gif") !important;
+
+        &:hover {
+            list-style-image: url("chrome://nettspend/skin/images/bookmarks/home-hover.gif") !important;
+
+            &:active {
+                list-style-image: url("chrome://nettspend/skin/images/bookmarks/home-active.gif") !important;
+            }
+        }
+    }
+}
+
+.bookmark-item {
+    &[container] {
+        list-style-image: url("chrome://nettspend/skin/images/bookmarks/bookmark-folder-closed.gif") !important;
+
+        &[open="true"] {
+            list-style-image: url("chrome://nettspend/skin/images/bookmarks/bookmark-folder-open.gif") !important;
+        }
+    }
+}
+
+#PlacesToolbarItems > toolbarseparator {
+    margin: 2px 0.2em 2px 0.2em !important;
+    padding-inline: 0 !important;
+
+    &::before {
+        content: none !important;
     }
 }

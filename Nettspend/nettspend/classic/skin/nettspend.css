@@ -3,91 +3,16 @@ toolbox,
   border-block-end: 0 !important;
   background-color: -moz-Dialog !important;
   color: -moz-DialogText !important;
-  border-left: 1px solid ThreeDShadow !important;
-  border-top: 1px solid ThreeDShadow !important;
-  border-right: 1px solid ThreeDHighlight !important;
-}
-
-/*
-*  SHITTY FUCKING HACK HELPPPPPP
-*/
-#toolbar-menubar,
-#nav-bar,
-#PersonalToolbar {
-  padding: 1px !important;
-  position: relative !important;
-}
-#toolbar-menubar::after,
-#nav-bar::after,
-#PersonalToolbar::after {
-  content: "";
-  display: flex;
-  width: calc(100% - 10px);
-  height: 100%;
-  margin-inline-start: 10px;
-  pointer-events: none;
-  left: 0 !important;
-  top: 0 !important;
-  position: absolute;
-  box-sizing: border-box;
-  border-left: 1px solid ThreeDHighlight !important;
-  border-top: 1px solid ThreeDHighlight !important;
-  border-right: 1px solid ThreeDShadow !important;
-  border-bottom: 1px solid ThreeDShadow !important;
 }
 
 .browser-toolbar {
   background-color: inherit !important;
   color: inherit !important;
+  padding: 0 !important;
 }
 
 *[moz-collapsed=true] {
   visibility: collapse !important;
-}
-
-toolbargrippy {
-  flex-direction: column !important;
-  justify-content: center !important;
-  border-left: 1px solid ThreeDHighlight !important;
-  border-top: 1px solid ThreeDHighlight !important;
-  border-right: 1px solid ThreeDShadow !important;
-  border-bottom: 1px solid ThreeDShadow !important;
-  width: 10px !important;
-  padding: 2px 1px !important;
-  list-style-image: url("chrome://nettspend/skin/images/toolbar/tbgrip-arrow.gif") !important;
-}
-toolbargrippy:not([tbgrippy-collapsed=true]) {
-  margin: -1px !important;
-  margin-inline-end: 1px !important;
-}
-toolbargrippy:hover {
-  background-color: #CCCCFF !important;
-}
-toolbargrippy .toolbargrippy-texture {
-  margin-top: 2px !important;
-  width: 6px !important;
-  background: url("chrome://nettspend/skin/images/toolbar/tbgrip-texture.gif") !important;
-}
-toolbargrippy[tbgrippy-collapsed=true] {
-  flex-direction: row !important;
-  border-left: 1px solid ThreeDHighlight !important;
-  border-top: 1px solid ThreeDHighlight !important;
-  border-right: 1px solid ThreeDShadow !important;
-  border-bottom: 1px solid ThreeDShadow !important;
-  width: 40px !important;
-  height: 10px !important;
-  padding: 1px 2px !important;
-  list-style-image: url("chrome://nettspend/skin/images/toolbar/tbgrip-arrow-clps.gif") !important;
-}
-toolbargrippy[tbgrippy-collapsed=true] .toolbargrippy-texture {
-  margin-top: 0 !important;
-  margin-left: 2px !important;
-  width: none !important;
-  height: 6px !important;
-}
-
-.collapsed-tray-spacer {
-  border-bottom: 1px solid ThreeDShadow !important;
 }
 
 toolbarbutton {
@@ -146,8 +71,7 @@ toolbarbutton:not([disabled=true])[checked=true] {
 }
 toolbarbutton[type=menu-button] {
   align-items: stretch !important;
-}
-toolbarbutton[type=menu-button] {
+  box-shadow: none !important;
   padding: 0 !important;
 }
 
@@ -158,15 +82,19 @@ toolbarbutton[type=menu-button] {
 
 .toolbarbutton-menubutton-button,
 .toolbarbutton-menubutton-dropmarker {
+  appearance: none !important;
   border: 1px solid !important;
   border-color: transparent !important;
+  padding: 2px !important;
 }
 .toolbarbutton-menubutton-button[disabled=true],
 .toolbarbutton-menubutton-dropmarker[disabled=true] {
+  padding: 2px !important;
   border-color: transparent !important;
 }
 toolbarbutton[type=menu-button]:not([disabled=true]):hover > .toolbarbutton-menubutton-button,
 toolbarbutton[type=menu-button]:not([disabled=true]):hover > .toolbarbutton-menubutton-dropmarker {
+  box-shadow: none !important;
   border-top-color: ThreeDHighlight !important;
   border-right-color: ThreeDShadow !important;
   border-bottom-color: ThreeDShadow !important;
@@ -175,6 +103,7 @@ toolbarbutton[type=menu-button]:not([disabled=true]):hover > .toolbarbutton-menu
 toolbarbutton[type=menu-button]:not([disabled=true]):hover:active > .toolbarbutton-menubutton-button, toolbarbutton[type=menu-button][open=true] > .toolbarbutton-menubutton-button,
 toolbarbutton[type=menu-button]:not([disabled=true]):hover:active > .toolbarbutton-menubutton-dropmarker,
 toolbarbutton[type=menu-button][open=true] > .toolbarbutton-menubutton-dropmarker {
+  box-shadow: none !important;
   border-top-color: ThreeDShadow !important;
   border-right-color: ThreeDHighlight !important;
   border-bottom-color: ThreeDHighlight !important;
@@ -182,21 +111,23 @@ toolbarbutton[type=menu-button][open=true] > .toolbarbutton-menubutton-dropmarke
 }
 
 .toolbarbutton-menu-dropmarker {
-  list-style-image: url("chrome://nettspend-global/skin/arrow/arrow-dn.gif");
+  -moz-image-region: auto !important;
+  list-style-image: url("chrome://nettspend/skin/images/arrow/arrow-dn.gif") !important;
 }
 .toolbarbutton-menu-dropmarker[disabled=true] {
-  list-style-image: url("chrome://nettspend-global/skin/arrow/arrow-dn-dis.gif");
+  list-style-image: url("chrome://nettspend/skin/images/arrow/arrow-dn-dis.gif") !important;
 }
 
 .toolbarbutton-menubutton-dropmarker {
+  -moz-image-region: auto !important;
   align-items: center !important;
-  padding: 0 0 1px 0;
-  list-style-image: url("chrome://nettspend-global/skin/arrow/arrow-dn.gif");
+  padding: 0 0 1px 0 !important;
+  list-style-image: url("chrome://nettspend/skin/images/arrow/arrow-dn.gif") !important;
 }
 .toolbarbutton-menubutton-dropmarker[disabled=true] {
   border: 1px solid transparent !important;
   padding: 0 0 1px 0 !important;
-  list-style-image: url("chrome://nettspend-global/skin/arrow/arrow-dn-dis.gif") !important;
+  list-style-image: url("chrome://nettspend/skin/images/arrow/arrow-dn-dis.gif") !important;
 }
 toolbarbutton[type=menu-button][open=true] > .toolbarbutton-menubutton-dropmarker {
   padding: 1px 0 0 0 !important;
@@ -313,18 +244,19 @@ toolbarbutton[type=menu-button][open=true] > .toolbarbutton-menubutton-dropmarke
   min-width: 47px !important;
   flex-direction: column !important;
 }
-#nav-bar .toolbarbutton-1,
+#nav-bar .toolbarbutton-1:not([type=menu-button]),
 #nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-button,
 #nav-bar .toolbarbutton-1[disabled=true]:hover:active {
   padding: 3px 8px 3px 7px !important;
 }
-#nav-bar .toolbarbutton-1:hover:active,
-#nav-bar .toolbarbutton-1[open=true],
-#nav-bar .toolbarbutton-1:hover > .toolbarbutton-menubutton-button {
+#nav-bar .toolbarbutton-1:not([type=menu-button]):hover:active,
+#nav-bar .toolbarbutton-1:not([type=menu-button])[open=true],
+#nav-bar .toolbarbutton-1:hover:active > .toolbarbutton-menubutton-button {
   padding: 4px 7px 2px 8px !important;
 }
 
 .button-toolbar {
+  appearance: none !important;
   -moz-user-focus: none !important;
   border: 1px solid transparent !important;
   border-radius: 0 !important;
@@ -394,26 +326,44 @@ toolbarbutton[type=menu-button][open=true] > .toolbarbutton-menubutton-dropmarke
 #PersonalToolbar toolbarbutton {
   flex-direction: row !important;
 }
+#PersonalToolbar toolbarbutton > .toolbarbutton-text {
+  display: flex !important;
+}
+#PersonalToolbar toolbarbutton > .toolbarbutton-icon {
+  width: 16px !important;
+  height: 16px !important;
+}
+#PersonalToolbar toolbarbutton:not([container=true]) {
+  cursor: pointer !important;
+  border: 1px solid transparent !important;
+  box-shadow: none !important;
+}
+#PersonalToolbar toolbarbutton:not([container=true]):hover {
+  text-decoration: underline !important;
+}
+#PersonalToolbar #home-button {
+  list-style-image: url("chrome://nettspend/skin/images/bookmarks/home.gif") !important;
+}
+#PersonalToolbar #home-button:hover {
+  list-style-image: url("chrome://nettspend/skin/images/bookmarks/home-hover.gif") !important;
+}
+#PersonalToolbar #home-button:hover:active {
+  list-style-image: url("chrome://nettspend/skin/images/bookmarks/home-active.gif") !important;
+}
 
-#navigator-throbber {
-  -moz-user-focus: ignore !important;
-  align-items: center !important;
-  justify-content: center !important;
-  margin: 1px 2px 1px 10px !important;
-  border: 1px solid ThreeDDarkShadow !important;
-  box-shadow: inset 1px 1px 0 ThreeDHighlight, inset -1px -1px 0 ThreeDShadow !important;
-  padding: 2px !important;
-  min-width: 0 !important;
-  appearance: none !important;
+.bookmark-item[container] {
+  list-style-image: url("chrome://nettspend/skin/images/bookmarks/bookmark-folder-closed.gif") !important;
 }
-#navigator-throbber:hover:active {
-  box-shadow: inset 1px 1px 0 ThreeDShadow, inset -1px -1px 0 ThreeDHighlight !important;
+.bookmark-item[container][open=true] {
+  list-style-image: url("chrome://nettspend/skin/images/bookmarks/bookmark-folder-open.gif") !important;
 }
-#navigator-throbber[toolbarmode=small] {
-  margin: 0 5px 0 0 !important;
+
+#PlacesToolbarItems > toolbarseparator {
+  margin: 2px 0.2em 2px 0.2em !important;
+  padding-inline: 0 !important;
 }
-#navigator-throbber .toolbarbutton-icon {
-  margin-right: 0 !important;
+#PlacesToolbarItems > toolbarseparator::before {
+  content: none !important;
 }
 
 #urlbar-container {
@@ -486,6 +436,131 @@ toolbarbutton[type=menu-button][open=true] > .toolbarbutton-menubutton-dropmarke
 #identity-box {
   visibility: collapse !important;
   margin-inline-end: 0 !important;
+}
+
+@media not (-moz-windows-classic) {
+  statusbar {
+    -moz-default-appearance: statusbar;
+    appearance: auto;
+  }
+}
+statusbar {
+  border-top: 1px solid ThreeDLightShadow;
+  border-left: 1px solid ThreeDShadow;
+  border-right: 1px solid ThreeDHighlight;
+  border-bottom: 1px solid ThreeDHighlight;
+  background-color: -moz-Dialog;
+}
+
+@media not (-moz-windows-classic) {
+  statusbarpanel {
+    -moz-default-appearance: statusbarpanel;
+    appearance: auto;
+  }
+}
+statusbarpanel {
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid ThreeDHighlight;
+  border-top: 1px solid ThreeDHighlight;
+  border-right: 1px solid ThreeDShadow;
+  border-bottom: 1px solid ThreeDShadow;
+  padding: 0 4px;
+}
+
+.statusbar-resizerpanel {
+  align-items: flex-end;
+  justify-content: flex-end;
+  -moz-default-appearance: statusbarpanel;
+  appearance: auto;
+  padding: 0px;
+}
+
+.statusbarpanel-iconic {
+  padding: 0px;
+}
+
+#status-bar {
+  border-top: 0 !important;
+}
+
+#tabbrowser-tabbox {
+  border-top: 1px solid ThreeDDarkShadow !important;
+  border-bottom: 1px solid ThreeDLightShadow !important;
+  border-left: 1px solid ThreeDShadow !important;
+  padding-inline-start: 1px !important;
+  box-shadow: inset 1px 0 0 ThreeDDarkShadow !important;
+}
+
+menubar > menu {
+  appearance: none !important;
+  border-radius: 0 !important;
+  border: 1px solid transparent !important;
+  padding: 2px 5px 2px 7px !important;
+  margin: 1px 0px 1px 0px !important;
+}
+menubar > menu[_moz-menuactive=true] {
+  background-color: transparent !important;
+  border-top: 1px solid ThreeDHighlight !important;
+  border-right: 1px solid ThreeDShadow !important;
+  border-bottom: 1px solid ThreeDShadow !important;
+  border-left: 1px solid ThreeDHighlight !important;
+}
+menubar > menu[_moz-menuactive=true][open=true] {
+  border-top: 1px solid ThreeDShadow !important;
+  border-right: 1px solid ThreeDHighlight !important;
+  border-bottom: 1px solid ThreeDHighlight !important;
+  border-left: 1px solid ThreeDShadow !important;
+}
+
+.menubar-text,
+.menubar-left {
+  margin: 0px 2px 0px 0px !important;
+  color: inherit !important;
+}
+
+#mini-nav {
+  list-style-image: url("chrome://nettspend/skin/images/taskbar/navigator.gif") !important;
+}
+#mini-nav:hover {
+  list-style-image: url("chrome://nettspend/skin/images/taskbar/navigator-hov.gif") !important;
+}
+
+.icon-navigator16 {
+  list-style-image: url("chrome://nettspend/skin/images/taskbar/navigator-16.gif");
+}
+
+#mini-mail {
+  list-style-image: url("chrome://nettspend/skin/images/taskbar/mail.gif") !important;
+}
+#mini-mail:hover {
+  list-style-image: url("chrome://nettspend/skin/images/taskbar/mail-hov.gif") !important;
+}
+
+.icon-mail16 {
+  list-style-image: url("chrome://nettspend/skin/images/taskbar/mail-16.gif");
+}
+
+#mini-addr {
+  list-style-image: url("chrome://nettspend/skin/images/taskbar/addressbook.gif") !important;
+}
+#mini-addr:hover {
+  list-style-image: url("chrome://nettspend/skin/images/taskbar/addressbook-hov.gif") !important;
+}
+
+.icon-addressbook16 {
+  list-style-image: url("chrome://nettspend/skin/images/taskbar/addressbook-16.gif");
+}
+
+#mini-comp {
+  list-style-image: url("chrome://nettspend/skin/images/taskbar/composer.gif");
+}
+#mini-comp:hover {
+  list-style-image: url("chrome://nettspend/skin/images/taskbar/composer-hov.gif");
+}
+
+.icon-composer16 {
+  list-style-image: url("chrome://nettspend/skin/images/taskbar/composer-16.gif");
 }
 
 /*# sourceMappingURL=nettspend.css.map */

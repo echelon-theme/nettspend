@@ -98,10 +98,6 @@
                 list-style-image: url("chrome://nettspend/skin/images/taskbar/composer-act.gif");
             }
         }
-
-        #mini-irc {
-            list-style-image: url("chrome://nettspend/skin/images/taskbar/taskbar-irc.gif");
-        }
     }
     
     .fakeresizer {
@@ -142,8 +138,4 @@
 
 .icon-addressbook16 {
     list-style-image: url("chrome://nettspend/skin/images/taskbar/addressbook-16.gif") !important;
-}
-
-#tasksMenuIRC {
-    list-style-image: url("chrome://nettspend/skin/images/taskbar/chatzilla-16.gif") !important;
 }

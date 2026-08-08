@@ -61,10 +61,8 @@ toolbarbutton {
 
     &[type="menu-button"] {
         align-items: stretch !important;
-
-        & {
-            padding: 0 !important;
-        }
+        box-shadow: none !important;
+        padding: 0 !important;
     }
 }
 
@@ -75,14 +73,18 @@ toolbarbutton {
 
 .toolbarbutton-menubutton-button,
 .toolbarbutton-menubutton-dropmarker {
+    appearance: none !important;
     border: 1px solid !important;
     border-color: transparent !important;
+    padding: 2px !important;
 
     &[disabled="true"] {
+        padding: 2px !important;
         border-color: transparent !important;
     }
 
     toolbarbutton[type="menu-button"]:not([disabled="true"]):hover > & {
+        box-shadow: none !important;
         border-top-color: ThreeDHighlight !important;
         border-right-color: ThreeDShadow !important;
         border-bottom-color: ThreeDShadow !important;
@@ -91,6 +93,7 @@ toolbarbutton {
 
     toolbarbutton[type="menu-button"]:not([disabled="true"]):hover:active > &,
     toolbarbutton[type="menu-button"][open="true"] > & {
+        box-shadow: none !important;
         border-top-color: ThreeDShadow !important;
         border-right-color: ThreeDHighlight !important;
         border-bottom-color: ThreeDHighlight !important;
@@ -99,22 +102,24 @@ toolbarbutton {
 }
 
 .toolbarbutton-menu-dropmarker {
-    list-style-image: url("chrome://nettspend-global/skin/arrow/arrow-dn.gif");
+    -moz-image-region: auto !important;
+    list-style-image: url("chrome://nettspend/skin/images/arrow/arrow-dn.gif") !important;
 
     &[disabled="true"] {
-        list-style-image: url("chrome://nettspend-global/skin/arrow/arrow-dn-dis.gif");
+        list-style-image: url("chrome://nettspend/skin/images/arrow/arrow-dn-dis.gif") !important;
     }
 }
 
 .toolbarbutton-menubutton-dropmarker {
+    -moz-image-region: auto !important;
     align-items: center !important;
-    padding: 0 0 1px 0;
-    list-style-image: url("chrome://nettspend-global/skin/arrow/arrow-dn.gif");
+    padding: 0 0 1px 0 !important;
+    list-style-image: url("chrome://nettspend/skin/images/arrow/arrow-dn.gif") !important;
 
     &[disabled="true"] {
         border: 1px solid transparent !important;
         padding: 0 0 1px 0 !important;
-        list-style-image: url("chrome://nettspend-global/skin/arrow/arrow-dn-dis.gif") !important;
+        list-style-image: url("chrome://nettspend/skin/images/arrow/arrow-dn-dis.gif") !important;
     }
 
     toolbarbutton[type="menu-button"][open="true"] > & {

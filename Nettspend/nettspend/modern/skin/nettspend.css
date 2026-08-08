@@ -1067,9 +1067,6 @@ menubar > menu .menubar-text {
 #status-bar #component-bar #mini-comp:hover:active {
   list-style-image: url("chrome://nettspend/skin/images/taskbar/composer-act.gif");
 }
-#status-bar #component-bar #mini-irc {
-  list-style-image: url("chrome://nettspend/skin/images/taskbar/taskbar-irc.gif");
-}
 #status-bar .fakeresizer {
   list-style-image: url("chrome://nettspend/skin/images/resizer.png") !important;
   cursor: se-resize !important;
@@ -1103,10 +1100,6 @@ menubar > menu .menubar-text {
 
 .icon-addressbook16 {
   list-style-image: url("chrome://nettspend/skin/images/taskbar/addressbook-16.gif") !important;
-}
-
-#tasksMenuIRC {
-  list-style-image: url("chrome://nettspend/skin/images/taskbar/chatzilla-16.gif") !important;
 }
 
 /* commonDialog icons */

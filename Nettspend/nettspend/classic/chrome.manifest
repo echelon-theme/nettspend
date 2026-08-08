@@ -1,7 +1,3 @@
 skin	    nettspend                                   nettspend-classic/1.0                                skin/
 
-override    chrome://global/skin/global.css             skin/override/global/skin/global.css
-override    chrome://global/skin/button.css             skin/override/global/skin/button.css
-override    chrome://global/skin/menulist.css           skin/override/global/skin/menulist.css
-override    chrome://global/skin/checkbox.css           skin/override/global/skin/checkbox.css
-override    chrome://global/skin/radio.css              skin/override/global/skin/radio.css
+override    chrome://global/skin/toolbar.css            skin/override/global/skin/toolbar.css

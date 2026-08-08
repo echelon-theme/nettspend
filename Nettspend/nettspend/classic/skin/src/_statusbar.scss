@@ -1,0 +1,41 @@
+statusbar {
+    @media not (-moz-windows-classic) {
+        -moz-default-appearance: statusbar;
+        appearance: auto;
+    }
+    border-top: 1px solid ThreeDLightShadow;
+    border-left: 1px solid ThreeDShadow;
+    border-right: 1px solid ThreeDHighlight;
+    border-bottom: 1px solid ThreeDHighlight;
+    background-color: -moz-Dialog;
+}
+
+statusbarpanel {
+    @media not (-moz-windows-classic) {
+        -moz-default-appearance: statusbarpanel;
+        appearance: auto;
+    }
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid ThreeDHighlight;
+    border-top: 1px solid ThreeDHighlight;
+    border-right: 1px solid ThreeDShadow;
+    border-bottom: 1px solid ThreeDShadow;
+    padding: 0 4px;
+}
+
+.statusbar-resizerpanel {
+    align-items: flex-end;
+    justify-content: flex-end;
+    -moz-default-appearance: statusbarpanel;
+    appearance: auto;
+    padding: 0px;
+}
+
+.statusbarpanel-iconic {
+    padding: 0px;
+}
+
+#status-bar {
+    border-top: 0 !important;
+}
